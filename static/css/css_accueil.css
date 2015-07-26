@@ -1,0 +1,19 @@
+#alerteEvent{
+	background-color: #eee;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	padding-top: 20px;
+}
+
+#video{
+	background-color: #eee;
+	border-radius: 5px;
+	text-align: center;
+	margin-bottom: 20px;
+	padding-bottom: 10px;
+}
+
+#video iframe{
+	width: 90%;
+	min-height: 400px;
+}

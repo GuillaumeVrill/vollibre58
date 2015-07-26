@@ -1,0 +1,78 @@
+/************************** GENERALE ***************************/
+body{
+    color: black;
+    background-color: #ddd;
+}
+
+/*************************** HEADER ****************************/
+nav, nav p{
+    padding: 0px;
+    margin: 0px;
+}
+
+nav p a:hover{
+    text-decoration: none;
+}
+
+.navbar-inverse .navbar-brand, .navbar-inverse .navbar-brand:hover{
+    background: black;
+    color: white;
+}
+
+.carousel-inner .item{
+    width: 100%;
+}
+
+header{
+    margin-bottom: 20px;
+}
+
+.carousel-caption{
+    position: absolute;
+    top: 60%;
+    font-size: 2vw;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+.carousel-caption h2{
+    font-size: 5vw;
+    text-shadow: 2px 2px 2px #000000;
+}
+
+#Carousel_fullscreen{
+    margin-bottom: 20px;
+}
+
+.carousel-inner .item > img{
+    position: absolute;
+    max-width: none;
+}
+
+blockquote{
+    border-left-color: #eee;
+    line-height: 40px;
+}
+
+/*************************** FOOTER ****************************/
+footer{
+    background-color: #eee;
+    position: relative;
+    min-height: 50px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-top: 15px;
+    border-radius: 5px;
+}
+
+footer ul{
+    display: inline-block;
+    width: 100%;
+}
+
+footer ul li{
+    display:inline-block;
+    position: relative;
+    width: 100%;
+    margin: auto;
+}

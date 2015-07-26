@@ -1,0 +1,20 @@
+Paragraphe 1: les mentions l�gales
+La SCEN de 2004 a énumérée les mentions obligatoires concernant les sites internet à usage professionnel. 
+Ces informations doivent être accessibles  pour les internautes à tout moment. 
+Ainsi doivent �tre accessibles (par un lien en bas de la page) les donn�es d'identification du propri�taire du site.
+S'il s'agit d'une personne physique�: nom pr�nom, adresse, t�l�phone, mail, et si cette personne physique est immatricul�e au RCS (ou r�pertoire des m�tiers), son num�ro d'identification.
+S'il s'agit d'une personne morale�: sa d�nomination, adresse du si�ge social, �ventuellement son capital social, et son num�ro d'identification, t�l�phone, mail. 
+Doivent figurer �galement les donn�es d'identification du responsable �ditorial�: nom du directeur de la publication ou du responsable de la r�daction du site internet, les donn�es d'identification de l'h�bergeur (nom/ d�nomination sociale, adresse).
+- Concernant les personnes physiques qui �ditent un site internet, mais � un usage non professionnel, celles-ci ne doivent indiquer que les coordonn�es de leur h�bergeur, mais elles auront transmis � celui-ci l'ensemble des informations qui permettent leur identification. 
+- Le non-respect des mentions l�gales est punit d'un an d'emprisonnement et 75000� d'amende pour les personnes physiques, et jusqu'� 375000� d'amende pour les personnes morales. 
+
+Paragraphe 2: les conditions g�n�rales d'utilisation
+Celles-ci vont permettre aux internautes de conna�tre les droits que le propri�taire du site conf�re � ces derniers, mais �galement les obligations de ceux-ci. 
+Il s'agit d'un contrat entre l'�diteur du site et l'internaute. 
+Il ne faut pas confondre les CGU, qui r�gissent les modalit�s d'utilisation du site, avec les CGV, qui elles vont d�terminer les relations commerciales existantes entre un professionnel et son client. 
+Celles-ci sont obligatoires sur les sites d'e-commerce destin�s � des particuliers. 
+Les CGU ne sont pas obligatoires, mais elles sont tr�s fortement recommand�es. 
+Il est �galement conseill� de mettre sur les CGU a date de derni�re MAJ, et de la m�me fa�on que les CGV, leur r�daction doit �tre adapt�e, personnalis�e�; la cour de cassation n'h�sitant pas � sanctionner le copier-coller de contrefa�ons. 
+Quand � leur r�daction, on peut y retrouver l'objet des CGU (le r�le de celles-ci), les mentions l�gales (mieux si elles sont s�par�es), une partie concernant les d�finitions des diff�rentes personnes ou entit�s en relation avec le site (utilisateur, membre, site, etc.). 
+On y trouve l'acceptation des risques de l'internet par l'utilisateur, l'�ventuelle installation de cookies, ainsi que le proc�d� qui permet leur d�sactivation, une partie concernant le respect des dispositions de la loi informatique et libert�s concernant le traitement des donn�es personnelles (on rappellera que la personne qui enregistre des donn�es personnelles � des droits), la politique retenue en mati�re de liens hypertexte (le site peut d�cliner toute responsabilit� quand aux contenus des liens hypertextes qui pointent vers d'autres sites internet, le propri�taire peut autoriser la mise en place d'un lien hypertexte pointant vers la page d'accueil, il peut demander d'en �tre informer au pr�alable, il peut aussi interdire la mise en place de liens hypertextes profonds ou les soumettre � une autorisation pr�alable, il peut aussi se r�server la possibilit� de faire supprimer un lien hypertexte qui pointerait sur son site � tout moment).
+Les CGU vont comprendre �galement les r�gles de propri�t� intellectuelle (Totalit� des droits�? R�utilisation�? Sous quelles conditions?).

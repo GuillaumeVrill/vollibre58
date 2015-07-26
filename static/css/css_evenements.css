@@ -1,0 +1,27 @@
+/******************** CSS EVENEMENTS ***********************/
+#events{
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+#event .panel-heading{
+	color: darkgreen;
+	background-color: #8d8;
+}
+
+#event .badge{
+	background-color: green;
+	float: left;
+	margin-right: 5px;
+}
+
+#alerte .panel-heading{
+	color: darkred;
+	background-color: #e88;
+}
+
+#alerte .badge{
+	background-color: red;
+	float: left;
+	margin-right: 5px;
+}

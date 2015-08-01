@@ -22,11 +22,11 @@
 			//Feuille de style CSS spécifique au contenu chargé:
 			if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
 				switch($_REQUEST['page']){
-					case 'clubetsites':		echo '<link rel="stylesheet" type="text/css" href="static/css/css_clubetsites.css" />'; break;
-					case 'blog': 			echo '<link rel="stylesheet" type="text/css" href="static/css/css_blog.css" />';	break;
-					case 'evenements': 		echo '<link rel="stylesheet" type="text/css" href="static/css/css_evenements.css" />';	break;
-					case 'contact': 		echo '<link rel="stylesheet" type="text/css" href="static/css/css_contact.css" />';	break;
-					case 'connexion':		echo '<link rel="stylesheet" type="text/css" href="static/css/css_connexion.css" />';	break;
+					case 'clubetsites':	echo '<link rel="stylesheet" type="text/css" href="static/css/css_clubetsites.css" />'; break;
+					case 'blog': 		echo '<link rel="stylesheet" type="text/css" href="static/css/css_blog.css" />';	break;
+					case 'evenements': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_evenements.css" />';	break;
+					case 'contact': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_contact.css" />';	break;
+					case 'connexion':	echo '<link rel="stylesheet" type="text/css" href="static/css/css_connexion.css" />';	break;
 				}
 			}
 			else{ echo '<link rel="stylesheet" type="text/css" href="static/css/css_accueil.css" />'; }

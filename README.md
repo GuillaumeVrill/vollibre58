@@ -1,3 +1,3 @@
 # vollibre58
 Dépôt de sauvegarde du site vollibre58
-Ne pas pull le fichier "nbproject"
+Ne pas Commit le fichier "nbproject" généré par netbeans.

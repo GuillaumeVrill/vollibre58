@@ -5,9 +5,16 @@
     border-radius: 5px;
 }
 
-h1 {
+h1, h2, h3 {
     padding-left: 10%;
     padding-right: 10%;
+}
+
+.historySection {
+    display: inline-block;
+    width: 100%;
+    margin-top: 15px;
+    margin-bottom: 15px;
 }
 
 p {
@@ -17,24 +24,110 @@ p {
     font-size: 16px;
 }
 
+/******************* LES PASTILLES ********************/
 .pastille-space {
     display: inline-block;
     width: 80%;
     margin-left: 10%;
+    margin-bottom: 15px;
 }
 
 .pastille-container {
     display: inline-block;
     position: relative;
     text-align: center;
-    margin-top: 25px;
-    margin-bottom: 25px;
 }
 
 .pastille {
+        display: inline-block;
+        position: relative;
+        border-radius: 50%;
+}
+
+@media only screen and (min-width:1200px) {
+    .pastille {
+        width: 400px;
+        min-height: 400px
+    }
+}
+
+@media only screen and (min-width:700px) and (max-width:1199px) {
+    .pastille {
+        width: 250px;
+        min-height: 250px;
+    }
+}
+
+@media only screen and (max-width:699px) {
+    .pastille-container {
+        display: block;
+        width: 100%;
+        min-width: 250px;
+    }
+    
+    .pastille {
+        width: 250px;
+        min-height: 250px;
+    }
+}
+
+/********************* SPECIFIQUES ***********************/
+.historyPic {
     display: inline-block;
-    position: relative;
-    max-width: 400px;
-    height: 400px;
-    border-radius: 50%;
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+}
+
+.historyPic img {
+    display: inline-block;
+    width: 90%;
+    border-radius: 25px;
+}
+
+.separated {
+    padding-left: 10%;
+    padding-right: 10%;
+    font-size: 16px;
+}
+
+@media only screen and (min-width:800px) {
+    .texte {
+        display: inline-block;
+        width: 45%;
+        text-align: left;
+    }
+    
+    .picture {
+        display: inline-block;
+        width: 55%;
+        text-align: right;
+    }
+    
+    .picture img{
+        display: inline-block;
+        width: 100%;
+        border-radius: 25px;
+    }
+}
+
+@media only screen and (max-width:799px) {
+    .texte {
+        display: inline-block;
+        width: 100%;
+        text-align: left;
+    }
+    
+    .picture {
+        display: inline-block;
+        width: 100%;
+        text-align: center;
+        margin-top: 25px;
+    }
+    
+    .picture img{
+        display: inline-block;
+        width: 100%;
+        border-radius: 25px;
+    }
 }

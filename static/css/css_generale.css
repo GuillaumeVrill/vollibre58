@@ -34,6 +34,18 @@ header{
     text-shadow: 2px 2px 2px #000000;
 }
 
+@media only screen and (max-width:600px) {
+    .carousel-caption{
+        top: 50%; 
+    }
+}
+
+@media only screen and (max-width:450px) {
+    .carousel-caption{
+        top: 25%; 
+    }
+}
+
 .carousel-caption h2{
     font-size: 5vw;
     text-shadow: 2px 2px 2px #000000;

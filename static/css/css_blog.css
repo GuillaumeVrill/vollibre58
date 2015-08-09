@@ -100,8 +100,14 @@
 }
 
 .albumsLinks a {
-    display: inline;
+    display: inline-block;
     font-weight: bold;
     color: #419641;
     padding-right: 25px;
+}
+
+@media only screen and (max-width:500px) {
+    .albumsLinks a {
+        display: block;
+    }
 }

@@ -4,3 +4,104 @@
 	border-radius: 5px;
 	margin-bottom: 20px;
 }
+
+#blog > .col-xs-12 {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.blogArticle {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    border-bottom: solid 3px darkgrey;
+}
+
+.content {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.picture {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 25px;
+}
+
+/********************** LES GALERIES ********************/
+.galerie-3pic {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.galerie-3pic table, .galerie-3pic table tr {
+    display: inline-block;
+    width: 100%;
+}
+
+.galerie-3pic img {
+    display: inline-block;
+    border-radius: 25px;
+}
+
+.galerie-3pic col-left {
+    text-align: left;
+}
+
+.galerie-3pic col-right {
+    text-align: right;
+}
+
+@media only screen and (min-width:800px){
+    .galerie-3pic table tr .col-large {
+        width: 65%;
+    }
+    
+    .galerie-3pic .pic-large {
+        width: 100%;
+    }
+    
+    .galerie-3pic .pic-medium {
+        width: 85%;
+        margin: 15px;
+    }
+}
+
+@media only screen and (max-width:799px){
+    .galerie-3pic table tr .col-large, .galerie-3pic table tr .col-small {
+        display: block;
+        width: 100%;
+    }
+    
+    .galerie-3pic img {
+        display: inline-block;
+        width: 100%;
+        margin-bottom: 15px;
+    }
+}
+
+/******************** LIENS VERS LES ALBUMS *******************/
+.albumsLinks {
+    display: inline-block;
+    width: 100%;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: solid 3px darkgrey;
+}
+
+.albumsLinks a {
+    display: inline;
+    font-weight: bold;
+    color: #419641;
+    padding-right: 25px;
+}

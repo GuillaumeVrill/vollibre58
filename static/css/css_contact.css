@@ -4,3 +4,38 @@
 	margin-bottom: 20px;
 	border-radius: 5px;
 }
+
+.contactPage {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.contactInfos {
+    margin-bottom: 25px;
+}
+
+.contact_line {
+    width: 100%;
+}
+
+.contact_line label {
+    display: inline-block;
+    width: 100%;
+}
+
+.contact_line input#objet,
+.contact_line input#mail,
+.contact_line textarea#message {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    resize: none;
+}
+
+#mailSend {
+    display: inline-block;
+    width: 100px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}

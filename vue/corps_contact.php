@@ -22,7 +22,8 @@
                     <label for="">Message : </label>
                     <textarea name="message" id="message" rows="10" cols="50" resize="none"></textarea>
                 </div>
-                <input name="mailSend" id="mailSend" type="submit" value="Envoyer" />
+                <input name="mailSend" id="mailSend" type="image" 
+                       src="static/images/icones/mailSend4.png" style="width:40px;" />
             </p>
         </form>
     </div>

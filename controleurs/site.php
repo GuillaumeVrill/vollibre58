@@ -27,12 +27,13 @@
 					case 'evenements': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_evenements.css" />';	break;
 					case 'contact': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_contact.css" />';	break;
 					case 'connexion':	echo '<link rel="stylesheet" type="text/css" href="static/css/css_connexion.css" />';	break;
+                                        case 'mentions':        echo '<link rel="stylesheet" type="text/css" href="static/css/css_mentions.css" />';    break;
 				}
 			}
 			else{ echo '<link rel="stylesheet" type="text/css" href="static/css/css_accueil.css" />'; }
 		?>
 	</head>
-	
+        
 	<body>
 		<?php
 			//chargement du HEADER:
@@ -40,11 +41,12 @@
 			//chargement du CONTENU:
 			if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
 				switch($_REQUEST['page']){
-					case 'clubetsites':             require_once('vue/corps_clubetsites.php');	break;
-					case 'blog': 			require_once('vue/corps_blog.php'); 		break;
-					case 'evenements': 		require_once('vue/corps_evenements.php'); 	break;
-					case 'contact': 		require_once('vue/corps_contact.php'); 		break;
-					case 'connexion': 		require_once('vue/corps_connexion.php'); 	break;
+					case 'clubetsites':     require_once('vue/corps_clubetsites.php');	break;
+					case 'blog': 		require_once('vue/corps_blog.php'); 		break;
+					case 'evenements': 	require_once('vue/corps_evenements.php'); 	break;
+					case 'contact': 	require_once('vue/corps_contact.php'); 		break;
+					case 'connexion': 	require_once('vue/corps_connexion.php'); 	break;
+                                        case 'mentions':        require_once('vue/corps_mentions.php');         break;       
 				}
 			}
 			else{ require_once('vue/corps_accueil.php'); }

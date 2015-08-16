@@ -1,0 +1,96 @@
+/********************** CSS MENTIONS ***********************/
+#mentions {
+	background-color: #eee;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+.mentionsPage {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.mentionsPage h1 {
+    border-bottom: solid 2px darkgrey;
+    padding-bottom: 25px;
+    margin-bottom: 25px;
+}
+
+/******************* PREMIERE LIGNE ********************/
+.mentionsPage table {
+    border-bottom: solid 2px darkgrey;
+    margin-bottom: 25px;
+}
+
+.mentionsPage table, 
+.mentionsPage table tr, 
+.mentionsPage table tr td {
+    width: 100%;
+}
+
+.mentionsPage table tr .left {
+    width: 59%;
+}
+
+.mentionsPage table tr .right {
+    width: 39%;
+    text-align: center;
+}
+
+.mentionsPage table tr .right img {
+    display: inline-block;
+    width: 100%;
+    border-radius: 10px;
+}
+
+@media only screen and (max-width:899px){
+    .mentionsPage table tr .left {
+        display: block;
+        width: 100%;
+    }
+
+    .mentionsPage table tr .right {
+        display: block;
+        width: 100%;
+    }
+
+    .mentionsPage table tr .right img {
+        margin-bottom: 25px;
+    }
+}
+
+/************************* CONTENU ***********************/
+.infosEditeur, .infosJuridiques, .infosTechniques {
+    margin-bottom: 25px;
+}
+
+.infosEditeur h2, .infosJuridiques h2, .infosTechniques h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.infosJuridiques, .infosTechniques {
+    border-bottom: solid 2px darkgrey;
+    margin-bottom: 25px;
+}
+
+/***** GENERAL : *****/
+.infos {
+    margin-bottom: 25px;
+}
+
+.infos .fonction, 
+.infos .denomination,
+.infos .titreJuridique,
+.infos .titreTechnique {
+    font-weight: bold;
+}
+
+.infos .coordonnees {
+    font-style: italic;
+}
+
+.infos .telephone, .infos .mail {
+    color: blue;
+}

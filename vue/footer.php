@@ -15,7 +15,7 @@
                     </span>
                 </li>
                 <li class="col-lg-4 col-md-4 col-sm-12">
-                    <a href="<?php print URL_PATH ?>mentions.php" title="Mentions legales">
+                    <a href="<?php print URL_PATH ?>?page=mentions" title="Mentions legales">
                         Mentions l&eacute;gales
                     </a>
                 </li>

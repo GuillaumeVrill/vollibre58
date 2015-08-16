@@ -38,10 +38,10 @@
                 <table>
                     <tr>
                         <td class="col-large col-left">
-                            <img class="pic-large" src="static/images/fonds/fond02.jpg" />
+                            <img class="pic-large" src="static/images/fonds/fond02.JPG" />
                         </td>
                         <td class="col-small col-right">
-                            <img class="pic-medium" src="static/images/fonds/fond05.jpg" />
+                            <img class="pic-medium" src="static/images/fonds/fond05.JPG" />
                             <img  class="pic-medium" src="static/images/fonds/fond08.jpg" />
                         </td>
                     </tr>

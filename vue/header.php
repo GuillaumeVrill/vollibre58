@@ -16,7 +16,7 @@
                 <li><a href="<?php print URL_PATH ?>?page=clubetsites" title="Sites de vol, activit&eacute;s du club, ...">Club et sites</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=blog" title="Historique de nos plus beaux vols!">Le blog</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=evenements" title="Travaux, Projets, Sorties club, ...">Evenements</a></li>
-                <li><a href="<?php print URL_PATH ?>?page=contact" title="Besoin d\'infos? Qui contacter?">Contact</a></li>
+                <li><a href="<?php print URL_PATH ?>?page=contact" title="Besoin d'infos? Qui contacter?">Contact</a></li>
             </ul>
             <p class="navbar-text navbar-right"><a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">Connexion</a></p>
         </div>
@@ -66,7 +66,7 @@
                 </a>
             </div>
             <div class="<?php if(isset($_REQUEST['page']) && $_REQUEST['page']=='contact'){ print "active"; } ?> item">
-                <a href="<?php print URL_PATH ?>?page=contact" title="Besoin d\'infos? Qui contacter?">
+                <a href="<?php print URL_PATH ?>?page=contact" title="Besoin d'infos? Qui contacter?">
                     <img class="img_thumbnail" src="static/images/carousel/contact01.png" alt="Contact" />
                     <div class="carousel-caption">
                         <h2>Contact</h2>

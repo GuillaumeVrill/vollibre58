@@ -89,4 +89,4 @@
 </header>
 
 <!-- Début de page : BALISE DE FERMETURE DANS LE FOOTER -->
-<div class="container">
+<div class="container specialContent">

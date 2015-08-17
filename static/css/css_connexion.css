@@ -1,6 +1,58 @@
-/******************** CSS CONNEXION ***********************/
-#connexion{
-	background-color: #eee;
-	margin-bottom: 20px;
-	border-radius: 5px;
+/******************* CONNEXION *********************/
+#connexion {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
 }
+
+.connexionPage {
+    display: inline-block;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.connexionPage img {
+    position: fixed; 
+    z-index: -1;
+    top: 0;
+    left: 0;
+}
+
+.connexionWindow {
+    position: absolute;
+    z-index: 1;
+    background-color: rgba(0,0,0,0.5);
+    border-radius: 25px;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 10%;
+    padding-top: 5%;
+    padding-bottom: 5%;
+}
+
+.connexionWindow h1 {
+    margin-bottom: 25px;
+}
+
+.login, .password {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#connexionBtn {
+    margin-bottom: 50px;
+}
+
+.footer {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+.footer ul li {
+    list-style-type: none;
+}
+

@@ -26,6 +26,7 @@
     background-color: rgba(0,0,0,0.7);
     border-radius: 25px;
     width: 50%;
+    min-width: 200px;
     margin-left: 25%;
     margin-top: 10%;
     padding-top: 5%;
@@ -40,6 +41,11 @@
     color: #BFAF58;
 }
 
+.connexionWindow form input {
+    color: black;
+    border-radius: 5px;
+}
+
 .connexionWindow h1 {
     margin-bottom: 25px;
 }
@@ -52,12 +58,17 @@
 
 #connexionBtn {
     margin-bottom: 50px;
+    font-weight: bold;
+    /*color: #BFAF58;*/
+    border-radius: 5px;
+    background-color: rgba(0.5,0.5,0.5,0.8);
 }
 
 .footer {
     display: inline-block;
     width: 100%;
     text-align: center;
+    padding-right: 40px;
 }
 
 .footer ul li {
@@ -65,3 +76,16 @@
     font-weight: bold;
 }
 
+@media only screen and (max-width:991px) {
+    .footer ul li {
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width:619px) {
+    .login label,
+    .password label {
+        display: block;
+        width: 100%;
+    }
+}

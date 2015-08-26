@@ -26,6 +26,7 @@
     background-color: rgba(0,0,0,0.7);
     border-radius: 25px;
     width: 50%;
+    min-width: 200px;
     margin-left: 25%;
     margin-top: 10%;
     padding-top: 5%;
@@ -67,6 +68,7 @@
     display: inline-block;
     width: 100%;
     text-align: center;
+    padding-right: 40px;
 }
 
 .footer ul li {
@@ -74,3 +76,16 @@
     font-weight: bold;
 }
 
+@media only screen and (max-width:991px) {
+    .footer ul li {
+        margin-bottom: 25px;
+    }
+}
+
+@media only screen and (max-width:619px) {
+    .login label,
+    .password label {
+        display: block;
+        width: 100%;
+    }
+}

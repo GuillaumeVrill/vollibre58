@@ -38,7 +38,7 @@
 	 * */
 	function recupererEvenements(){
 		$requete = 'SELECT * FROM tevenements';	
-		new EvenementsFactory($requete, $tabResult);
+		new EvenementsFactory($requete, $tabResult, null);
 		return $tabResult;
 	}
 	

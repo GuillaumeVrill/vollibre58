@@ -1,9 +1,10 @@
-<?php
+<?php require_once("conf/autoload.php");
+
 
 class ConnexionBDD
 {
 	/**
-	 * l'instance d'objet unique de la base de données
+	 * l'instance d'objet unique de la base de donnée
 	 * */
 	private static $instance=null;
 	
@@ -48,6 +49,7 @@ class ConnexionBDD
 		}
 
 	}
+	
 
 	/**
 	 * objet gérant la base de données
@@ -59,23 +61,27 @@ class ConnexionBDD
 		return self::$instance;
 	}
 
+
 	/**
 	 * méthode permettant de réaliser une requête préparé
 	 * */
-	public function prepareEtExecuteRequete($dbh, $requete){
+	public function prepareEtExecuteRequete($dbh, $requete, $parametres){
 
-		$num_args = func_num_args();
-		$argument = func_get_args();
+		$num_args = count($parametres);
 
 		$statement = $this->dbh->prepare($requete);
 
-		for($i=2; $i<$num_args; $i++){
-			$statement->bindParam($i-1, $argument[$i]);
+		for($i=0; $i<$num_args; $i++){
+			$statement->bindParam(($i+1), $parametres[$i], PDO::PARAM_STR);
 		}
-
+	
+	
+		
 		$statement->execute();
+
 
 		return $statement;
 	}
+
 }
 ?>

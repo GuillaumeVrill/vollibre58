@@ -5,26 +5,22 @@
 				<h1 class="panel-title">Ev&eacute;nements</h1>
 			</div>
 			<ul class="list-group">
-				<li class="list-group-item">
-					<span class="badge">Evenement</span> 
-					Sortie club: puy de dome, le jj/mm/aaaa, co-voiturage Saint-léger à 9h
-				</li>
-				<li class="list-group-item">
-					<span class="badge">Evenement</span> 
-					Nettoyage: Grenois, le jj/mm/aaaa, à partir de 10h
-				</li>
-				<li class="list-group-item">
-					<span class="badge">Evenement</span> 
-					Assemblée: Grenois le jj/mm/aaaa, à partir de 9h
-				</li>
-				<li class="list-group-item">
-					<span class="badge">Evenement</span> 
-					Treuil: Lurcy, le jj/mm/aaaa, toute la journée, 20€/personne
-				</li>
-				<li class="list-group-item">
-					<span class="badge">Evenement</span> 
-					Assemblée: Grenois le jj/mm/aaaa, à partir de 9h
-				</li>
+				
+						
+				<?php
+				
+				$evenements = $_SESSION["evenements"];
+				
+				if(isset($evenements)){
+					for($i=0; $i<count($evenements); $i++){
+						echo '<li class="list-group-item">';
+						echo '<span class="badge">Evenement</span>'; 
+						echo $evenements[$i]->getDescription();
+						echo '</li>';
+					}
+				}
+				?>
+				
 			</ul>
 		</div>
 	</div>
@@ -34,18 +30,18 @@
 				<h1 class="panel-title">Alertes</h1>
 			</div>
 			<ul class="list-group">
-				<li class="list-group-item">
-					<span class="badge">Alerte</span> 
-					Renouvellement Licences 2015
-				</li>
-				<li class="list-group-item">
-					<span class="badge">Alerte</span> 
-					Objets trouvés au déco: Altivario-GPS flytech, Casque Plusmax blanc, Gants Gortex noir (M)
-				</li>
-				<li class="list-group-item">
-					<span class="badge">Alerte</span> 
-					Chasse en cours à Morache, prudence
-				</li>
+				<?php
+					
+					$alertes = $_SESSION["alertes"];
+					
+					for($i=0; $i<count($alertes); $i++){
+						echo '<li class="list-group-item">';
+						echo '<span class="badge">Alerte</span>'; 
+						echo $alertes[$i]->getDescription();
+					}
+					
+					echo '</li>';
+				?>
 			</ul>
 		</div>
 	</div>

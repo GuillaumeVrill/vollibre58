@@ -16,6 +16,7 @@
                 <li><a href="<?php print URL_PATH ?>?page=clubetsites" title="Sites de vol, activit&eacute;s du club, ...">Club et sites</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=blog" title="Historique de nos plus beaux vols!">Le blog</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=evenements" title="Travaux, Projets, Sorties club, ...">Evenements</a></li>
+
                 <li><a href="<?php print URL_PATH ?>?page=contact" title="Besoin d'infos? Qui contacter?">Contact</a></li>
             </ul>
             <p class="navbar-text navbar-right"><a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">Connexion</a></p>

@@ -37,7 +37,7 @@
 	<body>
 		<?php
                         if(!isset($_REQUEST['page']) || (isset($_REQUEST['page']) && $_REQUEST['page'] != 'connexion')) {
-                            //chargement du HEADER:
+                            //chargement du HEADER:s
                             require_once('vue/header.php');
                             //chargement du CONTENU:
                             if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
@@ -61,6 +61,7 @@
                 <script src="static/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
 		<script src="static/bootstrap/js/carousel.js" type="text/javascript"></script>
                 <script src="static/jquery/carousel-perso.js" type="text/javascript"></script>
+		<script src="static/jquery/background.js" type="text/javascript"></script>
                 <script src="static/jquery/background.js" type="text/javascript"></script>
 	</body>
 </html>

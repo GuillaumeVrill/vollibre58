@@ -2,10 +2,19 @@
 		<div class="col-xs-12 col-sm-6">
 			<?php
 				//recherche des evenements:
+				$evenements = $_SESSION["evenements"];
 				
-				//affichage
-				echo '<p><span class="label label-success">Event:</span> F&eacute;vrier, <a href="">sortie Puy De Dome</a> le 26/04/2015!</p>';
-				echo '<p><span class="label label-success">Event:</span> <a href="">AG du club</a> le 15/02/2015 &agrave; la mairie de Grenois!</p>';
+				if(isset($evenements)){
+					for($i=0; $i<3; $i++){
+						if(count($evenements)>$i){
+							echo '<p><span class="label label-success">Event:</span> F&eacute;vrier, <a href="">'.$evenements[$i]->getDescription().'</a>,le '.$evenements[$i]->getDateFin().'!</p>';	
+						}
+					}
+				}
+				else{
+					echo 'aucun évènements prévu actuellement';
+				}
+				
 			?>
 			<br />
 		</div>
@@ -13,8 +22,16 @@
 			<?php
 				//recherche des alertes:
 				
-				//affichage
-				echo '<p><span class="label label-danger">Alerte:</span> Période de chasse, <a href="">pas de vols à Moraches</a></p>';
+				$alertes = $_SESSION["alertes"];
+				
+				if(isset($alertes)){
+					for($i=0; $i<3; $i++){
+						if(count($alertes)>$i){
+							echo '<p><span class="label label-danger">Alerte:</span>'.$alertes[$i]->getTitre().', <a href="">'.$alertes[$i]->getDescription().'</a>,le '.$alertes[$i]->getDateDebut().'</p>';
+						}
+					}
+				}
+			
 			?>
 			<br />
 		</div>

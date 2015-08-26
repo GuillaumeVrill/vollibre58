@@ -23,13 +23,21 @@
 .connexionWindow {
     position: absolute;
     z-index: 1;
-    background-color: rgba(0,0,0,0.5);
+    background-color: rgba(0,0,0,0.7);
     border-radius: 25px;
     width: 50%;
     margin-left: 25%;
     margin-top: 10%;
     padding-top: 5%;
     padding-bottom: 5%;
+}
+
+.connexionWindow form {
+    color: #C1AF99;
+}
+
+.connexionWindow form a {
+    color: #BFAF58;
 }
 
 .connexionWindow h1 {
@@ -54,5 +62,6 @@
 
 .footer ul li {
     list-style-type: none;
+    font-weight: bold;
 }
 

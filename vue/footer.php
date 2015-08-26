@@ -2,14 +2,14 @@
         <div class="col-lg-12">
             <ul>
                 <li class="col-lg-4 col-md-4 col-sm-12">
-                    <a href="<?php print URL_PATH ?>" title="Page d\'accueil du site">
+                    <a href="<?php print URL_PATH ?>" title="Page d'accueil du site">
                         Retour &agrave; l'accueil
                     </a>
                 </li>
                 <li class="col-lg-4 col-md-4 col-sm-12">
                     <span class="copyright">
                         Copyright &copy; 2015 by 
-                        <a href="<?php print URL_PATH ?>" title="Page d\'accueil du site">
+                        <a href="<?php print URL_PATH ?>" title="Page d'accueil du site">
                             vol libre 58
                         </a>
                     </span>

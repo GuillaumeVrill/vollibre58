@@ -15,7 +15,7 @@
 					for($i=0; $i<count($evenements); $i++){
 						echo '<li class="list-group-item">';
 						echo '<span class="badge">Evenement</span>'; 
-						echo $evenements[$i]->getDescription();
+						echo  utf8_encode ($evenements[$i]->getDescription());
 						echo '</li>';
 					}
 				}
@@ -37,7 +37,7 @@
 					for($i=0; $i<count($alertes); $i++){
 						echo '<li class="list-group-item">';
 						echo '<span class="badge">Alerte</span>'; 
-						echo $alertes[$i]->getDescription();
+						echo  utf8_encode ($alertes[$i]->getDescription());
 					}
 					
 					echo '</li>';

@@ -1,3 +1,5 @@
+	
+
 	<section id="alerteEvent" class="row">
 		<div class="col-xs-12 col-sm-6">
 			<?php
@@ -7,7 +9,7 @@
 				if(isset($evenements)){
 					for($i=0; $i<3; $i++){
 						if(count($evenements)>$i){
-							echo '<p><span class="label label-success">Event:</span> F&eacute;vrier, <a href="">'.$evenements[$i]->getDescription().'</a>,le '.$evenements[$i]->getDateFin().'!</p>';	
+							echo '<p><span class="label label-success">Event:</span> F&eacute;vrier, <a href="">'. utf8_encode ($evenements[$i]->getDescription()).'</a>,le '.$evenements[$i]->getDateFin().'!</p>';	
 						}
 					}
 				}
@@ -27,7 +29,7 @@
 				if(isset($alertes)){
 					for($i=0; $i<3; $i++){
 						if(count($alertes)>$i){
-							echo '<p><span class="label label-danger">Alerte:</span>'.$alertes[$i]->getTitre().', <a href="">'.$alertes[$i]->getDescription().'</a>,le '.$alertes[$i]->getDateDebut().'</p>';
+							echo '<p><span class="label label-danger">Alerte:</span> '. utf8_encode ($alertes[$i]->getTitre()).', <a href="">'. utf8_encode ($alertes[$i]->getDescription()).'</a>,le '.$alertes[$i]->getDateDebut().'</p>';
 						}
 					}
 				}
@@ -47,7 +49,24 @@
 					<h3>Derni&egrave;res actualit&eacute;s du club</h3>
 				</div>
 				<ul class="list-group">
-					<li class="list-group-item">Dernier <a href="">album ajout&eacute;</a></li>
+					
+					<?php
+						$tab_News = recupererNbDerniereNews(5);
+					
+						if(isset($tab_News)){
+							echo "ok";
+						}
+						else
+						{
+							echo "pas ok";
+						}
+					
+						//for($i=0; $i<count($tab_News); $i++){
+							//echo utf8_encode($tab_News[$i]->getTitre());
+						//}
+					
+					?>
+					
 					<li class="list-group-item">Prochain <a href="">&eacute;v&eacute;nement</a> pr&eacute;vu</li>
 					<li class="list-group-item">Etc.</li>
 				</ul>

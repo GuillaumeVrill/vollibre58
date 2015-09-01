@@ -5,22 +5,17 @@
 				<h1 class="panel-title">Ev&eacute;nements</h1>
 			</div>
 			<ul class="list-group">
-				
-						
 				<?php
-				
 				$evenements = $_SESSION["evenements"];
 				
 				if(isset($evenements)){
-					for($i=0; $i<count($evenements); $i++){
-						echo '<li class="list-group-item">';
-						echo '<span class="badge">Evenement</span>'; 
-						echo  utf8_encode ($evenements[$i]->getDescription());
-						echo '</li>';
-					}
-				}
-				?>
-				
+					for($i=0; $i<count($evenements); $i++){ ?>
+                                            <li class="list-group-item">
+                                            <span class="badge">Evenement</span>
+                                            <?php print utf8_encode ($evenements[$i]->getDescription()); ?>
+                                            </li>
+					<?php }
+				} ?>
 			</ul>
 		</div>
 	</div>
@@ -31,17 +26,16 @@
 			</div>
 			<ul class="list-group">
 				<?php
-					
-					$alertes = $_SESSION["alertes"];
-					
-					for($i=0; $i<count($alertes); $i++){
-						echo '<li class="list-group-item">';
-						echo '<span class="badge">Alerte</span>'; 
-						echo  utf8_encode ($alertes[$i]->getDescription());
-					}
-					
-					echo '</li>';
-				?>
+                                $alertes = $_SESSION["alertes"];
+                                
+                                if(isset($alertes)){
+                                    for($i=0; $i<count($alertes); $i++){ ?>
+                                            <li class="list-group-item">
+                                            <span class="badge">Alerte</span>
+                                            <?php print utf8_encode ($alertes[$i]->getDescription()); ?>
+                                            </li>
+                                    <?php } 
+                                } ?>
 			</ul>
 		</div>
 	</div>

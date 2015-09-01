@@ -8,10 +8,10 @@
         <div class="alerteInfos">
             Remplissez le formulaire suivant pour ajouter une alerte, elle sera contr&ocirc;l&eacute;e et accept&eacute;e par un mod&eacute;rateur.
         </div>
-        <form method="post" action="?page=f_alerte">
+        <form method="post" action="?page=f_add_alerte">
             <div class="alerte_line">
                 <label for="dateExp">Date d'expiration: </label>
-                <input type="date" name="dateExp" id="dateExp" placeholder="01/01/2015" />
+                <input type="date" name="dateExp" id="dateExp" />
             </div>
             <div class="alerte_line">
                 <label for="titreAlerte">Nom de l'alerte (titre): </label>

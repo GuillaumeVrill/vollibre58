@@ -286,6 +286,30 @@
 		}
 	}
 	
+	/**
+	 * Nom: supprimerEvenementParId
+	 * Description:  supprime un evenement dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id de l'évènement
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+	function supprimerEvenementParId($id){
+		
+		if(isset($id)){
+			
+			$requete = 'DELETE * FROM `tevenements` WHERE id=?';
+			
+			$parametres = array();
+			array_push($parametres, $id);
+			
+			new EvenementsFactory($requete, $tabResult, $parametres);
+			
+		}
+		
+	}
+	
 	/*
 	 * Nom: creerAlertes
 	 * Description : enregistre une nouvelle alerte dans la base de données

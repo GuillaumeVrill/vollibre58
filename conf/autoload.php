@@ -16,6 +16,9 @@ require_once($root."modele/Alerte.php");
 require_once($root."modele/Grade.php");
 require_once($root."modele/Dal.php");	
 
+//inclus l'ensemble des controleurs ~/controleurs
+require_once($root."controleurs/EvenementControlleur.php");
+
 //inclus l'ensemble des fabriques des classes métiers ~/modele
 require_once($root."modele/GradeFactory.php");
 require_once($root."modele/AlertesFactory.php");

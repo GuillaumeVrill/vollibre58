@@ -29,6 +29,7 @@
 					case 'contact': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_contact.css" />';	break;
                                         case 'mentions':        echo '<link rel="stylesheet" type="text/css" href="static/css/css_mentions.css" />';    break;
                                         case 'connexion':       echo '<link rel="stylesheet" type="text/css" href="static/css/css_connexion.css" />';   break;
+                                        case 'f_alerte':        echo '<link rel="stylesheet" type="text/css" href="static/css/css_f_alerte.css" />';    break;
 				}
 			}
 			else{ echo '<link rel="stylesheet" type="text/css" href="static/css/css_accueil.css" />'; }
@@ -38,7 +39,7 @@
 	<body>
 		<?php
                         if(!isset($_REQUEST['page']) || (isset($_REQUEST['page']) && $_REQUEST['page'] != 'connexion')) {
-                            //chargement du HEADER:s
+                            //chargement du HEADER:
                             require_once('vue/header.php');
                             //chargement du CONTENU:
                             if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
@@ -47,7 +48,8 @@
                                             case 'blog':            require_once('vue/corps_blog.php');             break;
                                             case 'evenements':      require_once('vue/corps_evenements.php');       break;
                                             case 'contact':         require_once('vue/corps_contact.php');          break;
-                                            case 'mentions':        require_once('vue/corps_mentions.php');         break;       
+                                            case 'mentions':        require_once('vue/corps_mentions.php');         break;
+                                            case 'f_alerte':        require_once('vue/form_alerte.php');            break;
                                     }
                             }
                             else{ require_once('vue/corps_accueil.php'); }

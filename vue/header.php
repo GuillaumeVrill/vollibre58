@@ -30,7 +30,8 @@
         <div class="carousel-inner" role="listbox">
             <div class="<?php if((!isset($_REQUEST['page']) || empty($_REQUEST['page']) || 
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='connexion') || 
-                    (isset($_REQUEST['page']) && $_REQUEST['page']=='mentions'))){ print "active"; } ?> item">
+                    (isset($_REQUEST['page']) && $_REQUEST['page']=='mentions') || 
+                    (isset($_REQUEST['page']) && $_REQUEST['page']=='f_alerte'))){ print "active"; } ?> item">
                 <a href="<?php print URL_PATH ?>" title="Page d'accueil du site">
                     <img class="img_thumbnail" src="static/images/carousel/accueil01.jpg" alt="Accueil" />
                     <div class="carousel-caption">

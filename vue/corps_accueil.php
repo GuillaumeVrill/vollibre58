@@ -6,9 +6,14 @@
 
             if(isset($evenements)){
                     for($i=0; $i<3; $i++){
-                            if(count($evenements)>$i){
-                                    echo '<p><span class="label label-success">Event:</span> F&eacute;vrier, <a href="">'. utf8_encode ($evenements[$i]->getDescription()).'</a>,le '.$evenements[$i]->getDateFin().'!</p>';	
-                            }
+                            if(count($evenements)>$i){ ?>
+                                    <p>
+                                        <span class="label label-success">Event:</span>
+                                        <?php print utf8_encode ($evenements[$i]->getTitre()); ?>, 
+                                        <a href=""> <?php print utf8_encode($evenements[$i]->getDescription()); ?></a>, 
+                                        le <?php print $evenements[$i]->getDateFin(); ?>
+                                    </p>	
+                            <?php }
                     }
             }
             else{
@@ -25,9 +30,14 @@
 
             if(isset($alertes)){
                 for($i=0; $i<3; $i++){
-                    if(count($alertes)>$i){
-                        echo '<p><span class="label label-danger">Alerte:</span> '. utf8_encode ($alertes[$i]->getTitre()).', <a href="">'. utf8_encode ($alertes[$i]->getDescription()).'</a>,le '.$alertes[$i]->getDateDebut().'</p>';
-                    }
+                    if(count($alertes)>$i){ ?>
+                        <p>
+                            <span class="label label-danger">Alerte:</span> 
+                            <?php print utf8_encode ($alertes[$i]->getTitre()); ?>, 
+                            <a href=""> <?php print utf8_encode ($alertes[$i]->getDescription()) ?></a>, 
+                            le <?php print $alertes[$i]->getDateDebut(); ?>
+                        </p>
+                    <?php }
                 }
             }
         ?>

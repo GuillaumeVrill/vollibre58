@@ -23,13 +23,14 @@
 			//Feuille de style CSS spécifique au contenu chargé:
 			if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
 				switch($_REQUEST['page']){
-					case 'clubetsites':	echo '<link rel="stylesheet" type="text/css" href="static/css/css_clubetsites.css" />'; break;
-					case 'blog': 		echo '<link rel="stylesheet" type="text/css" href="static/css/css_blog.css" />';	break;
-					case 'evenements': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_evenements.css" />';	break;
-					case 'contact': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_contact.css" />';	break;
-                                        case 'mentions':        echo '<link rel="stylesheet" type="text/css" href="static/css/css_mentions.css" />';    break;
-                                        case 'connexion':       echo '<link rel="stylesheet" type="text/css" href="static/css/css_connexion.css" />';   break;
-                                        case 'f_alerte':        echo '<link rel="stylesheet" type="text/css" href="static/css/css_f_alerte.css" />';    break;
+					case 'clubetsites':	echo '<link rel="stylesheet" type="text/css" href="static/css/css_clubetsites.css" />';     break;
+					case 'blog': 		echo '<link rel="stylesheet" type="text/css" href="static/css/css_blog.css" />';            break;
+					case 'evenements': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_evenements.css" />';      break;
+					case 'contact': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_contact.css" />';         break;
+                                        case 'mentions':        echo '<link rel="stylesheet" type="text/css" href="static/css/css_mentions.css" />';        break;
+                                        case 'connexion':       echo '<link rel="stylesheet" type="text/css" href="static/css/css_connexion.css" />';       break;
+                                        case 'f_add_alerte':    echo '<link rel="stylesheet" type="text/css" href="static/css/css_f_add_alerte.css" />';    break;
+                                        case 'f_add_event':     echo '<link rel="stylesheet" type="text/css" href="static/css/css_f_add_event.css" />';     break;
 				}
 			}
 			else{ echo '<link rel="stylesheet" type="text/css" href="static/css/css_accueil.css" />'; }
@@ -49,7 +50,8 @@
                                             case 'evenements':      require_once('vue/corps_evenements.php');       break;
                                             case 'contact':         require_once('vue/corps_contact.php');          break;
                                             case 'mentions':        require_once('vue/corps_mentions.php');         break;
-                                            case 'f_alerte':        require_once('vue/form_alerte.php');            break;
+                                            case 'f_add_alerte':    require_once('vue/form_add_alerte.php');        break;
+                                            case 'f_add_event':     require_once('vue/form_add_event.php');         break;
                                     }
                             }
                             else{ require_once('vue/corps_accueil.php'); }

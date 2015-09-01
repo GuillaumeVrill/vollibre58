@@ -1,0 +1,46 @@
+/******************** CSS CONTACT ***********************/
+#addEvent {
+	background-color: #eee;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+.addEventPage {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.eventInfos {
+    margin-bottom: 25px;
+}
+
+.event_line {
+    width: 100%;
+}
+
+.event_line label {
+    display: inline-block;
+    width: 100%;
+}
+
+.alerte_line input#dateExp {
+    display: inline-block;
+    width: 200px;
+    margin-bottom: 25px;
+}
+
+.event_line input#titreEvent,
+.event_line textarea#descrEvent {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    resize: none;
+}
+
+#eventSend {
+    display: inline-block;
+    width: 160px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}

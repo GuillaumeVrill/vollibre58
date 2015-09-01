@@ -11,7 +11,7 @@
         <form method="post" action="?page=f_add_event">
             <div class="event_line">
                 <label for="dateEvent">Date de l'&eacute;v&eacute;nement: </label>
-                <input type="date" name="dateEvent" id="dateExp" />
+                <input type="date" name="dateEvent" id="dateEvent" />
             </div>
             <div class="event_line">
                 <label for="titreAlerte">Nom de l'&eacute;v&eacute;nement (titre): </label>

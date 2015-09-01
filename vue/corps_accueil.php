@@ -56,9 +56,9 @@
                             echo "pas ok";
                     }
 
-                    //for($i=0; $i<count($tab_News); $i++){
-                            //echo utf8_encode($tab_News[$i]->getTitre());
-                    //}
+                   /* for($i=0; $i<count($tab_News); $i++){
+                            echo utf8_encode($tab_News[$i]->getTitre());
+                    }*/
 
                 ?>
 

@@ -3,9 +3,25 @@ $page['vue'] = 'vue/corps_evenement.php';
 $page['css'] = '<link rel="stylesheet" type="text/css" href="static/css/css_evenement.css" />';
 
 // Actions et evenements:
+$action="";
+
+
+if(isset($_REQUEST['dateEvent']) && isset($_REQUEST['titreEvent']) && isset($_REQUEST['eventSend'])){
+$titre=$_REQUEST['titreEvent'];
+$dateEvent=$_REQUEST['dateEvent'];
+$eventSend=$_REQUEST['eventSend'];
+
+//$Evenement = new Evenement(null, 
+}
+
+
 
 switch($action){
-	case "":
+	case "ajouterEvenement":
+	
+	break;
+	
+	case "supprimerEvenement":
 	
 	break;
 }
@@ -15,7 +31,7 @@ switch($action){
  * Description :ajoute un évènement dans la base de données
  *  */
 function ajouterEvenement($evenements){
-	creerEvenement($evenements);
+	//creerEvenement($evenements);
 }
 
 /*
@@ -23,6 +39,6 @@ function ajouterEvenement($evenements){
  * Description:supprime un évènement dans la base de données
  * */
 function supprimerEvenement($id){
-	supprimerEvenementParId($id);
+	//supprimerEvenementParId($id);
 }
 

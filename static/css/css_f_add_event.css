@@ -24,7 +24,7 @@
     width: 100%;
 }
 
-.alerte_line input#dateExp {
+.event_line input#dateEvent {
     display: inline-block;
     width: 200px;
     margin-bottom: 25px;

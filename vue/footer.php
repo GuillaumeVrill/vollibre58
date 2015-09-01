@@ -25,4 +25,4 @@
 
 <!-- fin de page : BALISE D'OUVERTURE DANS LE HEADER -->
 </div>
-</html>
+

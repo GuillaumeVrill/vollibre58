@@ -1,4 +1,21 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<?php
+    //appel du controleur correspondant a la page demandée:
+    if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
+        switch($_REQUEST['page']){
+                case 'clubetsites':	require_once('controleurs/ClubetsitesControleur.php');      break;
+                case 'blog': 		require_once('controleurs/BlogControleur.php');             break;
+                case 'evenements': 	require_once('controleurs/EvenementControleur.php');        break;
+                case 'contact': 	require_once('controleurs/ContactControleur.php');          break;
+                case 'mentions':        require_once('controleurs/MentionsControleur.php');         break;
+                case 'connexion':       require_once('controleurs/ConnexionControleur.php');        break;
+                case 'f_add_alerte':    require_once('controleurs/FormAddAlerteControleur.php');    break;
+                case 'f_add_event':     require_once('controleurs/FormAddEventControleur.php');     break;
+        }
+    }
+    else{ require_once('controleurs/AccueilControleur.php'); }
+?>
+
 <html lang="fr">
 	<head>
 		<title>Vol Libre 58</title>
@@ -19,22 +36,7 @@
 		<!-- Feuille de style CSS générale (header et footer) -->
 		<link rel="stylesheet" type="text/css" href="static/css/css_generale.css" />
 		
-		<?php
-			//Feuille de style CSS spécifique au contenu chargé:
-			if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
-				switch($_REQUEST['page']){
-					case 'clubetsites':	echo '<link rel="stylesheet" type="text/css" href="static/css/css_clubetsites.css" />';     break;
-					case 'blog': 		echo '<link rel="stylesheet" type="text/css" href="static/css/css_blog.css" />';            break;
-					case 'evenements': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_evenements.css" />';      break;
-					case 'contact': 	echo '<link rel="stylesheet" type="text/css" href="static/css/css_contact.css" />';         break;
-                                        case 'mentions':        echo '<link rel="stylesheet" type="text/css" href="static/css/css_mentions.css" />';        break;
-                                        case 'connexion':       echo '<link rel="stylesheet" type="text/css" href="static/css/css_connexion.css" />';       break;
-                                        case 'f_add_alerte':    echo '<link rel="stylesheet" type="text/css" href="static/css/css_f_add_alerte.css" />';    break;
-                                        case 'f_add_event':     echo '<link rel="stylesheet" type="text/css" href="static/css/css_f_add_event.css" />';     break;
-				}
-			}
-			else{ echo '<link rel="stylesheet" type="text/css" href="static/css/css_accueil.css" />'; }
-		?>
+		<?php print $page['css']; ?>
 	</head>
         
 	<body>
@@ -43,23 +45,12 @@
                             //chargement du HEADER:
                             require_once('vue/header.php');
                             //chargement du CONTENU:
-                            if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
-                                    switch($_REQUEST['page']){
-                                            case 'clubetsites':     require_once('vue/corps_clubetsites.php');      break;
-                                            case 'blog':            require_once('vue/corps_blog.php');             break;
-                                            case 'evenements':      require_once('vue/corps_evenements.php');       break;
-                                            case 'contact':         require_once('vue/corps_contact.php');          break;
-                                            case 'mentions':        require_once('vue/corps_mentions.php');         break;
-                                            case 'f_add_alerte':    require_once('vue/form_add_alerte.php');        break;
-                                            case 'f_add_event':     require_once('vue/form_add_event.php');         break;
-                                    }
-                            }
-                            else{ require_once('vue/corps_accueil.php'); }
+                            require_once($page['vue']);
                             //chargement du FOOTER:
                             require_once('vue/footer.php');
                         }
                         else {
-                            require_once('vue/connexion.php');
+                            require_once($page['vue']);
                         }
 		?>
 		<script src="static/jquery/jquery-1.11.2.min.js" type="text/javascript"></script>

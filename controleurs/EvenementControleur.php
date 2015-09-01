@@ -1,9 +1,9 @@
 <?php
-$page['vue'] = 'vue/corps_evenement.php';
-$page['css'] = '<link rel="stylesheet" type="text/css" href="static/css/css_evenement.css" />';
+$page['vue'] = 'vue/corps_evenements.php';
+$page['css'] = '<link rel="stylesheet" type="text/css" href="static/css/css_evenements.css" />';
 
 // Actions et evenements:
-
+$action="";
 switch($action){
 	case "":
 	

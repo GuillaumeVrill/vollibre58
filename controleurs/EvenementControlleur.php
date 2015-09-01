@@ -11,16 +11,16 @@ switch($action){
  * Nom: ajouterEvenement
  * Description :ajoute un évènement dans la base de données
  *  */
-public function ajouterEvenement(){
-	
+function ajouterEvenement($evenements){
+	creerEvenement($evenements);
 }
 
 /*
  * Nom: supprimerEvenement
  * Description:supprime un évènement dans la base de données
  * */
-public function supprimerEvenement(){
-	
+function supprimerEvenement($id){
+	supprimerEvenementParId($id);
 }
 
 

@@ -38,7 +38,7 @@
 	 * */
 	function recupererEvenements(){
 		$requete = 'SELECT * FROM tevenements';	
-		new EvenementsFactory($requete, $tabResult, null);
+		new EvenementsFactory($requete, $tabResult);
 		return $tabResult;
 	}
 	
@@ -52,6 +52,27 @@
 	function recupererNews(){
 		$requete = 'SELECT * FROM tnews';	
 		new NewsFactory($requete, $tabResult, null);
+		return $tabResult;
+	}
+	
+	/**
+	 * Nom:recupererNbDerniereNews
+	 * Description: récupère les X dernières news 
+	 * Paramètre: 
+	 * nb_news: le nombre de news à récupérer
+	 * Variables:
+	 * requete: la requête sql
+	 * argument : les paramètres de la requête
+	 * tabResult: le tableau d'objets News
+	 * */
+	function recupererNbDerniereNews($nb_news){
+		$requete = 'SELECT * FROM tnews ORDER BY id LIMIT ?';
+		
+		$argument= array();
+		array_push($argument, $nb_news);
+			
+		new NewsFactory($requete, $tabResult, $argument);
+		
 		return $tabResult;
 	}
 	

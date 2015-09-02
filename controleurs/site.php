@@ -11,6 +11,7 @@
                 case 'connexion':       require_once('controleurs/ConnexionControleur.php');        break;
                 case 'f_add_alerte':    require_once('controleurs/FormAddAlerteControleur.php');    break;
                 case 'f_add_event':     require_once('controleurs/FormAddEventControleur.php');     break;
+                case 'f_add_user':      require_once('controleurs/FormAddUserControleur.php');      break;
         }
     }
     else{ require_once('controleurs/AccueilControleur.php'); }
@@ -50,6 +51,7 @@
                             require_once('vue/footer.php');
                         }
                         else {
+                            // Si on est sur la page de connexion, on charge uniquement la page qui sera alors très spécifique: 
                             require_once($page['vue']);
                         }
 		?>

@@ -1,0 +1,40 @@
+/******************** CSS ADD ARTICLE ***********************/
+#addArticle {
+	background-color: #eee;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+.addArticlePage {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.articleInfos {
+    margin-bottom: 25px;
+}
+
+.articleadd_line {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#selectDispo {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+}
+
+#selectDispo .selectBox {
+    display: inline-block;
+    width: 31%;
+    margin: 1%;
+}
+
+#articleSend {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}

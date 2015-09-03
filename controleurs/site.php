@@ -12,6 +12,7 @@
                 case 'f_add_alerte':    require_once('controleurs/FormAddAlerteControleur.php');    break;
                 case 'f_add_event':     require_once('controleurs/FormAddEventControleur.php');     break;
                 case 'f_add_user':      require_once('controleurs/FormAddUserControleur.php');      break;
+                case 'f_add_article':   require_once('controleurs/FormAddArticleControleur.php');   break;
         }
     }
     else{ require_once('controleurs/AccueilControleur.php'); }

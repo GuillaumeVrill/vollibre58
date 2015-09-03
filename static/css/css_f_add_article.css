@@ -28,8 +28,12 @@
 
 #selectDispo .selectBox {
     display: inline-block;
-    width: 31%;
+    width: 30%;
     margin: 1%;
+}
+
+#selectDispo .selectBox img {
+    width: 100px;
 }
 
 #articleSend {
@@ -37,4 +41,17 @@
     width: 150px;
     margin-bottom: 25px;
     font-size: 14px;
+}
+
+@media only screen and (max-width:700px) {
+    #selectDispo .selectBox {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width:520px) {
+    #selectDispo .selectBox {
+        width: 100%;
+        min-width: 240px;
+    }
 }

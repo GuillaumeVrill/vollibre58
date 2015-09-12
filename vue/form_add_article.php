@@ -69,7 +69,7 @@
         <div class="articleInfos">
             Remplissez le formulaire suivant pour ajouter un nouvel article qui apparaitra en haut de la page "blog":
         </div>
-        <form method="post" action="?page=f_add_article" onLoad="loadForm()">
+        <form method="post" action="?page=f_add_article">
             <div class="articleadd_line">
                 <label for="titreArticle">Titre de l'article: </label>
                 <input type="text" name="titreArticle" id="titreArticle" maxlength="255" placeholder="Ex: Vols d'automne 2015" />
@@ -81,8 +81,7 @@
                         for ($i=0; $i<sizeof($disposition); $i++){ ?>
                             <div class="selectBox">
                                 <input type="radio" name="disposition" value="<?php print $i; ?>" 
-                                       id="<?php print $disposition[$i]['nom']; ?>" <?php if ($i==0){ ?> 
-                                       checked<?php } ?> 
+                                       id="<?php print $disposition[$i]['nom']; ?>"
                                        onClick="loadForm()" />
                                 <label for="<?php print $disposition[$i]['nom']; ?>"><?php print $disposition[$i]['titre']; ?><br />
                                     <img src="<?php print $disposition[$i]['url']; ?>" />

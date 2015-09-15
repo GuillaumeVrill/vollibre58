@@ -3,7 +3,7 @@
     /*
      * SQL ICI
      */
-    $user['id'] = 1;
+    $user['id'] = "1";
     $user['name'] = "Administrateur";
     $user['rights'] = "administrateur";
 ?>
@@ -27,7 +27,11 @@
                 <li><a href="<?php print URL_PATH ?>?page=evenements" title="Travaux, Projets, Sorties club, ...">Evenements</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=contact" title="Besoin d'infos? Qui contacter?">Contact</a></li>
             </ul>
-            <p class="navbar-text navbar-right"><a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">Connexion</a></p>
+            <p class="navbar-text navbar-right">
+                <a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">
+                    <?php if(isset($user['id']) && !empty($user['id'])) { ?>Deconnexion<?php } else { ?>Connexion<?php } ?>
+                </a>
+            </p>
         </div>
     </div>
 </nav>

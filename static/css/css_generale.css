@@ -43,6 +43,8 @@ nav p a:hover{
     min-width: 100px;
     margin-left: 25px;
     margin-right: 25px;
+    margin-top: 5px;
+    margin-bottom: 5px;
 }
 
 .admin-bar a:hover {
@@ -51,6 +53,7 @@ nav p a:hover{
 
 .admin-bar .user {
     color: white;
+    text-decoration: underline;
 }
 
 /* Banderole */

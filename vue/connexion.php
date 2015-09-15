@@ -1,6 +1,4 @@
 <?php
-    //création de la session:
-    //session_start();
     //si une tentative de connexion est réalisée:
     if(isset($_REQUEST['con']) && $_REQUEST['con'] == "active"){
         //vérification que les données ont été saisies:
@@ -13,17 +11,15 @@
              * SQL ICI (exemple: $req = SELECT * from Users WHERE pseudonyme = $pseudo AND password = $mdp;
              */
             //Remplacer la condition suivante par le resultat du select précédent:
-            if($pseudo == "admin" && $mdp == "admin"){
+            if($pseudo == "Administrateur" && $mdp == "admin"){
                 $_SESSION['user_id'] = "1";
                 $_SESSION['user_name'] = $pseudo;
                 $_SESSION['user_right'] = "administrateur";
+                header("Location: ".URL_PATH);
             }
-        }
-        if(isset($_SESSION['user_id'])){
-            header("Location: ".URL_PATH);
-        }
-        else {
-            header("Location: ".URL_PATH);
+            else {
+                header("Location: ".URL_PATH."?page=connexion");
+            }
         }
     }
 ?>

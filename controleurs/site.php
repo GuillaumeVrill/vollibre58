@@ -1,5 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <?php
+    //création ou récupération de la session:
+    session_start();
+    
     //appel du controleur correspondant a la page demandée:
     if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
         switch($_REQUEST['page']){
@@ -13,6 +16,7 @@
                 case 'f_add_event':     require_once('controleurs/FormAddEventControleur.php');     break;
                 case 'f_add_user':      require_once('controleurs/FormAddUserControleur.php');      break;
                 case 'f_add_article':   require_once('controleurs/FormAddArticleControleur.php');   break;
+                case 'logout':          require_once('controleurs/logout.php');                     break;
         }
     }
     else{ require_once('controleurs/AccueilControleur.php'); }

@@ -1,8 +1,3 @@
-<?php
-    //recupération de la session
-    session_start();
-?>
-
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -25,7 +20,7 @@
             <p class="navbar-text navbar-right">
                 <?php
                     if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){ ?>
-                        <a class="navbar-link" href="<?php print URL_PATH ?>/vue/logout.php">Deconnexion</a>
+                        <a class="navbar-link" href="<?php print URL_PATH ?>?page=logout">Deconnexion</a>
                 <?php }
                     else { ?>
                         <a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">Connexion</a>
@@ -40,7 +35,7 @@
     //controle de la connexion de l'utilisateur et distribution des actions selon les droits:
     if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
         <div class="admin-bar">
-            <span class="user">Bonjour <?php print($user['name']); ?> : </span>
+            <span class="user">Bonjour <?php print($_SESSION['user_name']); ?> : </span>
             <?php if($_SESSION['user_right'] == 'administrateur' || 
                     $_SESSION['user_right'] == 'moderateur' || 
                     $_SESSION['user_right'] == 'redacteur') { ?>

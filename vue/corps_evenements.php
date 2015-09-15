@@ -6,7 +6,7 @@
 			</div>
 			<ul class="list-group">
 				<?php
-				$evenements = $_SESSION["evenements"];
+				$evenements = recupererEvenements();
 				
 				if(isset($evenements)){
 					for($i=0; $i<count($evenements); $i++){ ?>
@@ -26,7 +26,7 @@
 			</div>
 			<ul class="list-group">
 				<?php
-                                $alertes = $_SESSION["alertes"];
+                                $alertes = recupererAlertes();
                                 
                                 if(isset($alertes)){
                                     for($i=0; $i<count($alertes); $i++){ ?>

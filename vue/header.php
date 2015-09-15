@@ -1,11 +1,6 @@
 <?php
-    //recupération de l'utilisateur actuel, et controle de ses droites:
-    /*
-     * SQL ICI
-     */
-    $user['id'] = "1";
-    $user['name'] = "Administrateur";
-    $user['rights'] = "administrateur";
+    //recupération de la session
+    session_start();
 ?>
 
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
@@ -28,9 +23,13 @@
                 <li><a href="<?php print URL_PATH ?>?page=contact" title="Besoin d'infos? Qui contacter?">Contact</a></li>
             </ul>
             <p class="navbar-text navbar-right">
-                <a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">
-                    <?php if(isset($user['id']) && !empty($user['id'])) { ?>Deconnexion<?php } else { ?>Connexion<?php } ?>
-                </a>
+                <?php
+                    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])){ ?>
+                        <a class="navbar-link" href="<?php print URL_PATH ?>/vue/logout.php">Deconnexion</a>
+                <?php }
+                    else { ?>
+                        <a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">Connexion</a>
+                <?php } ?>
             </p>
         </div>
     </div>
@@ -39,17 +38,17 @@
 <?php
     //BARRE D'ADMINISTRATION:
     //controle de la connexion de l'utilisateur et distribution des actions selon les droits:
-    if(isset($user['id']) && !empty($user['id'])) { ?>
+    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
         <div class="admin-bar">
             <span class="user">Bonjour <?php print($user['name']); ?> : </span>
-            <?php if($user['rights'] == 'administrateur' || 
-                    $user['rights'] == 'moderateur' || 
-                    $user['rights'] == 'redacteur') { ?>
+            <?php if($_SESSION['user_right'] == 'administrateur' || 
+                    $_SESSION['user_right'] == 'moderateur' || 
+                    $_SESSION['user_right'] == 'redacteur') { ?>
                 <a href="">Publier un article</a>
             <?php } ?>
             <a href="">Proposer un &eacute;v&eacute;nement</a>
             <a href="">Poster une alerte</a>
-            <?php if($user['rights'] == 'administrateur' || $user['rights'] == 'moderateur') { ?>
+            <?php if($_SESSION['user_right'] == 'administrateur' || $_SESSION['user_right'] == 'moderateur') { ?>
                 <a href="">Créer un nouvel utilisateur</a>
             <?php } ?>
         </div>

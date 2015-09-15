@@ -2,7 +2,7 @@
     <div class="col-xs-12 col-sm-6">
         <?php
             //recherche des evenements:
-            $evenements = $_SESSION["evenements"];
+            $evenements = recupererEvenements();
 
             if(isset($evenements)){
                     for($i=0; $i<3; $i++){
@@ -26,7 +26,7 @@
         <?php
             //recherche des alertes:
 
-            $alertes = $_SESSION["alertes"];
+            $alertes = recupererAlertes();
 
             if(isset($alertes)){
                 for($i=0; $i<3; $i++){

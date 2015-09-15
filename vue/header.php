@@ -1,3 +1,13 @@
+<?php
+    //recupération de l'utilisateur actuel, et controle de ses droites:
+    /*
+     * SQL ICI
+     */
+    $user['id'] = 1;
+    $user['name'] = "Administrateur";
+    $user['rights'] = "administrateur";
+?>
+
 <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
     <div class="container">
         <div class="navbar-header">
@@ -15,13 +25,31 @@
                 <li><a href="<?php print URL_PATH ?>?page=clubetsites" title="Sites de vol, activit&eacute;s du club, ...">Club et sites</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=blog" title="Historique de nos plus beaux vols!">Le blog</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=evenements" title="Travaux, Projets, Sorties club, ...">Evenements</a></li>
-
                 <li><a href="<?php print URL_PATH ?>?page=contact" title="Besoin d'infos? Qui contacter?">Contact</a></li>
             </ul>
             <p class="navbar-text navbar-right"><a class="navbar-link" href="<?php print URL_PATH ?>?page=connexion">Connexion</a></p>
         </div>
     </div>
 </nav>
+
+<?php
+    //BARRE D'ADMINISTRATION:
+    //controle de la connexion de l'utilisateur et distribution des actions selon les droits:
+    if(isset($user['id']) && !empty($user['id'])) { ?>
+        <div class="admin-bar">
+            <span class="user">Bonjour <?php print($user['name']); ?> : </span>
+            <?php if($user['rights'] == 'administrateur' || 
+                    $user['rights'] == 'moderateur' || 
+                    $user['rights'] == 'redacteur') { ?>
+                <a href="">Publier un article</a>
+            <?php } ?>
+            <a href="">Proposer un &eacute;v&eacute;nement</a>
+            <a href="">Poster une alerte</a>
+            <?php if($user['rights'] == 'administrateur' || $user['rights'] == 'moderateur') { ?>
+                <a href="">Créer un nouvel utilisateur</a>
+            <?php } ?>
+        </div>
+<?php } ?>
 
 <header>
     <div id="Carousel_fullscreen" class="carousel slide carousel-fade" data-ride="carousel" data-interval="5000">

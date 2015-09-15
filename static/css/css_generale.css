@@ -23,6 +23,37 @@ nav p a:hover{
     width: 100%;
 }
 
+/* Bare d'admin: */
+.admin-bar {
+    display: inline-block;
+    margin-top: 50px;
+    position: fixed;
+    z-index: 1000;
+    width: 100%;
+    background-color: #505050;
+    min-height: 25px;
+    text-align: center;
+}
+
+.admin-bar a, .admin-bar .user {
+    display: inline-block;
+    text-decoration: none;
+    color: darkgrey;
+    font-weight: bold;
+    min-width: 100px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+
+.admin-bar a:hover {
+    color: white;
+}
+
+.admin-bar .user {
+    color: white;
+}
+
+/* Banderole */
 header{
     margin-bottom: 20px;
 }

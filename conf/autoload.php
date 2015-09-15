@@ -27,5 +27,8 @@ require_once($root."modele/PersonneFactory.php");
 require_once($root."modele/EvenementsFactory.php");
 require_once($root."modele/ImageFactory.php");
 
+//inclus la classe de securité permettant d'utiliser des fonctions contre les injections SQL etc.
+require_once('modele/securite.php');
+
 ?>
 

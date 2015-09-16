@@ -39,12 +39,13 @@
             <?php if($_SESSION['user_right'] == 'administrateur' || 
                     $_SESSION['user_right'] == 'moderateur' || 
                     $_SESSION['user_right'] == 'redacteur') { ?>
-                <a href="">Publier un article</a>
+                <a href="<?php print URL_PATH; ?>?page=f_add_article">Publier un article</a>
+                <a href="">Editer les liens vers les albums</a>
             <?php } ?>
-            <a href="">Proposer un &eacute;v&eacute;nement</a>
-            <a href="">Poster une alerte</a>
+            <a href="<?php print URL_PATH; ?>?page=f_add_event">Proposer un &eacute;v&eacute;nement</a>
+            <a href="<?php print URL_PATH; ?>?page=f_add_alerte">Poster une alerte</a>
             <?php if($_SESSION['user_right'] == 'administrateur' || $_SESSION['user_right'] == 'moderateur') { ?>
-                <a href="">Créer un nouvel utilisateur</a>
+                <a href="<?php print URL_PATH; ?>?page=f_add_user">Créer un nouvel utilisateur</a>
             <?php } ?>
         </div>
 <?php } ?>

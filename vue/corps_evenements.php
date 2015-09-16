@@ -12,6 +12,8 @@
 					for($i=0; $i<count($evenements); $i++){ ?>
                                             <li class="list-group-item">
                                             <span class="badge">Evenement</span>
+                                            <?php print utf8_encode($evenements[$i]->getDateFin()); ?> - 
+                                            <strong><?php print utf8_encode($evenements[$i]->getTitre()); ?></strong> - 
                                             <?php print utf8_encode ($evenements[$i]->getDescription()); ?>
                                             </li>
 					<?php }
@@ -32,6 +34,8 @@
                                     for($i=0; $i<count($alertes); $i++){ ?>
                                             <li class="list-group-item">
                                             <span class="badge">Alerte</span>
+                                            <?php print utf8_encode($alertes[$i]->getDateDebut()); ?> - 
+                                            <strong><?php print utf8_encode($alertes[$i]->getTitre()); ?></strong> - 
                                             <?php print utf8_encode ($alertes[$i]->getDescription()); ?>
                                             </li>
                                     <?php } 

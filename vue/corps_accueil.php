@@ -1,45 +1,41 @@
+<?php
+    //recherche des alertes et des événements:
+    $alertes = recupererAlertes();
+    $evenements = recupererEvenements();
+?>
 <section id="alerteEvent" class="row">
     <div class="col-xs-12 col-sm-6">
         <?php
-            //recherche des evenements:
-            $evenements = recupererEvenements();
-
             if(isset($evenements)){
-                    for($i=0; $i<3; $i++){
-                            if(count($evenements)>$i){ ?>
-                                    <p>
-                                        <span class="label label-success">Event:</span>
-                                        <?php print utf8_encode ($evenements[$i]->getTitre()); ?>, 
-                                        <a href=""> <?php print utf8_encode($evenements[$i]->getDescription()); ?></a>, 
-                                        le <?php print $evenements[$i]->getDateFin(); ?>
-                                    </p>	
-                            <?php }
-                    }
+                //on ne publie sur la page d'accueil que les 3 derniers événements en date:
+                for($i=0; $i<3; $i++){
+                    if(count($evenements)>$i){ ?>
+                        <p>
+                            <span class="label label-success">Event:</span>
+                            <?php print utf8_encode ($evenements[$i]->getDateFin()); ?> - 
+                            <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print utf8_encode($evenements[$i]->getTitre()); ?></a>
+                        </p>
+                    <?php }
+                }
             }
-            else{
-                    echo 'aucun évènements prévu actuellement';
-            }
+            else { echo 'Aucun évènement prévu.'; }
         ?>
         <br />
     </div>
     <div class="col-xs-12 col-sm-6">
         <?php
-            //recherche des alertes:
-
-            $alertes = recupererAlertes();
-
             if(isset($alertes)){
                 for($i=0; $i<3; $i++){
                     if(count($alertes)>$i){ ?>
                         <p>
-                            <span class="label label-danger">Alerte:</span> 
-                            <?php print utf8_encode ($alertes[$i]->getTitre()); ?>, 
-                            <a href=""> <?php print utf8_encode ($alertes[$i]->getDescription()) ?></a>, 
-                            le <?php print $alertes[$i]->getDateDebut(); ?>
+                            <span class="label label-danger">Alerte:</span>
+                            <?php print utf8_encode ($alertes[$i]->getDateDebut()); ?> - 
+                            <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print utf8_encode($alertes[$i]->getTitre()); ?></a>
                         </p>
                     <?php }
                 }
             }
+            else { echo 'Aucune alerte enregistr&eacute;e.'; }
         ?>
         <br />
     </div>
@@ -61,17 +57,13 @@
                     if(isset($tab_News)){
                             echo "ok";
                     }
-                    else
-                    {
+                    else{
                             echo "pas ok";
                     }
-
                    /* for($i=0; $i<count($tab_News); $i++){
                             echo utf8_encode($tab_News[$i]->getTitre());
                     }*/
-
                 ?>
-
                 <li class="list-group-item">Prochain <a href="">&eacute;v&eacute;nement</a> pr&eacute;vu</li>
                 <li class="list-group-item">Etc.</li>
             </ul>

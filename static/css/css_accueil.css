@@ -1,19 +1,24 @@
-#alerteEvent{
-	background-color: #eee;
-	border-radius: 5px;
-	margin-bottom: 20px;
-	padding-top: 20px;
+#alerteEvent {
+    background-color: #eee;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    padding-top: 20px;
 }
 
-#video{
-	background-color: #eee;
-	border-radius: 5px;
-	text-align: center;
-	margin-bottom: 20px;
-	padding-bottom: 10px;
+#alerteEvent .description, #alerteEvent .description:hover {
+    text-decoration: none;
+    color: #337DB8;
 }
 
-#video iframe{
-	width: 90%;
-	min-height: 400px;
+#video {
+    background-color: #eee;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+#video iframe {
+    width: 90%;
+    min-height: 400px;
 }

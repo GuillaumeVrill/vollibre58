@@ -6,7 +6,6 @@
             Les droits associ&eacute;s &agrave; votre compte ne sont pas suffisants pour acc&eacute;der &agrave; cette page. Si vous avez une requ&ecirc;te sp&eacute;cifique, 
             veuillez nous contacter via le formulaire de contact. <br />
             <br />
-            <a href="<?php print URL_PATH; ?>">Retourner &agrave; l'accueil</a>
         </div>
         <div class="access_right">
             <!-- image du dodo policier -->

@@ -4,7 +4,7 @@ $rights[0] = "administrateur";
 $rights[1] = "moderateur";
 $rights[2] = "redacteur";
 
-if(isset($_RESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SESSION['user_right'], $rights, true)){
+if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SESSION['user_right'], $rights, true)){
     $page['vue'] = 'vue/form_add_article.php';
     $page['css'] = '<link rel="stylesheet" type="text/css" href="static/css/css_f_add_article.css" />';
 }

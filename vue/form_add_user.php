@@ -2,9 +2,11 @@
     // récupération des grades de la base de données:
     $grade = array();
     // A REMPLACER PAR LA FONCTION SQL:
-    $grade[0] = "Membre";
-    $grade[1] = "Redacteur";
-    $grade[2] = "Moderateur";
+    $grade[0] = "membre";
+    $grade[1] = "redacteur";
+    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && $_SESSION['user_right'] == "administrateur"){ 
+        $grade[2] = "moderateur"; 
+    } 
 ?>
 
 <section id="addUser" class="row">

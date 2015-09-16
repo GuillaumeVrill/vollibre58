@@ -52,7 +52,9 @@
                 <div class="contenuJuridique">
                     Le site <strong>Vol libre 58</strong> est une oeuvre de l'esprit, son contenu est donc prot&eacute;g&eacute; par la loi en vigueur concernant le droit d'auteur. <br />
                     Tout comme nous nous engageons &agrave; ne publier que du contenu libre de droits ou dont nous disposons d'une autorisation, si vous souhaitez 
-                    utiliser le contenu de ce site &agrave; des fins autres que personnelles, veuillez nous en demander l'autorisation, par respect envers nos auteurs.
+                    utiliser le contenu de ce site &agrave; des fins autres que personnelles, veuillez nous en demander l'autorisation, par respect envers nos auteurs.<br />
+                    Certaines oeuvres graphiques et notament les personnages des <strong>"Dodo"</strong> ont &eacute;t&eacute; r&eacute;alis&eacute;es par 
+                    <strong>Jean-Jacques Garnier</strong>, ces oeuvres sont soumises au droit d'auteur selon la loi en vigueur.
                 </div>
             </div>
             <div class="infos">
@@ -102,7 +104,10 @@
             <div class="infos">
                 <div class="titreTechnique">- Gestion des cookies: </div>
                 <div class="contenuTechnique">
-                    -- POLITIQUE A DEFINIR --
+                    Le site peut vous proposer de conserver votre connexion en tant que membre active. Dans nos cookies, nous ne conservons que vs informations de connexions, 
+                    et rien d'autre. Nous ne les utilisons pas à des fins publicitaires, ni nous ne les fournissons à des tiers. Si vous souhaitez ne pas stocker de cookies provenant 
+                    de ce site sur votre ordinateur, ne cochez pas la case "conserver ma connexion active" sur la page de connexion lorsque vous vous identifiez. <br />
+                    -- FONCTIONNALITE ACTUELLEMENT NON DISPONIBLE, PAS DE COOKIES POUR LE MOMENT --
                 </div>
             </div>
         </div>

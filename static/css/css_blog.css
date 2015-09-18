@@ -111,3 +111,14 @@
     padding: 1%;
     border-radius: 10px;
 }
+
+@media only screen and (max-width:650px) {
+    .galerie-3pic .img-grande, 
+    .galerie-3pic-inv .img-grande,
+    .galerie-3pic .img-petite,
+    .galerie-3pic-inv .img-petite,
+    .galerie-2pic .demi, 
+    .vertical {
+        width: 100%;
+    }
+}

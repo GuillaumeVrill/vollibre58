@@ -1,4 +1,4 @@
-/******************** CSS BLOG ***********************/
+/*********************** CSS BLOG **************************/
 #blog{
 	background-color: #eee;
 	border-radius: 5px;
@@ -11,85 +11,7 @@
     margin-left: 10%;
 }
 
-.blogArticle {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 25px;
-    border-bottom: solid 3px darkgrey;
-}
-
-.content {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 25px;
-}
-
-.picture {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 25px;
-}
-
-.picture img {
-    width: 100%;
-    border-radius: 25px;
-}
-
-/********************** LES GALERIES ********************/
-.galerie-3pic {
-    display: inline-block;
-    width: 100%;
-    margin-bottom: 25px;
-    text-align: center;
-}
-
-.galerie-3pic table, .galerie-3pic table tr {
-    display: inline-block;
-    width: 100%;
-}
-
-.galerie-3pic img {
-    display: inline-block;
-    border-radius: 25px;
-}
-
-.galerie-3pic col-left {
-    text-align: left;
-}
-
-.galerie-3pic col-right {
-    text-align: right;
-}
-
-@media only screen and (min-width:800px){
-    .galerie-3pic table tr .col-large {
-        width: 65%;
-    }
-    
-    .galerie-3pic .pic-large {
-        width: 100%;
-    }
-    
-    .galerie-3pic .pic-medium {
-        width: 85%;
-        margin: 15px;
-    }
-}
-
-@media only screen and (max-width:799px){
-    .galerie-3pic table tr .col-large, .galerie-3pic table tr .col-small {
-        display: block;
-        width: 100%;
-    }
-    
-    .galerie-3pic img {
-        display: inline-block;
-        width: 100%;
-        margin-bottom: 15px;
-    }
-}
-
-/******************** LIENS VERS LES ALBUMS *******************/
+/****************** LIENS VERS LES ALBUMS ******************/
 .albumsLinks {
     display: inline-block;
     width: 100%;
@@ -110,4 +32,82 @@
     .albumsLinks a {
         display: block;
     }
+}
+
+/*************** ARTICLES SELON DISPOSITIONS ***************/
+
+.blogArticle {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    padding-bottom: 25px;
+    border-bottom: solid 3px darkgrey;
+}
+
+.content {
+    display: inline-block;
+    width: 100%;
+}
+
+.picture, .galerie, .galerie-3pic, 
+.galerie-3pic-inv, .galerie-2pic {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    margin-top: 25px;
+}
+
+.picture img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.galerie-3pic .img-grande, 
+.galerie-3pic-inv .img-grande {
+    display: inline-block;
+    width: 67%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.galerie-3pic .img-petite,
+.galerie-3pic-inv .img-petite {
+    display: inline-block;
+    width: 33%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.img-grande img, .img-petite img {
+    display: inline-block;
+    width: 95%;    
+    padding: 1%;
+    border-radius: 10px;
+}
+
+.galerie-2pic .demi {
+    display: inline-block;
+    width: 50%;
+    padding: 1%;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.galerie-2pic img {
+    display: inline-block;
+    width: 95%;
+    border-radius: 10px;
+}
+
+.vertical {
+    display: inline-block;
+    width: 50%;
+    vertical-align: middle;
+}
+
+.vertical img {
+    display: inline-block;
+    width: 95%;
+    padding: 1%;
+    border-radius: 10px;
 }

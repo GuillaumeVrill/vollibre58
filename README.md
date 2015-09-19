@@ -20,6 +20,7 @@ recupererArticle($article_id);              -
 
 recupererTouteslesImages();                 -
 recupererImagesArticle($article_id);        -
+recupererAlbums();                          -
 
 
 

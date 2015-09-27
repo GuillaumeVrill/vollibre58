@@ -89,6 +89,9 @@
 		return $tabResult;
 	}
 
+        function recupererImagesArticle($article_id){
+            
+        }
 
 	/*
 	 * Nom: recupererGrades
@@ -105,7 +108,7 @@
 		/*if(isset($membre)){
 			$id = $membre->getId();
 			
-			$requete = 'SELECT g.libelle FROM tGrade g, tmembre m WHERE g.id_membre = m.id AND g.id_membre= ?';
+			$requete = 'SELECT g.libelle FROM tgrade g, tmembre m WHERE g.id_membre = m.id AND g.id_membre= ?';
 			$parametres = array();
 			array_push($parametres, $id);
 			
@@ -114,8 +117,74 @@
 		}
 		return $tabGrade;*/
 	}
+        
+        function recupererDispositions(){
+            
+        }
+        
+        function recupererDispositionArticle($article_id){
+            
+        }
+        
+        function recupererAlbums(){
+            
+        }
 	
-		/*
+        /*
+	 * Nom: recupererGradeByLibelle
+	 * Description: l'id d'un grade en fonction d'un libellé
+	 * Paramètre:
+	 * libelle: le libellé recherché
+	 * Variables:
+	 * requete: la requete SQL
+	 * parametre: les paramètres de la requête préparée
+	 * tabResult: le jeux de résultat
+	 * */
+	function recupererGradeByLibelle($libelle){
+		
+		if(isset($libelle)){
+			
+			$requete = 'SELECT id FROM tGrade WHERE libelle=?';
+			
+			$parametres = array();
+			array_push($parametres, $libelle);
+			
+			new GradeFactory($requete, $tabResult, $parametres);
+		}
+		
+		return $tabResult;
+	}
+	
+        /*
+         * Nom: recupererMembreByPseudo
+	 * Description: un membre selon son psudonyme
+	 * Paramètre:
+	 * pseudo: le pseudonyme recherché
+	 * Variables:
+	 * requete: la requete SQL
+	 * parametre: les paramètres de la requête préparée
+	 * tabResult: le jeux de résultat
+         * */
+	function recupererMembreByPseudo($pseudo){
+		
+		if(isset($pseudo)){
+			
+			$requete = 'SELECT * FROM tmembre WHERE pseudo=?';
+			
+			$parametres = array();
+			array_push($parametres, $pseudo);
+			
+			new PersonneFactory($requete, $tabResult, $parametres);
+		}
+		
+		if(isset($tabResult)){
+			$membre = $tabResult[0];
+			return $membre;
+		}
+		
+	}
+        
+        /*
 	 * Nom: creerNews
 	 * Description : enregistre une nouvelle news dans la base de données
 	 * Paramètre:
@@ -212,51 +281,6 @@
 		}
 	}
 	
-	
-	/*
-	 * Nom: recupererGradeByLibelle
-	 * Description: l'id d'un grade en fonction d'un libellé
-	 * Paramètre:
-	 * libelle: le libellé recherché
-	 * Variables:
-	 * requete: la requete SQL
-	 * parametre: les paramètres de la requête préparée
-	 * tabResult: le jeux de résultat
-	 * */
-	function recupererGradeByLibelle($libelle){
-		
-		if(isset($libelle)){
-			
-			$requete = 'SELECT id FROM tGrade WHERE libelle=?';
-			
-			$parametres = array();
-			array_push($parametres, $libelle);
-			
-			new GradeFactory($requete, $tabResult, $parametres);
-		}
-		
-		return $tabResult;
-	}
-	
-	function recupererMembreByPseudo($pseudo){
-		
-		if(isset($pseudo)){
-			
-			$requete = 'SELECT id FROM tmembre WHERE pseudo=?';
-			
-			$parametres = array();
-			array_push($parametres, $pseudo);
-			
-			new PersonneFactory($requete, $tabResult, $parametres);
-		}
-		
-		if(isset($tabResult)){
-			$membre = $tabResult[0];
-			return $membre;
-		}
-		
-	}
-	
 	/*
 	 * Nom: creerEvenement
 	 * Description : enregistre un nouvel évènement dans la base de données
@@ -284,30 +308,6 @@
 			
 			new EvenementsFactory($requete, $tabResult, $parametres);
 		}
-	}
-	
-	/**
-	 * Nom: supprimerEvenementParId
-	 * Description:  supprime un evenement dans la base de données en fonction de son id
-	 * Paramètre:
-	 * $id: l'id de l'évènement
-	 * Variables:
-	 * requete: la requete sql
-	 * parametres: les parametres de la requete sql
-	 * */
-	function supprimerEvenementParId($id){
-		
-		if(isset($id)){
-			
-			$requete = 'DELETE * FROM `tevenements` WHERE id=?';
-			
-			$parametres = array();
-			array_push($parametres, $id);
-			
-			new EvenementsFactory($requete, $tabResult, $parametres);
-			
-		}
-		
 	}
 	
 	/*
@@ -366,5 +366,50 @@
 		}
 	}
 
-	
+        function creerDisposition(){
+            //fonction vide! Les dispositions sont arbitraires 
+            //et sont stockées à titre informatif dans la base de données
+            //Pour ajouter en tant qu'admin des dispositions dans la base, il faudra creer
+            //un editeur graphique de mise en forme et une génération automatique de l'HTML correspondant!
+            // ==> Pas pratique, et très complexe! On oublie!
+        }
+        
+        function creerAlbum($album){
+            if(isset($album)){
+			$titre = $album->getTitre();
+			$url = $image->getUrl();
+			
+			$requete = 'INSERT INTO `talbums`(`titre`, `url`) VALUES (?, ?)';
+			$parametres = array();
+			array_push($parametres, $titre);
+			array_push($parametres, $url);
+			
+			new ImageFactory($requete, $tabResult, $parametres);
+		}
+        }
+        
+	/**
+	 * Nom: supprimerEvenementParId
+	 * Description:  supprime un evenement dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id de l'évènement
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+	function supprimerEvenementParId($id){
+		
+		if(isset($id)){
+			
+			$requete = 'DELETE * FROM `tevenements` WHERE id=?';
+			
+			$parametres = array();
+			array_push($parametres, $id);
+			
+			new EvenementsFactory($requete, $tabResult, $parametres);
+			
+		}
+		
+	}
+        
 ?>

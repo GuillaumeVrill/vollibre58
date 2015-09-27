@@ -43,7 +43,7 @@
 <div class="row">
     <div id="video" class="col-xs-12 col-sm-8">
         <h3>Pr&eacute;sentation du club:</h3>
-        <iframe src="https://www.youtube.com/embed/xbmMfFfta4M" frameborder="0" allowfullscreen></iframe>
+        <iframe src="https://www.youtube.com/embed/JW2ShQsMFEk" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">

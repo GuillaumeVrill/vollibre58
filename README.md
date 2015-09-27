@@ -10,7 +10,7 @@ Fonctions relatives à la base de données qu'il faut créer:
 --- FONCTION NAME ---                       Done? (OK)
 #ExempleFonction()                          -OK
 
-SupprimerEvent($event_id);                  -
+SupprimerEvent($event_id);                  -OK
 SupprimerAlerte($alerte_id);                -
 SupprimerArticle($article_id);              -
 SupprimerUtilisateur($user_id);             -
@@ -18,9 +18,11 @@ SupprimerUtilisateur($user_id);             -
 recupererTousLesArticles();                 -
 recupererArticle($article_id);              -
 
-recupererTouteslesImages();                 -
+recupererTouteslesImages();                 -OK
 recupererImagesArticle($article_id);        -
 recupererAlbums();                          -
+recupererDispositions();                    -
+recupererDispositionArticle($article_id);   -
 
 
 

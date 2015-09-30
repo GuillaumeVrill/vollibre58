@@ -119,11 +119,17 @@
 	}
         
         function recupererDispositions(){
-            
+            $requete = 'SELECT * FROM tdispositions';
+            new DispositionFactory($requete, $tabResult, null);
+            return $tabResult;
         }
         
         function recupererDispositionArticle($article_id){
-            
+            $requete = 'SELECT * FROM tdisposition d WHERE id = ('
+                    . 'SELECT id_disposition FROM tnews WHERE id = '.$article_id
+                    . ');';
+            new DispositionFactory($requete, $tabResult, null);
+            return $tabresult;
         }
         
         function recupererAlbums(){

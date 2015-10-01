@@ -19,10 +19,10 @@ recupererTousLesArticles();                 -
 recupererArticle($article_id);              -
 
 recupererTouteslesImages();                 -OK
-recupererImagesArticle($article_id);        -
-recupererAlbums();                          -
-recupererDispositions();                    -
-recupererDispositionArticle($article_id);   -
+recupererImagesArticle($article_id);        -OK
+recupererAlbums();                          -OK
+recupererDispositions();                    -OK
+recupererDispositionArticle($article_id);   -OK
 
 
 

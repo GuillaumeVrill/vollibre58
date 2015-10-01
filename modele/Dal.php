@@ -1,5 +1,4 @@
 <?php 
-	
 	/**
 	 * Nom: recupererAdministrateurs
 	 * Description: récupère l'ensemble des administrateurs dans la base de données
@@ -84,13 +83,28 @@
 	 * tabResult: le tableau d'objets Image
 	 * */
 	function recupererImages(){
-		$requete = 'SELECT * FROM timages';
-		new ImageFactory($requete, $tabResult, null);
-		return $tabResult;
+            $requete = 'SELECT * FROM timages';
+            new ImageFactory($requete, $tabResult, null);
+            return $tabResult;
 	}
 
-        function recupererImagesArticle($article_id){
-            
+        /*
+	 * Nom:recupererImageArticle
+	 * Description:récupère les Images drelatives à un article
+	 * Variables:
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets Image
+	 * */
+        function recupererImagesArticle($article){
+            if(isset($article)){
+                $article_id = $article->getId();
+                $requete = 'SELECT * FROM timages WHERE id_new = ? ORDER BY id ASC';
+                $parametres = array();
+                array_push($parametres, $article_id);
+                
+                new ImageFactory($requete, $tabResult, $parametres);
+                return $tabResult;
+            }
         }
 
 	/*
@@ -104,36 +118,61 @@
 	 * tabGrade: le tableau d'objets de type Grade
 	 * */
 	function recupererGrades($membre){
-			
-		/*if(isset($membre)){
-			$id = $membre->getId();
-			
-			$requete = 'SELECT g.libelle FROM tgrade g, tmembre m WHERE g.id_membre = m.id AND g.id_membre= ?';
-			$parametres = array();
-			array_push($parametres, $id);
-			
-			new GradeFactory($requete, $tabGrade, $parametres);
-			
-		}
-		return $tabGrade;*/
+            if(isset($membre)){
+                $id = $membre->getId();
+                $requete = 'SELECT g.libelle FROM tgrade g, tmembre m WHERE g.id_membre = m.id AND g.id_membre= ?';
+                $parametres = array();
+                array_push($parametres, $id);
+
+                new GradeFactory($requete, $tabResult, $parametres);
+                return $tabResult;
+            }
 	}
         
+        /*
+	 * Nom:recupererDispositions
+	 * Description:récupère les dispositions d'articles dans la base de données
+	 * Variables:
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets Image
+	 * */
         function recupererDispositions(){
             $requete = 'SELECT * FROM tdispositions';
             new DispositionFactory($requete, $tabResult, null);
             return $tabResult;
         }
         
-        function recupererDispositionArticle($article_id){
-            $requete = 'SELECT * FROM tdisposition d WHERE id = ('
-                    . 'SELECT id_disposition FROM tnews WHERE id = '.$article_id
-                    . ');';
-            new DispositionFactory($requete, $tabResult, null);
-            return $tabresult;
+        /*
+	 * Nom:recupererDispositionArticle
+	 * Description:récupère la disposition de l'article souhaité dans la base de données
+	 * Variables:
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets Image
+	 * */
+        function recupererDispositionArticle($article){
+            if(isset($article)){
+                $article_id = $article->getIdt();
+                $requete = 'SELECT * FROM tdisposition d WHERE id = ('
+                        . 'SELECT id_disposition FROM tnews WHERE id = ?'
+                        . ');';
+                $parametres = array();
+                array_push($parametres, $article_id);
+                new DispositionFactory($requete, $tabResult, $parametres);
+                return $tabresult;
+            }
         }
         
+        /*
+	 * Nom:recupererAlbums
+	 * Description:récupère les liens albums dans la base de données
+	 * Variables:
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets Image
+	 * */
         function recupererAlbums(){
-            
+            $requete = 'SELECT * FROM talbums';
+            new AlbumFactory($requete, $tabResult, null);
+            return $tabResult;
         }
 	
         /*
@@ -147,18 +186,15 @@
 	 * tabResult: le jeux de résultat
 	 * */
 	function recupererGradeByLibelle($libelle){
-		
-		if(isset($libelle)){
-			
-			$requete = 'SELECT id FROM tGrade WHERE libelle=?';
-			
-			$parametres = array();
-			array_push($parametres, $libelle);
-			
-			new GradeFactory($requete, $tabResult, $parametres);
-		}
-		
-		return $tabResult;
+            if(isset($libelle)){
+                $requete = 'SELECT id FROM tGrade WHERE libelle=?';
+
+                $parametres = array();
+                array_push($parametres, $libelle);
+
+                new GradeFactory($requete, $tabResult, $parametres);
+                return $tabResult;
+            }
 	}
 	
         /*
@@ -172,22 +208,18 @@
 	 * tabResult: le jeux de résultat
          * */
 	function recupererMembreByPseudo($pseudo){
-		
-		if(isset($pseudo)){
-			
-			$requete = 'SELECT * FROM tmembre WHERE pseudo=?';
-			
-			$parametres = array();
-			array_push($parametres, $pseudo);
-			
-			new PersonneFactory($requete, $tabResult, $parametres);
-		}
-		
-		if(isset($tabResult)){
-			$membre = $tabResult[0];
-			return $membre;
-		}
-		
+            if(isset($pseudo)){
+                    $requete = 'SELECT * FROM tmembre WHERE pseudo=?';
+
+                    $parametres = array();
+                    array_push($parametres, $pseudo);
+
+                    new PersonneFactory($requete, $tabResult, $parametres);
+            }
+            if(isset($tabResult)){
+                    $membre = $tabResult[0];
+                    return $membre;
+            }
 	}
         
         /*
@@ -204,22 +236,20 @@
 	 * tabResult: le tableau d'objets de type Grade
 	 * */
 	function creerNews($news){
-		
-		if(isset($news)){
-			$titre = $news->getTitre();
-			$description = $news->getDescription();
-			$id_auteur = $news->getIdAuteur();
-	
-			$requete = 'INSERT INTO `tnews`(`titre`, `texte`, `date`, `id_membre`) VALUES (?,?,NOW(),?)';
-			$argument = array();
-		
-			array_push($argument, $titre);
-			array_push($argument, $description);
-			array_push($argument, $id_auteur);
-		
-			new NewsFactory($requete, $tabResult, $argument);
-		}
+            if(isset($news)){
+                $titre = $news->getTitre();
+                $description = $news->getDescription();
+                $id_auteur = $news->getIdAuteur();
 
+                $requete = 'INSERT INTO `tnews`(`titre`, `texte`, `date`, `id_membre`) VALUES (?,?,NOW(),?)';
+                $argument = array();
+
+                array_push($argument, $titre);
+                array_push($argument, $description);
+                array_push($argument, $id_auteur);
+
+                new NewsFactory($requete, $tabResult, $argument);
+            }
 	}
 	
 	/*

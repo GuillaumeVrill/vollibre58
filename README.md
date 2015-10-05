@@ -11,9 +11,9 @@ Fonctions relatives à la base de données qu'il faut créer:
 #ExempleFonction()                          -OK
 
 SupprimerEvent($event_id);                  -OK
-SupprimerAlerte($alerte_id);                -
-SupprimerArticle($article_id);              -
-SupprimerUtilisateur($user_id);             -
+SupprimerAlerte($alerte_id);                -OK
+SupprimerArticle($article_id);              -OK
+SupprimerUtilisateur($user_id);             -OK
 
 recupererTousLesArticles();                 -
 recupererArticle($article_id);              -

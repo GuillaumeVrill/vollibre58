@@ -437,7 +437,7 @@
 		
 		if(isset($id)){
 			
-			$requete = 'DELETE * FROM `tevenements` WHERE id=?';
+			$requete = 'DELETE FROM `tevenements` WHERE id=?';
 			
 			$parametres = array();
 			array_push($parametres, $id);
@@ -447,5 +447,59 @@
 		}
 		
 	}
+        
+        /**
+	 * Nom: supprimerAlerteParId
+	 * Description:  supprime une alerte dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id de l'alerte
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+        function supprimerAlerteParId($id){
+            if(isset($id)){
+                $requete = 'DELETE FROM `talert` WHERE `id`=?';
+                $parametres = array();
+                array_push($parametres, $id);
+                new AlertesFactory($requete, $tabResult, $parametres);
+            }
+        }
+        
+        /**
+	 * Nom: supprimerNewsParId
+	 * Description:  supprime un article dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id de l'article
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+        function supprimerNewsParId($id){
+            if(isset($id)){
+                $requete = 'DELETE FROM `tnews` WHERE `id`=?';
+                $parametres = array();
+                array_push($parametres, $id);
+                new NewsFactory($requete, $tabResult, $parametres);
+            }
+        }
+        
+        /**
+	 * Nom: supprimerMembreParId
+	 * Description:  supprime une alerte dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id du membre
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+        function supprimerMembreParId($id){
+            if(isset($id)){
+                $requete = 'DELETE FROM `tmembre` WHERE `id`=?';
+                $parametres = array();
+                array_push($parametres, $id);
+                new PersonneFactory($requete, $tabResult, $parametres);
+            }
+        }
         
 ?>

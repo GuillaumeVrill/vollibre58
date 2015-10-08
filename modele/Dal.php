@@ -461,7 +461,6 @@
 			array_push($parametres, $id);
 			
 			new EvenementsFactory($requete, $tabResult, $parametres);
-			
 		}
 		
 	}

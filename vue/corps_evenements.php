@@ -5,13 +5,19 @@
     
     //traitement des formulaires de suppression:
     for($i=0; $i<sizeof($evenements); $i++){
-        if(isset($_POST['event'.$i])){
-            
+        if(isset($_POST['event'.$evenements[$i]->getId()])){
+            //$eventSupp = $_POST['event'.$i];
+            //supprimerEvenementParId($eventSupp);
+            print 'event '.$evenements[$i]->getId().'deleted';
+            exit();
         }
     }
     for($i=0; $i<sizeof($alertes); $i++){
-        if(isset($_POST['alerte'.$i])){
-            
+        if(isset($_POST['alerte'.$alertes[$i]->getId()])){
+            //$alerteSupp = $_POST['alerte'.$i];
+            //supprimerEvenementParId($alerteSupp);
+            print 'alert '.$alertes[$i]->getId().'deleted';
+            exit();
         }
     }
 ?>
@@ -35,8 +41,8 @@
                             <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && 
                                     ($_SESSION['user_right']=='moderateur' || $_SESSION['user_right']=='administrateur')) : ?>
                                 <div class="supp_btn">
-                                    <form class="btn" name="event_supp_form" id="event_supp_form" method="post" action="<?php print URL_PATH; ?>?page=evenements">
-                                        <input name="event<?php print $alertes[$i]->getId(); ?>" id="event<?php print $evenements[$i]->getId(); ?>" type="submit" value=""
+                                    <form class="btn" name="event_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements">
+                                        <input name="event<?php print $evenements[$i]->getId(); ?>" id="event<?php print $evenements[$i]->getId(); ?>" type="submit" value=""
                                             onClick="confirm('Supprimer l\'événement?')" />
                                     </form>
                                 </div>
@@ -65,7 +71,7 @@
                             <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && 
                                     ($_SESSION['user_right']=='moderateur' || $_SESSION['user_right']=='administrateur')) : ?>
                                 <div class="supp_btn">
-                                    <form class="btn" name="alert_supp_form" id="alert_supp_form" method="post" action="<?php print URL_PATH; ?>?page=evenements">
+                                    <form class="btn" name="alert_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements">
                                         <input name="alerte<?php print $alertes[$i]->getId(); ?>" id="alerte<?php print $alertes[$i]->getId(); ?>" type="submit" value="" 
                                             onClick="confirm('Supprimer l\'alerte?')"/>
                                     </form>

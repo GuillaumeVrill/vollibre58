@@ -24,6 +24,8 @@ recupererAlbums();                          -OK
 recupererDispositions();                    -OK
 recupererDispositionArticle($article_id);   -OK
 
+editerNews($id);                            -
+editerUser($id);                            -
 
 
 NOTES: Pour la recupération d'un article ou de tous les articles, on récupèrera également les images de chaque article, il peut en posséder 1, 2, ou 3.

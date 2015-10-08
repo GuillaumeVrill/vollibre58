@@ -1,5 +1,4 @@
-<?php require_once("conf/autoload.php");
-
+<?php
 
 class ConnexionBDD
 {
@@ -74,12 +73,9 @@ class ConnexionBDD
 		for($i=0; $i<$num_args; $i++){
 			$statement->bindParam(($i+1), $parametres[$i], PDO::PARAM_STR);
 		}
-	
-	
 		
 		$statement->execute();
-
-
+                
 		return $statement;
 	}
 

@@ -6,18 +6,14 @@
     //traitement des formulaires de suppression:
     for($i=0; $i<sizeof($evenements); $i++){
         if(isset($_POST['event'.$evenements[$i]->getId()])){
-            //$eventSupp = $_POST['event'.$i];
-            //supprimerEvenementParId($eventSupp);
-            print 'event '.$evenements[$i]->getId().'deleted';
-            exit();
+            supprimerEvenementParId($evenements[$i]->getId());
+            $evenements = recupererEvenements();
         }
     }
     for($i=0; $i<sizeof($alertes); $i++){
         if(isset($_POST['alerte'.$alertes[$i]->getId()])){
-            //$alerteSupp = $_POST['alerte'.$i];
-            //supprimerEvenementParId($alerteSupp);
-            print 'alert '.$alertes[$i]->getId().'deleted';
-            exit();
+            supprimerAlerteParId($alertes[$i]->getId());
+            $alertes = recupererAlertes();
         }
     }
 ?>

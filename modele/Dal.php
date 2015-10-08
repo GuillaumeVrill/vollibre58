@@ -455,7 +455,7 @@
 		
 		if(isset($id)){
 			
-			$requete = 'DELETE FROM `tevenements` WHERE id=?';
+			$requete = 'DELETE FROM `tevenements` WHERE `id`=?';
 			
 			$parametres = array();
 			array_push($parametres, $id);

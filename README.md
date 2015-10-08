@@ -15,8 +15,8 @@ SupprimerAlerte($alerte_id);                -OK
 SupprimerArticle($article_id);              -OK
 SupprimerUtilisateur($user_id);             -OK
 
-recupererTousLesArticles();                 -
-recupererArticle($article_id);              -
+recupererTousLesArticles();                 -OK
+recupererArticle($article_id);              -OK
 
 recupererTouteslesImages();                 -OK
 recupererImagesArticle($article_id);        -OK

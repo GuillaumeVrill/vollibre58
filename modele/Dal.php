@@ -74,6 +74,24 @@
 		
 		return $tabResult;
 	}
+        
+        /**
+	 * Nom:recupererNewsParId
+	 * Description: récupère les X dernières news 
+	 * Paramètre: 
+	 * id: l'idée de l'article à récupérer
+	 * Variables:
+	 * requete: la requête sql
+	 * argument : les paramètres de la requête
+	 * tabResult: le tableau d'objets News
+	 * */
+        function recupererNewsParId($id){
+            $requete = 'SELECT * FROM tnews WHERE id = ?';
+            $argument = array();
+            array_push($argument, $id);
+            new NewsFactory($requete, $tabResult, $argument);
+            return $tabResult;
+        }
 	
 	/*
 	 * Nom:recupererImage

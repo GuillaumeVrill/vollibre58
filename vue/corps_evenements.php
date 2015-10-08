@@ -1,23 +1,3 @@
-<?php
-    //récupération des événements et des alertes:
-    $evenements = recupererEvenements();
-    $alertes = recupererAlertes();
-    
-    //traitement des formulaires de suppression:
-    for($i=0; $i<sizeof($evenements); $i++){
-        if(isset($_POST['event'.$evenements[$i]->getId()])){
-            supprimerEvenementParId($evenements[$i]->getId());
-            $evenements = recupererEvenements();
-        }
-    }
-    for($i=0; $i<sizeof($alertes); $i++){
-        if(isset($_POST['alerte'.$alertes[$i]->getId()])){
-            supprimerAlerteParId($alertes[$i]->getId());
-            $alertes = recupererAlertes();
-        }
-    }
-?>
-
 <section id="events" class="row">
     <div class="col-xs-12 col-sm-6" id="event">
         <div class="panel panel-success">

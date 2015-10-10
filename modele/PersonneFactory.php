@@ -27,7 +27,7 @@ class PersonneFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$mpd=$row['motDePasse'];		
+				$mdp=$row['motDePasse'];		
 			}
 			catch(Exception $e)
 			{

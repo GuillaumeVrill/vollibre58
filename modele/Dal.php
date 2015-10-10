@@ -1,5 +1,34 @@
 <?php 
-	/**
+        /**
+	 * Nom: connexionMembre
+	 * Description: récupère une personne de la base de données si les informations 
+         * passées en paramètres correspondent à ce qu'il y'a dans la base
+	 * Variables:
+         * $pseudo: le pseudonyme d ela personne
+         * $passwd: le mot de passe (crypté) de la personne
+	 * requete: la requête sql
+	 * tabResult: le tableau d'objets Administrateur
+	 * */
+        function connexionMembre($pseudo, $passwd){
+            $p = isset($pseudo) ? mysql_real_escape_string($pseudo) : null;
+            $mdp = isset($passwd) ? mysql_real_escape_string($passwd) : null;
+            if(isset($p) && !empty($p) && isset($mdp) && !empty($mdp)){
+                $requete = "SELECT * FROM tmembre WHERE pseudo = ? AND motdepasse = PASSWORD(?)";
+                $args = array();
+                array_push($args, $p);
+                array_push($args, $mdp);
+                new PersonneFactory($requete, $tabResult, $args);
+                if(isset($tabResult) && sizeof($tabResult)==1)
+                    return $tabResult;
+                else
+                    return null;
+            }
+            else{
+                return null;
+            }
+        }
+
+        /**
 	 * Nom: recupererAdministrateurs
 	 * Description: récupère l'ensemble des administrateurs dans la base de données
 	 * Variables:

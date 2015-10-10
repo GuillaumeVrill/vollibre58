@@ -36,15 +36,15 @@
     if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id'])) { ?>
         <div class="admin-bar">
             <span class="user">Bonjour <?php print($_SESSION['user_name']); ?> : </span>
-            <?php if($_SESSION['user_right'] == 'administrateur' || 
-                    $_SESSION['user_right'] == 'moderateur' || 
-                    $_SESSION['user_right'] == 'redacteur') { ?>
+            <?php if($_SESSION['user_right'] == '1' || 
+                    $_SESSION['user_right'] == '2' || 
+                    $_SESSION['user_right'] == '3') { ?>
                 <a href="<?php print URL_PATH; ?>?page=f_add_article">Publier un article</a>
                 <a href="">Editer les liens vers les albums</a>
             <?php } ?>
             <a href="<?php print URL_PATH; ?>?page=f_add_event">Proposer un &eacute;v&eacute;nement</a>
             <a href="<?php print URL_PATH; ?>?page=f_add_alerte">Poster une alerte</a>
-            <?php if($_SESSION['user_right'] == 'administrateur' || $_SESSION['user_right'] == 'moderateur') { ?>
+            <?php if($_SESSION['user_right'] == '1' || $_SESSION['user_right'] == '2') { ?>
                 <a href="<?php print URL_PATH; ?>?page=f_add_user">Créer un nouvel utilisateur</a>
             <?php } ?>
         </div>

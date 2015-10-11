@@ -12,7 +12,6 @@ class Grade{
 	public function __construct($id, $libelle){
 		$this->id = $id;
 		$this->libelle = $libelle;
-		$this->id_membre = $id_membre;
 	}
 	
 	/*retourne l'id */

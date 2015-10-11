@@ -177,6 +177,22 @@
 	}
         
         /*
+	 * Nom: recupererGrades
+	 * Description :recupère le/les grades associés à un membre dont l'id est fournis à la requete
+	 * Paramètre:
+	 * membre: le membre à ajouter
+	 * Variables:
+	 * $id: l'id du membre concerné par le grade
+	 * requete: la requete sql
+	 * tabGrade: le tableau d'objets de type Grade
+	 * */
+        function recupererTousLesGrades(){
+            $requete = 'SELECT * FROM tgrade';
+            new GradeFactory($requete, $tabResult, null);
+            return $tabResult;
+        }
+        
+        /*
 	 * Nom:recupererDispositions
 	 * Description:récupère les dispositions d'articles dans la base de données
 	 * Variables:

@@ -28,18 +28,10 @@ editerNews($id);                            -
 editerUser($id);                            -
 
 
-NOTES: Pour la recupération d'un article ou de tous les articles, on récupèrera également les images de chaque article, il peut en posséder 1, 2, ou 3.
-Le tableau de retour pour l'ensemble des articles pourra ressembler à ça:
-//--- $article[indice][colonneBDD][indice-secondaire-eventuel] = valeur; ---//
-$article[0]['id'] = "1";
-$article[0]['txt1'] = "blablabla";
-$article[0]['txt2'] = "blabla";
-$article[0]['disposition'] = "4"; //correspond à la disposition avec 2 textes et 2 images.
-$article[0]['img'][0] = "http://site-hebergement.fr/mon-image.png";
-$article[0]['img'][1] = "http://site-hebergement.fr/mon-image2.JPG";
-$article[1]['id'] = "2";
-$article[1]['txt1'] = "blablablabla";
-$article[1]['txt2'] = "blablablablablabla";
-$article[1]['disposition'] = "1"; //correspond à la disposition standart avec 2 textes et une image
-$article[1]['img'][0] = "http://site-hebergement.fr/mon-image3.jpg";
-//etc.
+-------------------------------------------------------------------
+                            SECURITE:
+-------------------------------------------------------------------
+
+-> Créer une fonction de hachage et de salage des mots de passe utilisateur lors de la création et de la connexion d'un utilisateur:
+        Dal.php -> connexionMembre() (remplacement de la fonction PASSWORD())
+                -> creerMembre()

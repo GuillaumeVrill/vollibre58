@@ -2,12 +2,12 @@
     // récupération des grades de la base de données:
     $grades = recupererTousLesGrades();
     $g = array();
-    // A REMPLACER PAR LA FONCTION SQL:
+    // grade: 3=membre, 2=redacteur, 1=moderateur, 0=administrateur (/!\ =/= getId() /!\)
     $g[0] = $grades[3];
     $g[1] = $grades[2];
-    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && $_SESSION['user_right'] == "1"){ 
+    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && $_SESSION['user_right'] == "1"){
         $g[2] = $grades[1];
-    } 
+    }
 ?>
 
 <section id="addUser" class="row">
@@ -35,7 +35,7 @@
                     <?php
                         //listing des options disponibles dans le tableau de grades:
                         for($i=0; $i<sizeof($g); $i++){ ?>
-                            <option value="<?php print $i; ?>"><?php print $g[$i]->getLibelle(); ?></option>
+                            <option value="<?php print $g[$i]->getId(); ?>"><?php print $g[$i]->getLibelle(); ?></option>
                         <?php }
                     ?>
                 </select>

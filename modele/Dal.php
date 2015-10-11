@@ -177,12 +177,10 @@
 	}
         
         /*
-	 * Nom: recupererGrades
-	 * Description :recupère le/les grades associés à un membre dont l'id est fournis à la requete
-	 * Paramètre:
-	 * membre: le membre à ajouter
+	 * Nom: recupererTouslesGrades
+	 * Description :recupère les grades de la base de données
+	 * Paramètres: aucun
 	 * Variables:
-	 * $id: l'id du membre concerné par le grade
 	 * requete: la requete sql
 	 * tabGrade: le tableau d'objets de type Grade
 	 * */
@@ -327,32 +325,29 @@
 	 * tabResult: le tableau d'objets de type Grade
 	 * */
 	function creerMembre($membre){
-		
-		if(isset($membre)){
-			$pseudo = $membre->getPseudo();
-			$motDePasse = md5($membre->getMotDePasse());
-			$email = $membre->getEmail();	
-			$id_grade = $membre->getIdGrade();
-			
-			//si le grade n'est pas spécifié alors la personne deviens automatiquement un membre
-			if(!isset($id_grade)){
-				
-				$id_grade_tmp = recupererGradeByLibelle("MEMBRE");
-				if(isset($id_grade_tmp)){
-						$id_grade = $id_grade_tmp[0]->getId();
-				}
-			}
-			
-			
-			$requete = 'INSERT INTO `tmembre`(`pseudo`, `motDePasse`, `email`, `id_grade`) VALUES (?,?,?,?)';
-			$parametres = array();
-			array_push($parametres, $pseudo);
-			array_push($parametres, $motDePasse);
-			array_push($parametres, $email);
-			array_push($parametres, $id_grade);
-			
-			new PersonneFactory($requete, $tabResult, $parametres);	
-		}
+            if(isset($membre)){
+                $pseudo = $membre->getPseudo();
+                $motDePasse = md5($membre->getMotDePasse());
+                $email = $membre->getEmail();	
+                $id_grade = $membre->getIdGrade();
+
+                //si le grade n'est pas spécifié alors la personne deviens automatiquement un membre
+                if(!isset($id_grade)){
+                    $id_grade_tmp = recupererGradeByLibelle("membre");
+                    if(isset($id_grade_tmp)){
+                        $id_grade = $id_grade_tmp[0]->getId();
+                    }
+                }
+
+                $requete = 'INSERT INTO `tmembre`(`pseudo`, `motDePasse`, `email`, `id_grade`) VALUES (?,?,?,?)';
+                $parametres = array();
+                array_push($parametres, $pseudo);
+                array_push($parametres, $motDePasse);
+                array_push($parametres, $email);
+                array_push($parametres, $id_grade);
+
+                new PersonneFactory($requete, $tabResult, $parametres);	
+            }
 	}
 	
 	/*

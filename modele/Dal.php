@@ -459,15 +459,13 @@
 			new ImageFactory($requete, $tabResult, $parametres);
 		}
 	}
-
-        function creerDisposition(){
-            //fonction vide! Les dispositions sont arbitraires 
-            //et sont stockées à titre informatif dans la base de données
-            //Pour ajouter en tant qu'admin des dispositions dans la base, il faudra creer
-            //un editeur graphique de mise en forme et une génération automatique de l'HTML correspondant!
-            // ==> Pas pratique, et très complexe! On oublie!
-        }
         
+        /*
+	 * Nom: creerAlbum
+	 * Description: permet d'insérer un album (lien vers un album web)
+	 * Paramètres:
+	 * album: l'album à insérer
+	 * */
         function creerAlbum($album){
             if(isset($album)){
 			$titre = $album->getTitre();
@@ -480,6 +478,28 @@
 			
 			new ImageFactory($requete, $tabResult, $parametres);
 		}
+        }
+        
+        /*
+	 * Nom: creerMessage
+	 * Description: permet d'insérer un message de contact
+	 * Paramètres:
+	 * message: le message à ajouter dans l'article
+	 * */
+        function creerMessage($message){
+            if(isset($message)){
+                $maildest = $message->getMailDest();
+                $obj = $message->getObjet();
+                $msg = $message->getMessage();
+                
+                $requete = 'INSERT INTO `tmessage` (`mailDestinataire`, `objet`, `message`) VALUES (?,?,?)';
+                $args = array();
+                array_push($args, $maildest);
+                array_push($args, $obj);
+                array_push($args, $msg);
+                
+                new MessageFactory($requete, $tabResult, $args);
+            }
         }
         
 	/**

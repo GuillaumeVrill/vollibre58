@@ -14,6 +14,8 @@ require_once($root."modele/Personne.php");
 require_once($root."modele/Evenement.php");
 require_once($root."modele/Alerte.php");
 require_once($root."modele/Grade.php");
+require_once($root."modele/Message.php");
+require_once($root."modele/Disposition.php");
 require_once($root."modele/Dal.php");
 
 //inclus l'ensemble des fabriques des classes métiers ~/modele
@@ -23,6 +25,8 @@ require_once($root."modele/NewsFactory.php");
 require_once($root."modele/PersonneFactory.php");
 require_once($root."modele/EvenementsFactory.php");
 require_once($root."modele/ImageFactory.php");
+require_once($root."modele/MessageFactory.php");
+require_once($root."modele/DispositionFactory.php");
 
 //inclus la classe de securité permettant d'utiliser des fonctions contre les injections SQL etc.
 require_once('modele/securite.php');

@@ -1,5 +1,5 @@
 <?php
-class Image{
+class Disposition{
 	
 	/*
 	 * l'id de la disposition

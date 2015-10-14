@@ -81,14 +81,14 @@ class Message{
 	/**
 	 * retourne le message
 	 * */
-	public function getDate(){
+	public function getMessage(){
 		return $this->message;
 	}
 	
 	/**
 	 * modifie le message
 	 * */
-	public function setDate($message){
+	public function setMessage($message){
 		$this->message = $message;
 	}
 

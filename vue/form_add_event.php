@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <section id="addEvent" class="row">
     <div class="col-xs-12 addEventPage">
         <h1> Ajouter un &eacute;v&eacute;nement </h1>

@@ -1,7 +1,3 @@
-<?php
-
-?>
-
 <section id="addAlerte" class="row">
     <div class="col-xs-12 addAlertePage">
         <h1> Ajouter une Alerte </h1>

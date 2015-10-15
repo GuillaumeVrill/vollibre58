@@ -390,12 +390,14 @@
 	function creerEvenement($evenement){
 		
 		if(isset($evenement)){
+                        $date = $evenement->getDateFin();
 			$titre = $evenement->getTitre();
 			$description = $evenement->getDescription();
 			$id_membre = $evenement->getIdAuteur();
 		
-			$requete = 'INSERT INTO `tevenements`(`date`, `titre`, `description`, `id_membre`) VALUES (NOW(), ?, ?, ?)';
+			$requete = 'INSERT INTO `tevenements`(`date`, `titre`, `description`, `id_membre`) VALUES (?, ?, ?, ?)';
 			$parametres = array();
+                        array_push($parametres, $date);
 			array_push($parametres, $titre);
 			array_push($parametres, $description);
 			array_push($parametres, $id_membre);
@@ -418,7 +420,7 @@
 	 * requete: la requete sql
 	 * tabResult: le tableau d'objets de type Grade
 	 * */
-	function creerAlertes($alerte){
+	function creerAlerte($alerte){
 		
 		if(isset($alerte)){
 			$dateDeb = $alerte->getDateDebut();
@@ -427,8 +429,10 @@
 			$description = $alerte->getDescription();
 			$id_membre = $alerte->getIdAuteur();
 		
-			$requete = 'INSERT INTO `talert`(`date_deb`, `date_fin`, `titre`, `description`, `id_membre`) VALUES (NOW(), NOW(), ?, ?, ?)';
+			$requete = 'INSERT INTO `talert`(`date_deb`, `date_fin`, `titre`, `description`, `id_membre`) VALUES (?, ?, ?, ?, ?)';
 			$parametres = array();
+                        array_push($parametres, $dateDeb);
+                        array_push($parametres, $dateFin);
 			array_push($parametres, $titre);
 			array_push($parametres, $description);
 			array_push($parametres, $id_membre);

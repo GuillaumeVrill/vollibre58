@@ -12,7 +12,6 @@ if(isset($_REQUEST['userSend'])){
         $grade = $_POST['gradeUser'];
 
         $p = new Personne(0, $pseudo, $mdp, $mail, $grade);
-        //ajout dans la base de données:
         creerMembre($p);
         
         //affichage de la barre de réussite:
@@ -20,8 +19,7 @@ if(isset($_REQUEST['userSend'])){
     }
     else{
         //Afficher la barre d'erreur:
-        print "erreur d'ajout de l'utilisateur";
-        exit();
+        
     }
 }
 

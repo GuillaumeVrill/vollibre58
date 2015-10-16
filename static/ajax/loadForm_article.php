@@ -57,27 +57,27 @@
         //selection du formulaire et mise en place des éléments:
         switch($idDisposition){
             //Formulaire standard:
-            case 0: 
+            case 1: 
                 echo '<div class="form_article std">'.$texteHaut.'<div class="article_line  img_select">'.$img_std.'</div>'.$texteBas.'</div>';
                 break;
             //Formulaire 3 images:
-            case 1:
+            case 2:
                 echo '<div class="form_article pic3">'.$texteHaut.'<div class="article_line  img_select">'.$img_3pic_grande.'<div class="img_3pic_right">'.$img_3pic_petite1.$img_3pic_petite2.'</div></div>'.$texteBas.'</div>';
                 break;
             //Formulaire 3 images inversé:
-            case 2:
+            case 3:
                 echo '<div class="form_article picInv3">'.$texteHaut.'<div class="article_line  img_select">'.'<div class="img_3picinv_left">'.$img_3picInv_petite1.$img_3picInv_petite2.'</div>'.$img_3picInv_grande.'</div>'.$texteBas.'</div>';
                 break;
             //Formulaire 2 images:
-            case 3:
+            case 4:
                 echo '<div class="form_article pic2">'.$texteHaut.'<div class="article_line  img_select">'.$img_2pic_pic1.$img_2pic_pic2.'</div>'.$texteBas.'</div>';
                 break;
             //Formulaire verticale gauche:
-            case 4:
+            case 5:
                 echo '<div class="form_article vertG">'.'<div class="article_line  img_select">'.$img_vertG.'</div>'.$texteDroite.'</div>';
                 break;
             //Formulaire verticale droite:
-            case 5:
+            case 6:
                 echo '<div class="form_article vertD">'.$texteGauche.'<div class="article_line  img_select">'.$img_vertD.'</div></div>';
                 break;
         }

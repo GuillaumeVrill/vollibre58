@@ -198,7 +198,7 @@
 	 * tabResult: le tableau d'objets Image
 	 * */
         function recupererDispositions(){
-            $requete = 'SELECT * FROM tdispositions';
+            $requete = 'SELECT * FROM tdisposition';
             new DispositionFactory($requete, $tabResult, null);
             return $tabResult;
         }

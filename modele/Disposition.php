@@ -41,7 +41,7 @@ class Disposition{
 	 * l'id de l'image
 	 * */
 	public function getId(){
-		return $id;
+		return $this->id;
 	}
 
 	/*
@@ -76,7 +76,7 @@ class Disposition{
 	/**
 	 *definis le nouveau chemin d'accès à l'image
 	 * */
-	public function setChemin($description){
+	public function setDescription($description){
 		$this->description = $description;
 	}
         

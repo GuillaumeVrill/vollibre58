@@ -36,31 +36,7 @@
 
 <?php
     //récupération des mises en formes disponibles:
-    $disposition = array();
-    //'nom' = code raccourci du titre
-    //'titre' = nom qui sera affiché et visible
-    //A REMPLACER PAR UNE REQUETE SQL ==>
-    $disposition[0]['nom'] = "std";
-    $disposition[1]['nom'] = "3pic";
-    $disposition[2]['nom'] = "3pic-rev";
-    $disposition[3]['nom'] = "2pic";
-    $disposition[4]['nom'] = "vert-left";
-    $disposition[5]['nom'] = "vertright";
-    
-    $disposition[0]['titre'] = "standart";
-    $disposition[1]['titre'] = "3 images";
-    $disposition[2]['titre'] = "3 images inversées";
-    $disposition[3]['titre'] = "2 images";
-    $disposition[4]['titre'] = "verticale gauche";
-    $disposition[5]['titre'] = "verticale droite";
-    
-    $disposition[0]['url'] = "static/images/dispositionsArticles/01standard.png";
-    $disposition[1]['url'] = "static/images/dispositionsArticles/02pictures3.png";
-    $disposition[2]['url'] = "static/images/dispositionsArticles/03pictures3_rev.png";
-    $disposition[3]['url'] = "static/images/dispositionsArticles/04pictures2.png";
-    $disposition[4]['url'] = "static/images/dispositionsArticles/05verticalLeft.png";
-    $disposition[5]['url'] = "static/images/dispositionsArticles/06verticalRight.png";
-    
+    $dispo = recupererDispositions();
 ?>
 
 <section id="addArticle" class="row">
@@ -78,13 +54,13 @@
                 <label for="selectDispo">Selectionnez la mise en forme de l'article: </label>
                 <div id="selectDispo">
                     <?php
-                        for ($i=0; $i<sizeof($disposition); $i++){ ?>
+                        for ($i=0; $i<sizeof($dispo); $i++){ ?>
                             <div class="selectBox">
-                                <input type="radio" name="disposition" value="<?php print $i; ?>" 
-                                       id="<?php print $disposition[$i]['nom']; ?>"
+                                <input type="radio" name="disposition" value="<?php print $dispo[$i]->getId(); ?>" 
+                                       id="dispo<?php print $dispo[$i]->getId(); ?>"
                                        onClick="loadForm()" />
-                                <label for="<?php print $disposition[$i]['nom']; ?>"><?php print $disposition[$i]['titre']; ?><br />
-                                    <img src="<?php print $disposition[$i]['url']; ?>" />
+                                <label for="dispo<?php print $dispo[$i]->getId(); ?>"><?php print $dispo[$i]->getLibelle(); ?><br />
+                                    <img src="<?php print $dispo[$i]->getUrl(); ?>" />
                                 </label>
                             </div>
                         <?php }

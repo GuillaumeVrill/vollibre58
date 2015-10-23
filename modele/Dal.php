@@ -299,15 +299,21 @@
 	function creerNews($news){
             if(isset($news)){
                 $titre = $news->getTitre();
-                $description = $news->getDescription();
+                $texte1 = $news->getTexte1();
+                $texte2 = $news->getTexte2();
+                $date = $news->getDate();
                 $id_auteur = $news->getIdAuteur();
+                $id_disposition = $news->getIdDisposition();
 
-                $requete = 'INSERT INTO `tnews`(`titre`, `texte`, `date`, `id_membre`) VALUES (?,?,NOW(),?)';
+                $requete = 'INSERT INTO `tnews`(`titre`, `texte1`, `texte2`, `date`, `id_membre`, ìd_disposition`) VALUES (?,?,?,?,?,?)';
                 $argument = array();
 
                 array_push($argument, $titre);
-                array_push($argument, $description);
+                array_push($argument, $texte1);
+                array_push($argument, $texte2);
+                array_push($argument, $date);
                 array_push($argument, $id_auteur);
+                array_push($argument, $id_disposition);
 
                 new NewsFactory($requete, $tabResult, $argument);
             }

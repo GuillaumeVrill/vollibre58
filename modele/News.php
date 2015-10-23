@@ -13,9 +13,10 @@ class News{
 	protected $titre;
 	
 	/**
-	 * la description de la news
+	 * la description de la news (2 parties possibles):
 	 * */
-	protected $description;
+	protected $texte1;
+        protected $texte2;
 	
 	/**
 	 * la date du post de la news
@@ -26,17 +27,24 @@ class News{
 	 * l'id de l'auteur ayant posté dans la news
 	 * */
 	protected $id_auteur;
+        
+        /**
+         * la disposition choisie pour la mise en forme de l'article
+         **/
+        protected $id_disposition;
 	
 	
 	/**
 	 * constructeur des News
 	 * */
-	public function __construct($id, $titre, $description, $date, $id_auteur){
+	public function __construct($id, $titre, $txt1, $txt2, $date, $id_auteur, $id_disposition){
 		$this->id = $id;
 		$this->titre=$titre;
-		$this->description=$description;
+		$this->texte1=$txt1;
+                $this->texte1=$txt2;
 		$this->date=$date;
 		$this->id_auteur=$id_auteur; 
+                $this->id_disposition = $id_disposition;
 	}
 	
 	/**
@@ -71,17 +79,31 @@ class News{
 	
 	
 	/**
-	 * retourne la description de la news
+	 * retourne le premier texte de la news
 	 * */
-	public function getDescription(){
-		return $this->description;
+	public function getTexte1(){
+		return $this->texte1;
 	}
 	
 	/**
-	 * modifie la description de la news
+	 * modifie le premier texte de la news
 	 * */
-	public function setDescription($description){
-		$this->description = $description;
+	public function setTexte1($txt1){
+		$this->texte1 = $txt1;
+	}
+        
+        /**
+	 * retourne le second texte de la news
+	 * */
+	public function getTexte2(){
+		return $this->texte2;
+	}
+	
+	/**
+	 * modifie le second texte de la news
+	 * */
+	public function setTexte2($txt2){
+		$this->texte2 = $txt2;
 	}
 	
 	/**
@@ -114,6 +136,21 @@ class News{
 		$this->id_auteur = $id_auteur;
 	}
 
+        /**
+	 *retourne l'id de la disposiion qui a posté la news
+	 *  */
+	public function getIdDisposition(){
+		return $this->id_disposition;
+	}
+	
+	
+	/**
+	 * modifie l'id de l'auteur qui a posté la news
+	 * */
+	public function setIdDisposition($id_disposition){
+		$this->id_disposition = $id_disposition;
+	}
+        
 }
 
 ?>

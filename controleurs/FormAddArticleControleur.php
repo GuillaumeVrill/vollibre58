@@ -37,7 +37,8 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
             switch($id_dispo){
                 case 1: 
                     if($txtH && $txtB && $istd){
-                        print "1 ok"; exit();
+                        //fonction de creation d'un nouvel article
+                        
                     }
                     else{
                         //affichage d'un message d'informations manquantes: 

@@ -25,7 +25,14 @@ class NewsFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$texte = $row['texte'];
+				$texte1 = $row['texte1'];
+			}
+			catch(Exception $e)
+			{
+				echo $e->getMessage();
+			}
+                        try{
+				$texte2 = $row['texte2'];
 			}
 			catch(Exception $e)
 			{
@@ -45,8 +52,15 @@ class NewsFactory{
 			{
 				echo $e->getMessage();
 			}
+                        try{
+				$id_disposition = $row['id_disposition'];
+			}
+			catch(Exception $e)
+			{
+				echo $e->getMessage();
+			}
 			
-			$news = new News($id, $titre, $texte, $date, $idMembre);
+			$news = new News($id, $titre, $texte1, $texte2, $date, $idMembre, $id_disposition);
 			$tabResult[] = $news;
 		
 		}

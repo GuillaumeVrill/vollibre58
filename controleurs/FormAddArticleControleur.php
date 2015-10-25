@@ -7,6 +7,7 @@ $rights[2] = "3";   //redacteur
 $dispo = recupererDispositions();
 
 if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SESSION['user_right'], $rights, true)){
+    $id_user = $_SESSION['user_id'];
     if(isset($_REQUEST['articleSend'])){
         //on récupère les résultat (true ou false) de la récupération de tous les inputs des formulaires possibles. On aura "true" s'il existe et sont rempli, false sinon:
         $txtH = 0; $txtB = 0; $txtG = 0; $txtD = 0;     //les textes
@@ -32,13 +33,18 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
         if(isset($_REQUEST['image_3picinv_petite1']) && !empty($_REQUEST['image_3picinv_petite1'])){ $i3invp1 = $_REQUEST['image_3picinv_petite1']; }
         if(isset($_REQUEST['image_3picinv_petite2']) && !empty($_REQUEST['image_3picinv_petite2'])){ $i3invp2 = $_REQUEST['image_3picinv_petite2']; }
         
-        if(isset($_REQUEST['disposition']) && !empty($_REQUEST['disposition'])){
+        if(isset($_REQUEST['disposition']) && !empty($_REQUEST['disposition'] && isset($_REQUEST['titreArticle']) && !empty($_REQUEST['titreArticle']))){
             $id_dispo = $_REQUEST['disposition'];
+            $titre = $_REQUEST['titreArticle'];
+            $article = null;
+            $image = array();
+            $today = date("Y-m-d");
             switch($id_dispo){
                 case 1: 
                     if($txtH && $txtB && $istd){
-                        //fonction de creation d'un nouvel article
-                        
+                        //REMPLACER L'ID DE L'ARTICLE PAR UNE FONCTION DE RECUPERATION DU DERNIER ID SAISI.
+                        $article = new News(0, $titre, $txtH, $txtB, $today, $id_user, $id_dispo);
+                        array_push($image, new Image(0, $istd, 0));
                     }
                     else{
                         //affichage d'un message d'informations manquantes: 
@@ -48,7 +54,10 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
                 
                 case 2: 
                     if($txtH && $txtB && $i3gde && $i3p1 && $i3p2){
-                        print "2 ok"; exit();
+                        $article = new News(0, $titre, $txtH, $txtB, $today, $id_user, $id_dispo);
+                        array_push($image, new Image(0, $i3gde, 0));
+                        array_push($image, new Image(0, $i3p1, 0));
+                        array_push($image, new Image(0, $i3p2, 0));
                     }
                     else{
                         //affichage d'un message d'informations manquantes:
@@ -58,7 +67,10 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
                 
                 case 3: 
                     if($txtH && $txtB && $i3invgde && $i3invp1 && $i3invp2){
-                        print "3 ok"; exit();
+                        $article = new News(0, $titre, $txtH, $txtB, $today, $id_user, $id_dispo);
+                        array_push($image, new Image(0, $i3invgde, 0));
+                        array_push($image, new Image(0, $i3invp1, 0));
+                        array_push($image, new Image(0, $i3invp2, 0));
                     }
                     else{
                         //affichage d'un message d'informations manquantes:
@@ -68,7 +80,9 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
                 
                 case 4: 
                     if($txtH && $txtB && $i2p1 && $i2p2){
-                        print "4 ok"; exit();
+                        $article = new News(0, $titre, $txtH, $txtB, $today, $id_user, $id_dispo);
+                        array_push($image, new Image(0, $i2p1, 0));
+                        array_push($image, new Image(0, $i2p2, 0));
                     }
                     else{ 
                         //affichage d'un message d'informations manquantes:
@@ -78,7 +92,8 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
                 
                 case 5: 
                     if($txtD && $ivertG){
-                        print "5 ok"; exit();
+                        $article = new News(0, $titre, $txtD, "", $today, $id_user, $id_dispo);
+                        array_push($image, new Image(0, $ivertG, 0));
                     }
                     else{ 
                         //affichage d'un message d'informations manquantes:
@@ -88,7 +103,8 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
                 
                 case 6: 
                     if($txtG && $ivertD){
-                        print "6 ok"; exit();
+                        $article = new News(0, $titre, $txtG, "", $today, $id_user, $id_dispo);
+                        array_push($image, new Image(0, $ivertD, 0));
                     }
                     else{ 
                         //affichage d'un message d'informations manquantes:
@@ -96,6 +112,16 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
                     }
                     break;
             }
+            
+            //Ajout du nouvel article:
+            creerNews($article);
+            //Récupération dernier article ajouté et mise en place du bon id dans les images créés:
+            $res = recupererLastIdArticle();
+            for($i=0; $i<sizeof($image); $i++){
+                $image[$i]->setIdNews($res[0]->getId());
+                creerImage($image[$i]);
+            }
+            
         }
     }
     

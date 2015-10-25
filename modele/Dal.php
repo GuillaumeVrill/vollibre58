@@ -121,6 +121,21 @@
             new NewsFactory($requete, $tabResult, $argument);
             return $tabResult;
         }
+        
+        /**
+         * Nom: recupererLastIdArticle
+         * Description: récupère l'id du dernier article enregistré
+	 * Paramètre: 
+	 * Variables:
+	 * requete: la requête sql
+	 * argument : les paramètres de la requête
+	 * tabResult: l'entier contenant l'id du dernier article
+         * */
+        function recupererLastIdArticle(){
+            $requete = 'SELECT * FROM tnews WHERE id = (SELECT MAX(id) FROM tnews)';
+            new NewsFactory($requete, $tabResult, null);
+            return $tabResult;
+        }
 	
 	/*
 	 * Nom:recupererImage
@@ -305,7 +320,7 @@
                 $id_auteur = $news->getIdAuteur();
                 $id_disposition = $news->getIdDisposition();
 
-                $requete = 'INSERT INTO `tnews`(`titre`, `texte1`, `texte2`, `date`, `id_membre`, ìd_disposition`) VALUES (?,?,?,?,?,?)';
+                $requete = 'INSERT INTO `tnews`(`titre`, `texte`, `texte2`, `date`, `id_membre`, `id_disposition`) VALUES (?,?,?,?,?,?)';
                 $argument = array();
 
                 array_push($argument, $titre);

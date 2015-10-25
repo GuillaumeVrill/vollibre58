@@ -15,7 +15,7 @@ class News{
 	/**
 	 * la description de la news (2 parties possibles):
 	 * */
-	protected $texte1;
+	protected $texte;
         protected $texte2;
 	
 	/**
@@ -40,8 +40,8 @@ class News{
 	public function __construct($id, $titre, $txt1, $txt2, $date, $id_auteur, $id_disposition){
 		$this->id = $id;
 		$this->titre=$titre;
-		$this->texte1=$txt1;
-                $this->texte1=$txt2;
+		$this->texte=$txt1;
+                $this->texte2=$txt2;
 		$this->date=$date;
 		$this->id_auteur=$id_auteur; 
                 $this->id_disposition = $id_disposition;
@@ -82,14 +82,14 @@ class News{
 	 * retourne le premier texte de la news
 	 * */
 	public function getTexte1(){
-		return $this->texte1;
+		return $this->texte;
 	}
 	
 	/**
 	 * modifie le premier texte de la news
 	 * */
 	public function setTexte1($txt1){
-		$this->texte1 = $txt1;
+		$this->texte = $txt1;
 	}
         
         /**

@@ -25,7 +25,7 @@ class NewsFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$texte1 = $row['texte1'];
+				$texte1 = $row['texte'];
 			}
 			catch(Exception $e)
 			{

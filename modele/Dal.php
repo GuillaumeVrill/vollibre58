@@ -160,7 +160,7 @@
         function recupererImagesArticle($article){
             if(isset($article)){
                 $article_id = $article->getId();
-                $requete = 'SELECT * FROM timages WHERE id_new = ? ORDER BY id ASC';
+                $requete = 'SELECT * FROM timages WHERE id_news = ? ORDER BY id ASC';
                 $parametres = array();
                 array_push($parametres, $article_id);
                 

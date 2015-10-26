@@ -18,10 +18,12 @@
                 array_push($args, $p);
                 array_push($args, $mdp);
                 new PersonneFactory($requete, $tabResult, $args);
-                if(isset($tabResult) && sizeof($tabResult)==1)
+                if(isset($tabResult) && sizeof($tabResult)==1){
                     return $tabResult;
-                else
+                }
+                else{
                     return null;
+                }
             }
             else{
                 return null;

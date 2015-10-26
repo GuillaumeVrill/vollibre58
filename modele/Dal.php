@@ -78,7 +78,7 @@
 	 * tabResult: le tableau d'objets News
 	 * */
 	function recupererNews(){
-		$requete = 'SELECT * FROM tnews';	
+		$requete = 'SELECT * FROM tnews ORDER BY id DESC';	
 		new NewsFactory($requete, $tabResult, null);
 		return $tabResult;
 	}

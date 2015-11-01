@@ -33,6 +33,16 @@
     padding-bottom: 5%;
 }
 
+.connexionForm {
+    display: inline-block;
+    text-align: left;
+}
+
+.connexionForm label,
+.connexionForm input {
+    min-width: 150px;
+}
+
 .connexionWindow form {
     color: #C1AF99;
 }
@@ -52,7 +62,7 @@
 
 .login, .password {
     display: inline-block;
-    width: 100%;
+    /*width: 100%;*/
     margin-bottom: 25px;
 }
 
@@ -82,7 +92,7 @@
     }
 }
 
-@media only screen and (max-width:619px) {
+@media only screen and (max-width:655px) {
     .login label,
     .password label {
         display: block;

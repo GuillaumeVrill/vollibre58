@@ -5,14 +5,16 @@
     <div class="connexionWindow">
         <form method="post" action="<?php print URL_PATH ?>?page=connexion&con=active">
             <h1>Connexion</h1>
-            <div class="login">
-                <label for="pseudo">Nom d'utilisateur: </label>
-                <input type="text" id="pseudo" name="pseudo" placeholder="Pseudonyme" />
-            </div>
-            <div class="password">
-                <label for="passwd">Password: </label>
-                <input type="password" id="passwd" name="passwd" placeholder="Mot de passe" />
-            </div>
+            <div class="connexionForm">
+                <div class="login">
+                    <label for="pseudo">Nom d'utilisateur: </label>
+                    <input type="text" id="pseudo" name="pseudo" placeholder="Pseudonyme" />
+                </div><br />
+                <div class="password">
+                    <label for="passwd">Password: </label>
+                    <input type="password" id="passwd" name="passwd" placeholder="Mot de passe" />
+                </div><br />
+            </div><br />
             <input type="submit" name="connexionBtn" id="connexionBtn" value="Connexion" />
             <div class="footer">
                 <ul>

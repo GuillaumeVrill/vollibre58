@@ -16,6 +16,7 @@
                 case 'f_add_event':     require_once('controleurs/FormAddEventControleur.php');     break;
                 case 'f_add_user':      require_once('controleurs/FormAddUserControleur.php');      break;
                 case 'f_add_article':   require_once('controleurs/FormAddArticleControleur.php');   break;
+                case 'list_user':       require_once('controleurs/ListUserControleur.php');         break;
                 case 'logout':          require_once('controleurs/logout.php');                     break;
         }
     }

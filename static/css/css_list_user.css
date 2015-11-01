@@ -1,0 +1,67 @@
+/******************** CSS ADD USER ***********************/
+#listUsers {
+    background-color: #eee;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.userItem {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.userTemoin {
+    font-weight: bold;
+}
+
+.userItem div {
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+    
+}
+
+.userItem .user_id {
+    width: 5%;
+}
+
+.userItem .user_pseudo,
+.userItem .user_mail {
+    width: 35%;
+    border-left: solid 1px black;
+}
+
+.userItem .user_idGrade,
+.userItem .user_action {
+    width: 10%;
+    border-left: solid 1px black;
+}
+
+/************* ACCES AU FORMULAIRE D'AJOUT *********************/
+.add_user_form {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.add_user_form a {
+    background: green;
+    border: solid 1px black;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.add_user_form a:hover {
+    background: darkgreen;
+}

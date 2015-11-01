@@ -31,8 +31,8 @@
         }
 
         /**
-	 * Nom: recupererAdministrateurs
-	 * Description: récupère l'ensemble des administrateurs dans la base de données
+	 * Nom: recupererPersonnes
+	 * Description: récupère l'ensemble des personnes dans la base de données
 	 * Variables:
 	 * requete: la requête sql
 	 * tabResult: le tableau d'objets Administrateur

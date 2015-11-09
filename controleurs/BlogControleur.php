@@ -1,4 +1,8 @@
 <?php
+function createAlbumLinks(){
+    
+}
+
 function createView(){
     //récupération des articles et de leurs images:
     $articles = recupererNews();

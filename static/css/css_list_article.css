@@ -70,3 +70,22 @@
 .add_article_form a:hover {
     background: darkgreen;
 }
+
+/****************** BTN DE SUPPRESSION *******************/
+.supp_btn, .contenu {
+    display: inline;
+}
+
+.supp_btn .btn {
+    background-color: transparent;
+    width: 15px;
+    padding: 0;
+}
+
+.supp_btn .btn input[type=submit] {
+    background: url('../images/icones/icone_supp.png') top right no-repeat;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    border: none;
+}

@@ -6,6 +6,13 @@ $rights[2] = "3";
 
 if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SESSION['user_right'], $rights, true)){
     $articles = recupererNews();
+    //traitement des formulaires de suppression:
+    for($i=0; $i<sizeof($articles); $i++){
+        if(isset($_POST['article'.$articles[$i]->getId()])){
+            supprimerNewsParId($articles[$i]->getId());
+            $articles = recupererNews();
+        }
+    }
     $page['vue'] = 'vue/list_article.php';
     $page['css'] = '<link rel="stylesheet" type="text/css" href="static/css/css_list_article.css" />';
 }

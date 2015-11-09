@@ -11,20 +11,18 @@ editerUser($id);
 
 
 -------------------------------------------------------------------
-                        PAGES ET FORMUALIRES:
+                    PAGES ET FORMUALIRES A CREER:
 -------------------------------------------------------------------
 
 -> Liste des utilisateurs (possibilité d'ajout, d'édition et de suppression)
 -> Liste des articles (possibilité d'ajout, edition et de suppression)
+-> Liste des messages de contact (suppression, réponse)
 -> Formulaire d'edition des utilisateurs
 -> Formulaire d'edition des articles
 
-=> Modifier la barre d'admin pour accéder au liste
-=> On accèdera aux formulaires d'ajout d'utilisateurs et d'articles depuis les pages de listes
-
 
 -------------------------------------------------------------------
-                            SECURITE:
+                        SECURITE A GERER:
 -------------------------------------------------------------------
 
 -> Créer une fonction de hachage et de salage des mots de passe utilisateur lors de la création et de la connexion d'un utilisateur:

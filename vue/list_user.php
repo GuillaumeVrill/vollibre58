@@ -7,15 +7,25 @@
         <div class="user_action">ACTIONS</div>
     </div>
     <?php for($i=0; $i<sizeof($users); $i++){ ?>
-        <div class="userItem">
-            <div class="user_id"><?php print $users[$i]->getId(); ?></div>
-            <div class="user_pseudo"><?php print $users[$i]->getPseudo(); ?></div>
-            <div class="user_mail"><?php print $users[$i]->getEMail() ?></div>
-            <div class="user_idGrade"><?php print $users[$i]->getIdGrade(); ?></div>
-            <div class="user_action">
-                action
+        <!-- on affiche jamais l'administrateur, il ne peut etre supprimer de la liste -->
+        <?php if($users[$i]->getId() != 1): ?>
+            <div class="userItem">
+                <div class="user_id"><?php print $users[$i]->getId(); ?></div>
+                <div class="user_pseudo"><?php print $users[$i]->getPseudo(); ?>
+                    <div class="btn_supp">
+                        <form class="btn" name="user_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=list_user">
+                            <input name="user<?php print $users[$i]->getId(); ?>" id="user<?php print $users[$i]->getId(); ?>" type="submit" value=""
+                                onClick="confirm('Supprimer l\'utilisateur?')" />
+                        </form>
+                    </div>
+                </div>
+                <div class="user_mail"><?php print $users[$i]->getEMail(); ?></div>
+                <div class="user_idGrade"><?php print $users[$i]->getIdGrade(); ?></div>
+                <div class="user_action">
+                    action
+                </div>
             </div>
-        </div>
+        <?php endif; ?>
     <?php } ?>
     <div class="add_user_form">
         <a href="<?php print URL_PATH; ?>?page=f_add_user">Nouveau Membre</a>

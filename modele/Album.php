@@ -1,5 +1,5 @@
 <?php
-class Image{
+class Album {
 	
 	/*
 	 * l'id de la disposition
@@ -19,7 +19,7 @@ class Image{
 
 	
 
-	public function __construct($id, $description, $libelle, $nom, $url){
+	public function __construct($id, $titre, $url){
 		$this->id = $id;
                 $this->titre = $titre;
                 $this->url = $url;
@@ -29,7 +29,7 @@ class Image{
 	 * l'id de l'image
 	 * */
 	public function getId(){
-		return $id;
+		return $this->id;
 	}
 
 	/*

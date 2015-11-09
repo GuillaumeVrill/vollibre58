@@ -1,6 +1,9 @@
 <?php
 function createAlbumLinks(){
-    
+    $albums = recupererAlbums();
+    for($i=0; $i<sizeof($albums); $i++){
+        echo '<a href="'.$albums[$i]->getUrl().'">'.$albums[$i]->getTitre().'</a>';
+    }
 }
 
 function createView(){

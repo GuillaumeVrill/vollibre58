@@ -4,8 +4,6 @@
         <div class="albumsLinks">
             <h4>Albums des photographes:</h4>
             <?php createAlbumLinks(); ?>
-            <a href="">Album de Guillaume</a>
-            <a href="">Album de Sebastien</a>
         </div>
         <?php createView(); ?>
     </div>

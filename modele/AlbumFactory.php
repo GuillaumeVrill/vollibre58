@@ -1,5 +1,5 @@
 <?php
-class DispositionFactory{
+class AlbumFactory {
 	
 	function __construct($requete, &$tabResult, $parametres){
 		$dbh = ConnexionBDD::getInstance();
@@ -29,7 +29,7 @@ class DispositionFactory{
 			}
                         
 			
-			$album = new Disposition($id, $titre, $url);
+			$album = new Album($id, $titre, $url);
 			$tabResult[] = $album;
 		
 		}

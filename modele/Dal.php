@@ -496,7 +496,7 @@
         function creerAlbum($album){
             if(isset($album)){
 			$titre = $album->getTitre();
-			$url = $image->getUrl();
+			$url = $album->getUrl();
 			
 			$requete = 'INSERT INTO `talbums`(`titre`, `url`) VALUES (?, ?)';
 			$parametres = array();

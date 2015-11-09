@@ -1,0 +1,53 @@
+/******************** CSS ADD USER ***********************/
+#addAlbum {
+	background-color: #eee;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+.addAlbumPage {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.albumInfos {
+    margin-bottom: 25px;
+}
+
+.albumadd_line {
+    display: inline-block;
+    width: 22%;
+    margin: 1%;
+}
+
+.albumadd_line label {
+    display: inline-block;
+    width: 100%;
+}
+
+.albumadd_line input{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    resize: none;
+}
+
+#albumSend {
+    display: inline-block;
+    width: 160px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+@media only screen and (min-width:601px) and (max-width:800px) {
+    .albumadd_line {
+        width: 47%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .albumadd_line {
+        width: 100%;
+    }
+}

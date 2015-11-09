@@ -11,8 +11,9 @@
         <?php if($users[$i]->getId() != 1): ?>
             <div class="userItem">
                 <div class="user_id"><?php print $users[$i]->getId(); ?></div>
-                <div class="user_pseudo"><?php print $users[$i]->getPseudo(); ?>
-                    <div class="btn_supp">
+                <div class="user_pseudo">
+                    <div class="contenu"><?php print $users[$i]->getPseudo(); ?></div>
+                    <div class="supp_btn">
                         <form class="btn" name="user_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=list_user">
                             <input name="user<?php print $users[$i]->getId(); ?>" id="user<?php print $users[$i]->getId(); ?>" type="submit" value=""
                                 onClick="confirm('Supprimer l\'utilisateur?')" />

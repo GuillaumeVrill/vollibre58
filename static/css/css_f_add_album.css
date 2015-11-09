@@ -17,7 +17,7 @@
 
 .albumadd_line {
     display: inline-block;
-    width: 22%;
+    width: 35%;
     margin: 1%;
 }
 
@@ -38,6 +38,12 @@
     width: 160px;
     margin-bottom: 25px;
     font-size: 14px;
+}
+
+.precisions {
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
 }
 
 @media only screen and (min-width:601px) and (max-width:800px) {

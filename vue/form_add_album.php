@@ -15,5 +15,8 @@
             </div>
             <input name="albumSend" id="albumSend" type="submit" value="Ajouter l'album" />
         </form>
+        <div class="precisions">
+            Les url doivent porter vers des albums web (picasa, google+), ou des hébergeurs d'images / de fichiers (imagesia, dropbox) par exemples. 
+        </div>
     </div>
 </section>

@@ -1,0 +1,75 @@
+/******************* CSS LIST ARTICLE ********************/
+#listMessages {
+    background-color: #eee;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.msgItem {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.msgTemoin {
+    font-weight: bold;
+    margin-bottom: 40px;
+}
+
+.msgItem div {
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+    
+}
+
+.msgItem .msg_id {
+    width: 5%;
+}
+
+.msgItem .msg_objet {
+    width: 50%;
+    border-left: solid 1px black;
+}
+
+.msgItem .msg_mail {
+    width: 30%;
+    border-left: solid 1px black;
+}
+
+.msgItem .msg_message {
+    display: inline-block;
+    width: 90%;
+    text-align: left;
+    border: dashed 1px black;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+.msgItem .msg_action {
+    width: 10%;
+    border-left: solid 1px black;
+}
+
+/****************** BTN DE SUPPRESSION *******************/
+.supp_btn, .contenu {
+    display: inline;
+}
+
+.supp_btn .btn {
+    background-color: transparent;
+    width: 15px;
+    padding: 0;
+}
+
+.supp_btn .btn input[type=submit] {
+    background: url('../images/icones/icone_supp.png') top right no-repeat;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    border: none;
+}

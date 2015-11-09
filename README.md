@@ -16,8 +16,6 @@ editerUser($id);
 
 -> Liste des utilisateurs (possibilité d'ajout, d'édition et de suppression)
 -> Liste des articles (possibilité d'ajout, edition et de suppression)
--> Liste des messages de contact (suppression, réponse)
--> Liste des liens des albums (supression, ajout)
 -> Formulaire d'edition des utilisateurs
 -> Formulaire d'edition des articles
 

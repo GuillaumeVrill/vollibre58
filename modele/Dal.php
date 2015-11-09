@@ -13,7 +13,7 @@
             $p = isset($pseudo) ? mysql_real_escape_string($pseudo) : null;
             $mdp = isset($passwd) ? mysql_real_escape_string($passwd) : null;
             if(isset($p) && !empty($p) && isset($mdp) && !empty($mdp)){
-                $requete = "SELECT * FROM tmembre WHERE pseudo = ? AND motdepasse = PASSWORD(?)";
+                $requete = "SELECT * FROM `tmembre` WHERE `pseudo` = ? AND `motdepasse` = PASSWORD(?)";
                 $args = array();
                 array_push($args, $p);
                 array_push($args, $mdp);
@@ -39,7 +39,7 @@
 	 * */
 	function recupererPersonnes()
 	{
-		$requete = 'SELECT * FROM tmembre';
+		$requete = 'SELECT * FROM `tmembre`';
 		
 		new PersonneFactory($requete, $tabmembres, null);
 		
@@ -54,7 +54,7 @@
 	 * tabResult: le tableau d'objets alerte
 	 * */
 	function recupererAlertes(){
-		$requete = 'SELECT * FROM talert';	
+		$requete = 'SELECT * FROM `talert`';	
 		new AlertesFactory($requete, $tabResult, null);
 		return $tabResult;
 	}
@@ -67,7 +67,7 @@
 	 * tabResult: le tableau d'objets Evenement
 	 * */
 	function recupererEvenements(){
-		$requete = 'SELECT * FROM tevenements';	
+		$requete = 'SELECT * FROM `tevenements`';	
 		new EvenementsFactory($requete, $tabResult, null);
 		return $tabResult;
 	}
@@ -80,7 +80,7 @@
 	 * tabResult: le tableau d'objets News
 	 * */
 	function recupererNews(){
-		$requete = 'SELECT * FROM tnews ORDER BY id DESC';	
+		$requete = 'SELECT * FROM `tnews` ORDER BY `id` DESC';	
 		new NewsFactory($requete, $tabResult, null);
 		return $tabResult;
 	}
@@ -96,7 +96,7 @@
 	 * tabResult: le tableau d'objets News
 	 * */
 	function recupererNbDerniereNews($nb_news){
-		$requete = 'SELECT * FROM tnews ORDER BY id LIMIT ?';
+		$requete = 'SELECT * FROM `tnews` ORDER BY `id` LIMIT ?';
 		
 		$argument= array();
 		array_push($argument, $nb_news);
@@ -117,7 +117,7 @@
 	 * tabResult: le tableau d'objets News
 	 * */
         function recupererNewsParId($id){
-            $requete = 'SELECT * FROM tnews WHERE id = ?';
+            $requete = 'SELECT * FROM `tnews` WHERE `id` = ?';
             $argument = array();
             array_push($argument, $id);
             new NewsFactory($requete, $tabResult, $argument);
@@ -134,7 +134,7 @@
 	 * tabResult: l'entier contenant l'id du dernier article
          * */
         function recupererLastIdArticle(){
-            $requete = 'SELECT * FROM tnews WHERE id = (SELECT MAX(id) FROM tnews)';
+            $requete = 'SELECT * FROM `tnews` WHERE `id` = (SELECT MAX(`id`) FROM `tnews`)';
             new NewsFactory($requete, $tabResult, null);
             return $tabResult;
         }
@@ -147,7 +147,7 @@
 	 * tabResult: le tableau d'objets Image
 	 * */
 	function recupererImages(){
-            $requete = 'SELECT * FROM timages';
+            $requete = 'SELECT * FROM `timages`';
             new ImageFactory($requete, $tabResult, null);
             return $tabResult;
 	}
@@ -162,7 +162,7 @@
         function recupererImagesArticle($article){
             if(isset($article)){
                 $article_id = $article->getId();
-                $requete = 'SELECT * FROM timages WHERE id_news = ? ORDER BY id ASC';
+                $requete = 'SELECT * FROM `timages` WHERE `id_news` = ? ORDER BY `id` ASC';
                 $parametres = array();
                 array_push($parametres, $article_id);
                 
@@ -184,7 +184,7 @@
 	function recupererGrades($membre){
             if(isset($membre)){
                 $id = $membre->getId();
-                $requete = 'SELECT g.libelle FROM tgrade g, tmembre m WHERE g.id_membre = m.id AND g.id_membre= ?';
+                $requete = 'SELECT g.libelle FROM `tgrade` g, `tmembre` m WHERE g.id_membre = m.id AND g.id_membre= ?';
                 $parametres = array();
                 array_push($parametres, $id);
 
@@ -202,7 +202,7 @@
 	 * tabGrade: le tableau d'objets de type Grade
 	 * */
         function recupererTousLesGrades(){
-            $requete = 'SELECT * FROM tgrade';
+            $requete = 'SELECT * FROM `tgrade`';
             new GradeFactory($requete, $tabResult, null);
             return $tabResult;
         }
@@ -215,7 +215,7 @@
 	 * tabResult: le tableau d'objets Image
 	 * */
         function recupererDispositions(){
-            $requete = 'SELECT * FROM tdisposition';
+            $requete = 'SELECT * FROM `tdisposition`';
             new DispositionFactory($requete, $tabResult, null);
             return $tabResult;
         }
@@ -230,8 +230,8 @@
         function recupererDispositionArticle($article){
             if(isset($article)){
                 $article_id = $article->getIdt();
-                $requete = 'SELECT * FROM tdisposition d WHERE id = ('
-                        . 'SELECT id_disposition FROM tnews WHERE id = ?'
+                $requete = 'SELECT * FROM `tdisposition` d WHERE `id` = ('
+                        . 'SELECT `id_disposition` FROM `tnews` WHERE `id` = ?'
                         . ');';
                 $parametres = array();
                 array_push($parametres, $article_id);
@@ -248,7 +248,7 @@
 	 * tabResult: le tableau d'objets Image
 	 * */
         function recupererAlbums(){
-            $requete = 'SELECT * FROM talbums';
+            $requete = 'SELECT * FROM `talbums`';
             new AlbumFactory($requete, $tabResult, null);
             return $tabResult;
         }
@@ -265,7 +265,7 @@
 	 * */
 	function recupererGradeByLibelle($libelle){
             if(isset($libelle)){
-                $requete = 'SELECT id FROM tGrade WHERE libelle=?';
+                $requete = 'SELECT id FROM `tGrade` WHERE `libelle`=?';
 
                 $parametres = array();
                 array_push($parametres, $libelle);
@@ -287,7 +287,7 @@
          * */
 	function recupererMembreByPseudo($pseudo){
             if(isset($pseudo)){
-                    $requete = 'SELECT * FROM tmembre WHERE pseudo=?';
+                    $requete = 'SELECT * FROM `tmembre` WHERE `pseudo`=?';
 
                     $parametres = array();
                     array_push($parametres, $pseudo);
@@ -299,6 +299,19 @@
                     return $membre;
             }
 	}
+        
+        /*
+	 * Nom:recupererMessages
+	 * Description:récupère les messages dans la base de données
+	 * Variables:
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets Messages
+	 * */
+        function recupererMessages(){
+            $requete = 'SELECT * FROM `tmessage`';
+            new MessageFactory($requete, $tabResult, null);
+            return $tabResult;
+        }
         
         /*
 	 * Nom: creerNews
@@ -621,6 +634,24 @@
                 $parametres = array();
                 array_push($parametres, $id);
                 new AlbumFactory($requete, $tabResult, $parametres);
+            }
+        }
+        
+        /**
+	 * Nom: supprimerMessageParId
+	 * Description:  supprime un message dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id du message
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+        function supprimerMessageParId($id){
+            if(isset($id)){
+                $requete = 'DELETE FROM `tmessage` WHERE `id`=?';
+                $parametres = array();
+                array_push($parametres, $id);
+                new MessageFactory($requete, $tabResult, $parametres);
             }
         }
         

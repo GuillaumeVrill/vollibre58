@@ -38,15 +38,19 @@
             <span class="user">Bonjour <?php print($_SESSION['user_name']); ?> : </span>
             <?php if($_SESSION['user_right'] == '1' || 
                     $_SESSION['user_right'] == '2' || 
-                    $_SESSION['user_right'] == '3') { ?>
+                    $_SESSION['user_right'] == '3') : ?>
                 <a href="<?php print URL_PATH; ?>?page=list_article">G&eacute;rer les articles</a>
                 <a href="<?php print URL_PATH; ?>?page=list_album">G&eacute;rer les albums</a>
-            <?php } ?>
+            <?php endif; ?>
+            <?php if($_SESSION['user_right'] == '1' || $_SESSION['user_right'] == '2'): ?>
+                <a href="<?php print URL_PATH; ?>?page=evenements">G&eacute;rer alertes et &eacute;v&eacute;nements</a>
+            <?php endif; ?>
             <a href="<?php print URL_PATH; ?>?page=f_add_event">Proposer un &eacute;v&eacute;nement</a>
             <a href="<?php print URL_PATH; ?>?page=f_add_alerte">Poster une alerte</a>
-            <?php if($_SESSION['user_right'] == '1' || $_SESSION['user_right'] == '2') { ?>
+            <?php if($_SESSION['user_right'] == '1' || $_SESSION['user_right'] == '2'): ?>
                 <a href="<?php print URL_PATH; ?>?page=list_user">G&eacute;rer les utilisateurs</a>
-            <?php } ?>
+                <a href="<?php print URL_PATH; ?>?page=list_msg_contact">Messages</a>
+            <?php endif; ?>
         </div>
 <?php } ?>
 
@@ -64,7 +68,8 @@
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='f_add_album') ||
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='list_user') || 
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='list_article') || 
-                    (isset($_REQUEST['page']) && $_REQUEST['page']=='list_album')){ print "active"; } ?> item">
+                    (isset($_REQUEST['page']) && $_REQUEST['page']=='list_album') ||
+                    (isset($_REQUEST['page']) && $_REQUEST['page']=='list_msg_contact')){ print "active"; } ?> item">
                 <a href="<?php print URL_PATH ?>" title="Page d'accueil du site">
                     <img class="img_thumbnail" src="static/images/carousel/accueil01.jpg" alt="Accueil" />
                     <div class="carousel-caption">

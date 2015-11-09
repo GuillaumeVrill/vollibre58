@@ -20,14 +20,14 @@ class MessageFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$maildest=$row['mailDest'];		
+				$maildest=$row['mailDestinataire'];
 			}
 			catch(Exception $e)
 			{
 				echo $e->getMessage();
 			}
 			try{
-				$objet=$row['objet'];		
+				$objet=$row['objet'];
 			}
 			catch(Exception $e)
 			{
@@ -41,8 +41,8 @@ class MessageFactory{
 			}
 			
 			
-			$message = new Message($id, $maildest, $objet, $message);
-			$tabResult[] = $message;
+			$msg = new Message($id, $maildest, $objet, $message);
+			$tabResult[] = $msg;
 		
 		}
 	

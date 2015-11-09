@@ -20,6 +20,7 @@
                 case 'list_user':       require_once('controleurs/ListUserControleur.php');         break;
                 case 'list_article':    require_once('controleurs/ListArticleControleur.php');      break;
                 case 'list_album':      require_once('controleurs/ListAlbumsControleur.php');       break;
+                case 'list_msg_contact':require_once('controleurs/ListMessageControleur.php');      break;
                 case 'logout':          require_once('controleurs/logout.php');                     break;
         }
     }

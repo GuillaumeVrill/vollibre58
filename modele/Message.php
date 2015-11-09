@@ -28,9 +28,9 @@ class Message{
 	 * */
 	public function __construct($id, $maildest, $objet, $message){
 		$this->id = $id;
-		$this->maildest=$maildest;
-		$this->objet=$objet;
-		$this->message=$message;
+		$this->maildest = $maildest;
+		$this->objet = $objet;
+		$this->message = $message;
 	}
 	
 	/**
@@ -74,7 +74,7 @@ class Message{
 	/**
 	 * modifie l'objet du message
 	 * */
-	public function setobjet($objet){
+	public function setObjet($objet){
 		$this->objet = $objet;
 	}
 	

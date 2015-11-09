@@ -40,7 +40,7 @@
                     $_SESSION['user_right'] == '2' || 
                     $_SESSION['user_right'] == '3') { ?>
                 <a href="<?php print URL_PATH; ?>?page=list_article">G&eacute;rer les articles</a>
-                <a href="">Editer les liens vers les albums</a>
+                <a href="<?php print URL_PATH; ?>?page=list_album">G&eacute;rer les albums</a>
             <?php } ?>
             <a href="<?php print URL_PATH; ?>?page=f_add_event">Proposer un &eacute;v&eacute;nement</a>
             <a href="<?php print URL_PATH; ?>?page=f_add_alerte">Poster une alerte</a>
@@ -62,7 +62,8 @@
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='f_add_user') || 
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='f_add_article') ||
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='list_user') || 
-                    (isset($_REQUEST['page']) && $_REQUEST['page']=='list_article')){ print "active"; } ?> item">
+                    (isset($_REQUEST['page']) && $_REQUEST['page']=='list_article') || 
+                    (isset($_REQUEST['page']) && $_REQUEST['page']=='list_album')){ print "active"; } ?> item">
                 <a href="<?php print URL_PATH ?>" title="Page d'accueil du site">
                     <img class="img_thumbnail" src="static/images/carousel/accueil01.jpg" alt="Accueil" />
                     <div class="carousel-caption">

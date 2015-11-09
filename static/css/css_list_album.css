@@ -1,0 +1,85 @@
+/******************** CSS LIST USER **********************/
+#listAlbums {
+    background-color: #eee;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.albumItem {
+    display: inline-block;
+    width: 100%;
+    margin-top: 10px; 
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.albumTemoin {
+    font-weight: bold;
+}
+
+.albumItem div {
+    display: inline-block;
+    min-width: 20px;
+    text-align: center;
+    
+}
+
+.albumItem .album_id {
+    width: 5%;
+}
+
+.albumItem .album_title,
+.albumItem .album_url {
+    width: 40%;
+    border-left: solid 1px black;
+}
+
+.albumItem .album_action {
+    width: 10%;
+    border-left: solid 1px black;
+}
+
+/************* ACCES AU FORMULAIRE D'AJOUT ***************/
+.add_album_form {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+.add_album_form a {
+    background: green;
+    border: solid 1px black;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.add_album_form a:hover {
+    background: darkgreen;
+}
+
+/****************** BTN DE SUPPRESSION *******************/
+.supp_btn, .contenu {
+    display: inline;
+}
+
+.supp_btn .btn {
+    background-color: transparent;
+    width: 15px;
+    padding: 0;
+}
+
+.supp_btn .btn input[type=submit] {
+    background: url('../images/icones/icone_supp.png') top right no-repeat;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    border: none;
+}

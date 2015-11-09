@@ -590,7 +590,7 @@
         
         /**
 	 * Nom: supprimerMembreParId
-	 * Description:  supprime une alerte dans la base de données en fonction de son id
+	 * Description:  supprime un membre dans la base de données en fonction de son id
 	 * Paramètre:
 	 * $id: l'id du membre
 	 * Variables:
@@ -603,6 +603,24 @@
                 $parametres = array();
                 array_push($parametres, $id);
                 new PersonneFactory($requete, $tabResult, $parametres);
+            }
+        }
+        
+        /**
+	 * Nom: supprimerAlbumParId
+	 * Description:  supprime un album dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id de l'album
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+        function supprimerAlbumParId($id){
+            if(isset($id)){
+                $requete = 'DELETE FROM `talbums` WHERE `id`=?';
+                $parametres = array();
+                array_push($parametres, $id);
+                new AlbumFactory($requete, $tabResult, $parametres);
             }
         }
         

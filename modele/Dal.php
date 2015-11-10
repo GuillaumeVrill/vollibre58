@@ -45,6 +45,25 @@
 		
 		return $tabmembres;
 	}
+        
+        /**
+	 * Nom: recupererPersonneParId
+	 * Description: récupère une personnes dans la base de données
+	 * Variables:
+         * $id: l'id de la personne a récupérer
+	 * requete: la requête sql
+	 * tabResult: le tableau d'objets Administrateur
+	 * */
+	function recupererPersonneParId($id)
+	{
+		$requete = 'SELECT * FROM `tmembre` WHERE `id` = ?';
+		
+                $parametres = array();
+                array_push($parametres, $id);
+		new PersonneFactory($requete, $tabmembres, $parametres);
+		
+		return $tabmembres;
+	}
 
 	/**
 	 * Nom:recupererAlertes
@@ -363,7 +382,7 @@
 	function creerMembre($membre){
             if(isset($membre)){
                 $pseudo = $membre->getPseudo();
-                $motDePasse = md5($membre->getMotDePasse());
+                $motDePasse = $membre->getMotDePasse();
                 $email = $membre->getEmail();	
                 $id_grade = $membre->getIdGrade();
 
@@ -375,7 +394,7 @@
                     }
                 }
 
-                $requete = 'INSERT INTO `tmembre`(`pseudo`, `motDePasse`, `email`, `id_grade`) VALUES (?,?,?,?)';
+                $requete = 'INSERT INTO `tmembre`(`pseudo`, `motDePasse`, `email`, `id_grade`) VALUES (?,PASSWORD(?),?,?)';
                 $parametres = array();
                 array_push($parametres, $pseudo);
                 array_push($parametres, $motDePasse);
@@ -654,5 +673,76 @@
                 new MessageFactory($requete, $tabResult, $parametres);
             }
         }
+        
+        /*
+	 * Nom: editerMembre
+	 * Description : edite un membre dans la base de données
+	 * Parametre:
+	 * actualUser: l'utilisateur a editeer
+         * membre: le membre qui va servir à éditer la personne actuelle
+	 * Variables:
+	 * pseudo: le pseudo du membre
+	 * motDePasse: le mot de passe du membre
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets de type Grade
+	 * */
+	function editerMembre($actualUserId ,$membre){
+            if(isset($membre) && isset($actualUserId)){
+                $pseudo = $membre->getPseudo();
+                $motDePasse = $membre->getMotDePasse();
+                $email = $membre->getEmail();	
+                $id_grade = $membre->getIdGrade();
+                
+                //si le grade n'est pas spécifié alors la personne deviens automatiquement un membre
+                if(!isset($id_grade)){
+                    $id_grade_tmp = recupererGradeByLibelle("membre");
+                    $id_grade = $id_grade_tmp[0]->getId();
+                }
+                
+                $requete = 'UPDATE `tmembre` SET `pseudo`=?, `motDePasse`=PASSWORD(?), `email`=?, `id_grade`=? WHERE `id`=?';
+                $parametres = array();
+                array_push($parametres, $pseudo);
+                array_push($parametres, $motDePasse);
+                array_push($parametres, $email);
+                array_push($parametres, $id_grade);
+                array_push($parametres, $actualUserId);
+
+                new PersonneFactory($requete, $tabResult, $parametres);	
+            }
+	}
+        
+        /*
+	 * Nom: editerNews
+	 * Description : edite une news dans la base de données
+	 * Paramètre:
+         * $actuelNewsId: L'id de la news a modifier
+	 * news: la news à ajouter
+	 * Variables:
+	 * $titre: le titre de la news
+	 * $texte et texte2: les textes de la news
+	 * $date: la date de poste de la news
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets de type Grade
+	 * */
+	function editerNews($actualNewsId, $news){
+            if(isset($news) && isset($actualNewsId)){
+                $id = $actualNewsId;
+                $titre = $news->getTitre();
+                $texte1 = $news->getTexte1();
+                $texte2 = $news->getTexte2();
+                $date = $news->getDate();
+
+                $requete = 'UPDATE `tnews` SET `titre`=?, `texte`=?, `texte2`=?, `date`=? WHERE `id`=?';
+                $argument = array();
+
+                array_push($argument, $titre);
+                array_push($argument, $texte1);
+                array_push($argument, $texte2);
+                array_push($argument, $date);
+                array_push($argument, $id);
+
+                new NewsFactory($requete, $tabResult, $argument);
+            }
+	}
         
 ?>

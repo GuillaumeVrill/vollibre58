@@ -1,6 +1,6 @@
 <section id="addEvent" class="row">
     <div class="col-xs-12 addEventPage">
-        <h1> Ajouter un &eacute;v&eacute;nement </h1>
+        <h1> Ajouter un Ev&eacute;nement </h1>
         <div class="eventInfos">
             Remplissez le formulaire suivant pour ajouter un &eacute;v&eacute;nement, qui sera contr&ocirc;l&eacute; et accept&eacute; par un mod&eacute;rateur.
         </div>

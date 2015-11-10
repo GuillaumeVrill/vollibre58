@@ -17,6 +17,7 @@
                 case 'f_add_user':      require_once('controleurs/FormAddUserControleur.php');      break;
                 case 'f_add_article':   require_once('controleurs/FormAddArticleControleur.php');   break;
                 case 'f_add_album':     require_once('controleurs/FormAddAlbumControleur.php');     break;
+                case 'f_edit_user':     require_once('controleurs/FormEditUserControleur.php');     break;
                 case 'list_user':       require_once('controleurs/ListUserControleur.php');         break;
                 case 'list_article':    require_once('controleurs/ListArticleControleur.php');      break;
                 case 'list_album':      require_once('controleurs/ListAlbumsControleur.php');       break;

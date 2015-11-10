@@ -7,16 +7,13 @@ Fonctions relatives à la base de données qu'il faut créer:
 -----------------------------------------------------------------
 
 editerNews($id);
-editerUser($id);
 
 
 -------------------------------------------------------------------
                     PAGES ET FORMUALIRES A CREER:
 -------------------------------------------------------------------
 
--> Liste des utilisateurs (possibilité d'ajout, d'édition et de suppression)
 -> Liste des articles (possibilité d'ajout, edition et de suppression)
--> Formulaire d'edition des utilisateurs
 -> Formulaire d'edition des articles
 
 

@@ -41,7 +41,7 @@
 
 <section id="addArticle" class="row">
     <div class="col-xs-12 addArticlePage">
-        <h1> R&eacute;diger un article </h1>
+        <h1> R&eacute;diger un Article </h1>
         <div class="articleInfos">
             Remplissez le formulaire suivant pour ajouter un nouvel article qui apparaitra en haut de la page "blog":
         </div>

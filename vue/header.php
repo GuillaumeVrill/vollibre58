@@ -66,6 +66,7 @@
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='f_add_user') || 
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='f_add_article') ||
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='f_add_album') ||
+                    (isset($_REQUEST['page']) && $_REQUEST['page']=='f_edit_user') ||
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='list_user') || 
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='list_article') || 
                     (isset($_REQUEST['page']) && $_REQUEST['page']=='list_album') ||

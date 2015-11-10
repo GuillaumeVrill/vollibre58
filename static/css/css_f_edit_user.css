@@ -1,0 +1,54 @@
+/******************** CSS ADD USER ***********************/
+#editUser {
+	background-color: #eee;
+	margin-bottom: 20px;
+	border-radius: 5px;
+}
+
+.editUserPage {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.userInfos {
+    margin-bottom: 25px;
+}
+
+.useredit_line {
+    display: inline-block;
+    width: 22%;
+    margin: 1%;
+}
+
+.useredit_line label {
+    display: inline-block;
+    width: 100%;
+}
+
+.useredit_line input,
+.useredit_line select{
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 25px;
+    resize: none;
+}
+
+#userEdit {
+    display: inline-block;
+    width: 160px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+@media only screen and (min-width:601px) and (max-width:800px) {
+    .useredit_line {
+        width: 47%;
+    }
+}
+
+@media only screen and (max-width:600px) {
+    .useredit_line {
+        width: 100%;
+    }
+}

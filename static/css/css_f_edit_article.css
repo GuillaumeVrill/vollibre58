@@ -1,0 +1,180 @@
+/******************** CSS ADD ARTICLE ***********************/
+#editArticle {
+    background-color: #eee;
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+.editArticlePage {
+    display: inline-block;
+    width: 80%;
+    margin-left: 10%;
+}
+
+.articleInfos {
+    margin-bottom: 25px;
+}
+
+.articleedit_line {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+#selectDispo {
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    border: solid 1px black;
+    margin-bottom: 25px;
+}
+
+#selectDispo .selectBox {
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+}
+
+#selectDispo .selectBox img {
+    width: 100px;
+}
+
+#articleSend {
+    display: inline-block;
+    width: 150px;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+@media only screen and (max-width:700px) {
+    #selectDispo .selectBox {
+        width: 40%;
+    }
+}
+
+@media only screen and (max-width:520px) {
+    #selectDispo .selectBox {
+        width: 100%;
+        min-width: 240px;
+    }
+}
+
+/********* FORMULAIRE DYNAMIQUE EN AJAX: *********/
+#formulaire,
+#formulaire .form_article,
+#formulaire .form_article .article_line {
+    display: inline-block;
+    width: 100%;
+}
+
+#formulaire .form_article .article_line {
+    margin-bottom: 25px;
+}
+
+.txtH label, .txtB label,
+.txtH #txtHaut, .txtB #txtBas {
+    display: inline-block;
+    width:100%;
+}
+
+.txtD label, .txtG label, 
+.txtD #txtDroite, .txtG #txtGauche {
+    display: inline-block;
+    width: 100%;
+}
+
+.img_select {
+    display: inline-block;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.article_line input, 
+.img_select label {
+    margin-left: 25px;
+}
+
+.article_line input {
+    margin-bottom: 10px;
+}
+
+/* Organisation des blocs d'upload des images: */
+.img_std {
+    display: inline-block;
+    width: 90%;
+    margin-left: 5%;
+    padding-top: 9%;
+    min-height: 200px;
+    border: solid 1px black;
+}
+
+.img_3pic_gde, .img_3picinv_gde {
+    display: inline-block;
+    width: 55%;
+    padding-top: 9%;
+    min-height: 200px;
+    border: solid 1px black;
+    vertical-align: middle;
+}
+
+.img_3pic_right {
+    display: inline-block;
+    width: 40%;
+    margin-left: 5%;
+    vertical-align: middle;
+}
+
+.img_3picinv_left {
+    display: inline-block;
+    width: 40%;
+    margin-right: 5%;
+    vertical-align: middle;
+}
+
+.img_3pic_pet1, .img_3pic_pet2,
+.img_3picinv_pet1, .img_3picinv_pet2 {
+    border: solid 1px black;
+    min-height: 70px;
+    padding-top: 5%;
+}
+
+.img_3pic_pet1, .img_3picinv_pet1 {
+    margin-bottom: 40px;
+}
+
+#formulaire .vertG .img_select,
+#formulaire .vertG .txtD,
+#formulaire .vertD .img_select,
+#formulaire .vertD .txtG {
+    display: inline-block;
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+    vertical-align: top;
+}
+
+#formulaire .vertG .img_select,
+#formulaire .vertD .img_select {
+    min-height: 200px;
+    border: solid 1px black;
+    padding-top: 9%;
+}
+
+#formulaire .pic2 .img_select .img_2pic_1, 
+#formulaire .pic2 .img_select .img_2pic_2{
+    display: inline-block;
+    width: 48%;
+    margin-left: 1%;
+    margin-right: 1%;
+    vertical-align: top;
+    border: solid 1px black;
+    min-height: 200px;
+    padding-top: 9%;
+}
+
+textarea {
+    resize: none;
+}
+
+.img_select input {
+    width: 180px;
+}

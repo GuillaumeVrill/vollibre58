@@ -24,15 +24,15 @@
                 <input type="hidden" name="actUser" id="actUser" value="<?php print $user->getId(); ?>" />
                 <div class="useredit_line">
                     <label for="pseudoUser">Pseudonyme: </label>
-                    <input type="text" name="pseudoUser" id="pseudoUser" maxlength="100" value="<?php print $user->getPseudo(); ?>" />
+                    <input type="text" name="pseudoUser" id="pseudoUser" maxlength="100" value="<?php print $user->getPseudo(); ?>" required />
                 </div>
                 <div class="useredit_line">
                     <label for="motdepasseUser">Mot de passe: </label>
-                    <input type="password" name="motdepasseUser" id="motdepasseUser" />
+                    <input type="password" name="motdepasseUser" id="motdepasseUser" required />
                 </div>
                 <div class="useredit_line">
                     <label for="mailUser">Adresse mail: </label>
-                    <input type="mail" name="mailUser" id="mailUser" maxlength="255" value="<?php print $user->getEmail(); ?>" />
+                    <input type="mail" name="mailUser" id="mailUser" maxlength="255" value="<?php print $user->getEmail(); ?>" required />
                 </div>
                 <div class="useredit_line">
                     <label for="gradeUser">Grade: </label>

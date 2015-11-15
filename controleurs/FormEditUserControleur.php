@@ -6,6 +6,14 @@ $rights[1] = "2";
 $error = false;
 
 if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SESSION['user_right'], $rights, true)){
+    
+    if(isset($_REQUEST['actualUser']) && !empty($_REQUEST['actualUser'])){
+        $userId = $_REQUEST['actualUser'];
+        $personne = recupererPersonneParId($userId);
+        $user = $personne[0];
+        $error= false;
+    }
+    
     if(isset($_REQUEST['userEdit']) && isset($_REQUEST['actUser']) && !empty($_REQUEST['actUser'])){
         if(isset($_POST['pseudoUser']) && !empty($_POST['pseudoUser']) && 
             isset($_POST['motdepasseUser']) && !empty($_POST['motdepasseUser']) && 
@@ -24,7 +32,7 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
             editerMembre($actualUserId, $p);
             $personne = recupererPersonneParId($actualUserId);
             $user = $personne[0];
-
+            $error= false;
             //affichage de la barre de réussite:
 
         }
@@ -34,15 +42,12 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
         }
     }
     
-    if(isset($_REQUEST['actualUser']) && !empty($_REQUEST['actualUser'])){
-        $userId = $_REQUEST['actualUser'];
-        $personne = recupererPersonneParId($userId);
-        $user = $personne[0];
-    }
-    
     if(!isset($user)){
         $user = new Personne(0, "ERROR", "ERROR", "ERROR", "0");
         $error = true;
+    }
+    else {
+        $error = false;
     }
     
     $page['vue'] = 'vue/form_edit_user.php';

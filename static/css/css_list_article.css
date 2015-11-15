@@ -89,3 +89,22 @@
     height: 15px;
     border: none;
 }
+
+/********************* BTN D'EDITION **********************/
+.edit_btn, .contenu {
+    display: inline;
+}
+
+.edit_btn .btn2 {
+    background-color: transparent;
+    width: 15px;
+    padding: 0;
+}
+
+.edit_btn .btn2 input[type=submit] {
+    background: url('../images/icones/icone_edit.png') top right no-repeat;
+    background-size: 15px 15px;
+    width: 15px;
+    height: 15px;
+    border: none;
+}

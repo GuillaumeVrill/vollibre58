@@ -23,6 +23,15 @@
                         onClick="confirm('Supprimer l\'article?')" />
                 </form>
             </div>
+            <div class="edit_btn">
+                <form class="btn2" name="news_edit_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=f_edit_article">
+                    <input name="article<?php print $articles[$i]->getId(); ?>" id="article<?php print $articles[$i]->getId(); ?>" type="submit" value=""
+                        onClick="confirm('Editer l\'article?')" 
+                        alt="editer l'article" 
+                        title="editer l'article" />
+                    <input type="hidden" name="actualNews" id="actualNews" value="<?php print $articles[$i]->getId(); ?>" />
+                </form>
+            </div>
         </div>
         </div>
     <?php } ?>

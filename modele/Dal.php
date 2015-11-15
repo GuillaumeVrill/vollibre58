@@ -246,9 +246,8 @@
 	 * requete: la requete sql
 	 * tabResult: le tableau d'objets Image
 	 * */
-        function recupererDispositionArticle($article){
-            if(isset($article)){
-                $article_id = $article->getIdt();
+        function recupererDispositionArticle($article_id){
+            if(isset($article_id)){
                 $requete = 'SELECT * FROM `tdisposition` d WHERE `id` = ('
                         . 'SELECT `id_disposition` FROM `tnews` WHERE `id` = ?'
                         . ');';

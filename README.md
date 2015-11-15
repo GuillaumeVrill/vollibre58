@@ -6,20 +6,21 @@ Dépôt du site vollibre58, club de parapente de Bourgogne
 Fonctions relatives à la base de données qu'il faut créer:
 -----------------------------------------------------------------
 
-editerNews($id);
 
 
--------------------------------------------------------------------
-                    PAGES ET FORMUALIRES A CREER:
--------------------------------------------------------------------
 
--> Liste des articles (possibilité d'ajout, edition et de suppression)
--> Formulaire d'edition des articles
+-----------------------------------------------------------------
+            Fonctions aditionnelles à gérer:
+-----------------------------------------------------------------
+
+-> ajout des required dans les formulaires
+-> créer des boutons pour l'ajout d'événements ou d'alertes pour éviter les liens dans la barre d'administration
 
 
--------------------------------------------------------------------
+
+-----------------------------------------------------------------
                         SECURITE A GERER:
--------------------------------------------------------------------
+-----------------------------------------------------------------
 
 -> Créer une fonction de hachage et de salage des mots de passe utilisateur lors de la création et de la connexion d'un utilisateur:
         Dal.php -> connexionMembre() (remplacement de la fonction PASSWORD())

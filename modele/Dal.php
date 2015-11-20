@@ -326,7 +326,7 @@
 	 * tabResult: le tableau d'objets Messages
 	 * */
         function recupererMessages(){
-            $requete = 'SELECT * FROM `tmessage`';
+            $requete = 'SELECT * FROM `tmessage` ORDER BY `id` DESC';
             new MessageFactory($requete, $tabResult, null);
             return $tabResult;
         }

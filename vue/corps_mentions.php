@@ -17,8 +17,8 @@
                             <div class="mail">vollibre58@free.fr (/!\ pas encore fonctionnel /!\)</div>
                         </div>
                         <div class="infos">
-                            <div class="fonction">Directeurs de la publication : </div>
-                            <div class="denomination">Guillaume VRILLIAUX, Sebastien LENHARTOVA</div>
+                            <div class="fonction">Directeur de la publication : </div>
+                            <div class="denomination">Dominique CHAGNY</div>
                         </div>
                         <div class="infos">
                             <div class="fonction">H&eacute;bergeur : </div>
@@ -104,10 +104,12 @@
             <div class="infos">
                 <div class="titreTechnique">- Gestion des cookies: </div>
                 <div class="contenuTechnique">
-                    Le site peut vous proposer de conserver votre connexion en tant que membre active. Dans nos cookies, nous ne conservons que vs informations de connexions, 
-                    et rien d'autre. Nous ne les utilisons pas à des fins publicitaires, ni nous ne les fournissons à des tiers. Si vous souhaitez ne pas stocker de cookies provenant 
+                    Le site peut vous proposer de conserver votre connexion en tant que membre active. Dans nos cookies, nous ne conservons que vos informations de connexions, 
+                    et rien d'autre. Nous ne les utilisons pas à des fins publicitaires, ni ne les fournissons à des tiers. Si vous souhaitez ne pas stocker de cookies provenant 
                     de ce site sur votre ordinateur, ne cochez pas la case "conserver ma connexion active" sur la page de connexion lorsque vous vous identifiez. <br />
-                    -- FONCTIONNALITE ACTUELLEMENT NON DISPONIBLE, PAS DE COOKIES POUR LE MOMENT --
+                    Actuellement, le site utilise le mécanisme de session pour gérer son administration. Aussi, les visiteurs ne disposent pas de cookies provenant du site. 
+                    Toutefois, si vous remarquez des cookies provenant du site, merci de nous contacter afin que nous déterminions les causes de leur présence et que nous 
+                    prenions les mesures qui s'imposent pour régler ce problème. 
                 </div>
             </div>
         </div>

@@ -19,15 +19,15 @@
         <form method="post" action="?page=f_add_user">
             <div class="useradd_line">
                 <label for="pseudoUser">Pseudonyme: </label>
-                <input type="text" name="pseudoUser" id="pseudoUser" maxlength="100" placeholder="Ex: GuillaumeV" />
+                <input type="text" name="pseudoUser" id="pseudoUser" maxlength="100" placeholder="Ex: GuillaumeV" required />
             </div>
             <div class="useradd_line">
                 <label for="motdepasseUser">Mot de passe: </label>
-                <input type="password" name="motdepasseUser" id="motdepasseUser" />
+                <input type="password" name="motdepasseUser" id="motdepasseUser" required />
             </div>
             <div class="useradd_line">
                 <label for="mailUser">Adresse mail: </label>
-                <input type="mail" name="mailUser" id="mailUser" maxlength="255" placeholder="Ex: personne@exemple.com" />
+                <input type="mail" name="mailUser" id="mailUser" maxlength="255" placeholder="Ex: personne@exemple.com" required />
             </div>
             <div class="useradd_line">
                 <label for="gradeUser">Grade: </label>

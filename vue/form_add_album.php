@@ -7,11 +7,11 @@
         <form method="post" action="?page=f_add_album">
             <div class="albumadd_line">
                 <label for="titreAlbum">Titre: </label>
-                <input type="text" name="titreAlbum" id="titreAlbum" maxlength="100" placeholder="Ex: Album de Guillaume" />
+                <input type="text" name="titreAlbum" id="titreAlbum" maxlength="100" placeholder="Ex: Album de Guillaume" required />
             </div>
             <div class="albumadd_line">
                 <label for="urlAlbum">Lien de l'album (URL): </label>
-                <input type="text" name="urlAlbum" id="urlAlbum" maxlength="100" placeholder="Ex: http://lorempixel.com" />
+                <input type="text" name="urlAlbum" id="urlAlbum" maxlength="100" placeholder="Ex: http://lorempixel.com" required />
             </div>
             <input name="albumSend" id="albumSend" type="submit" value="Ajouter l'album" />
         </form>

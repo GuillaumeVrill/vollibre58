@@ -48,7 +48,7 @@
         <form method="post" action="?page=f_add_article">
             <div class="articleadd_line">
                 <label for="titreArticle">Titre de l'article: </label>
-                <input type="text" name="titreArticle" id="titreArticle" maxlength="255" placeholder="Ex: Vols d'automne 2015" />
+                <input type="text" name="titreArticle" id="titreArticle" maxlength="255" placeholder="Ex: Vols d'automne 2015" required />
             </div>
             <div class="articleadd_line">
                 <label for="selectDispo">Selectionnez la mise en forme de l'article: </label>
@@ -58,7 +58,7 @@
                             <div class="selectBox">
                                 <input type="radio" name="disposition" value="<?php print $dispo[$i]->getId(); ?>" 
                                        id="dispo<?php print $dispo[$i]->getId(); ?>"
-                                       onClick="loadForm()" />
+                                       onClick="loadForm()" required />
                                 <label for="dispo<?php print $dispo[$i]->getId(); ?>"><?php print $dispo[$i]->getLibelle(); ?><br />
                                     <img src="<?php print $dispo[$i]->getUrl(); ?>" />
                                 </label>

@@ -7,15 +7,15 @@
         <form method="post" action="?page=contact">
             <div class="contact_line">
                 <label for="mail">Votre email pour vous r&eacute;pondre:</label>
-                <input type="mail" name="mail" id="mail" placeholder="Ex: nom.prenom@exemple.com" />
+                <input type="mail" name="mail" id="mail" placeholder="Ex: nom.prenom@exemple.com" required />
             </div>
             <div class="contact_line">
                 <label for="objet">Objet : </label>
-                <input type="text" name="objet" id="objet" placeholder="Ex: rejoindre le club" maxlength="200" />
+                <input type="text" name="objet" id="objet" placeholder="Ex: rejoindre le club" maxlength="200" required />
             </div>
             <div class="contact_line">
                 <label for="">Message : </label>
-                <textarea name="message" id="message" rows="10" cols="50" resize="none"></textarea>
+                <textarea name="message" id="message" rows="10" cols="50" resize="none" required></textarea>
             </div>
             <input name="mailSend" id="mailSend" type="submit" value="" />
         </form>

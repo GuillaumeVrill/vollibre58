@@ -7,15 +7,15 @@
         <form method="post" action="?page=f_add_alerte">
             <div class="alerte_line">
                 <label for="dateExp">Date d'expiration: </label>
-                <input type="date" name="dateExp" id="dateExp" />
+                <input type="date" name="dateExp" id="dateExp" required />
             </div>
             <div class="alerte_line">
                 <label for="titreAlerte">Nom de l'alerte (titre): </label>
-                <input type="text" name="titreAlerte" id="titreAlerte" placeholder="Ex: Objet trouv&eacute;" />
+                <input type="text" name="titreAlerte" id="titreAlerte" placeholder="Ex: Objet trouv&eacute;" required />
             </div>
             <div class="alerte_line">
                 <label for="descrAlerte">Description</label>
-                <textarea name="descrAlerte" id="descrAlerte" rows="3" cols="50" resize="none" maxlength="255"></textarea>
+                <textarea name="descrAlerte" id="descrAlerte" rows="3" cols="50" resize="none" maxlength="255" required></textarea>
             </div>
             <input name="alerteSend" id="alerteSend" type="submit" value="Proposer l'alerte" />
         </form>

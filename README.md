@@ -6,6 +6,7 @@ Dépôt du site vollibre58, club de parapente de Bourgogne
 Fonctions relatives à la base de données qu'il faut créer:
 -----------------------------------------------------------------
 
+-> récupérer les données en utf8 et les ressortir en affichage en utf8 (encodage)
 
 
 
@@ -13,7 +14,6 @@ Fonctions relatives à la base de données qu'il faut créer:
             Fonctions aditionnelles à gérer:
 -----------------------------------------------------------------
 
--> ajout des required dans les formulaires
 -> créer des boutons pour l'ajout d'événements ou d'alertes pour éviter les liens dans la barre d'administration
 
 

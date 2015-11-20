@@ -9,49 +9,49 @@
     
     //Préparation des elements de formulaires:
     $texteHaut = '<div class="article_line txtH"><label for="txtHaut">Texte du haut: </label>'
-            . '<textarea name="txtHaut" id="txtHaut" rows="5" resize="none"></textarea></div>';
+            . '<textarea name="txtHaut" id="txtHaut" rows="5" resize="none" required></textarea></div>';
     
     $texteBas = '<div class="article_line txtB"><label for="txtBas">Texte du bas: </label>'
-            . '<textarea name="txtBas" id="txtBas" rows="5" resize="none"></textarea></div>';
+            . '<textarea name="txtBas" id="txtBas" rows="5" resize="none" required></textarea></div>';
     
     $texteGauche = '<div class="article_line txtG"><label for="txtGauche">Texte de gauche: </label>'
-            . '<textarea name="txtGauche" id="txtGauche" rows="8" resize="none"></textarea></div>';
+            . '<textarea name="txtGauche" id="txtGauche" rows="8" resize="none" required></textarea></div>';
     
     $texteDroite = '<div class="article_line txtD"><label for="txtDroite">Texte de droite: </label>'
-            . '<textarea name="txtDroite" id="txtDroite" rows="8" resize="none"></textarea></div>';
+            . '<textarea name="txtDroite" id="txtDroite" rows="8" resize="none" required></textarea></div>';
     
     $img_std = '<div class="img_std"><label for="image_std">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_std" id="image_std" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_std" id="image_std" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_vertG = '<div class="img_vertG"><label for="image_vertG">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_vertG" id="image_vertG" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_vertG" id="image_vertG" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_vertD = '<div class="img_vertD"><label for="image_vertD">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_vertD" id="image_vertD" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_vertD" id="image_vertD" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_2pic_pic1 = '<div class="img_2pic_1"><label for="image_2pic_1">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_2pic_1" id="image_2pic_1" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_2pic_1" id="image_2pic_1" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_2pic_pic2 = '<div class="img_2pic_2"><label for="image_2pic_2">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_2pic_2" id="image_2pic_2" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_2pic_2" id="image_2pic_2" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_3pic_grande = '<div class="img_3pic_gde"><label for="image_3pic_grande">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_3pic_grande" id="image_3pic_grande" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_3pic_grande" id="image_3pic_grande" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_3pic_petite1 = '<div class="img_3pic_pet1"><label for="image_3pic_petite1">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_3pic_petite1" id="image_3pic_petite1" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_3pic_petite1" id="image_3pic_petite1" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_3pic_petite2 = '<div class="img_3pic_pet2"><label for="image_3pic_petite2">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_3pic_petite2" id="image_3pic_petite2" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_3pic_petite2" id="image_3pic_petite2" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_3picInv_grande = '<div class="img_3picinv_gde"><label for="image_3picinv_grande">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_3picinv_grande" id="image_3picinv_grande" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_3picinv_grande" id="image_3picinv_grande" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_3picInv_petite1 = '<div class="img_3picinv_pet1"><label for="image_3picinv_petite1">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_3picinv_petite1" id="image_3picinv_petite1" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_3picinv_petite1" id="image_3picinv_petite1" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     $img_3picInv_petite2 = '<div class="img_3picinv_pet2"><label for="image_3picinv_petite2">Lien vers l\'image: </label>'
-            . '<input type="text" name="image_3picinv_petite2" id="image_3picinv_petite2" placeholder="Ex: http://host/image.jpg" /></div>';
+            . '<input type="text" name="image_3picinv_petite2" id="image_3picinv_petite2" placeholder="Ex: http://host/image.jpg" required /></div>';
     
     try {
         //selection du formulaire et mise en place des éléments:

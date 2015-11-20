@@ -26,6 +26,47 @@
 	margin-right: 5px;
 }
 
+/******************* BTN NEW EVENT/ALERTE *******************/
+#firstForm {
+    padding: 0;
+}
+
+.btnNewEvent {
+    background: green;
+    border: solid 1px black;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.btnNewEvent:hover {
+    background: darkgreen;
+    color: white;
+    text-decoration: none;
+}
+
+.btnNewAlerte {
+    background: red;
+    border: solid 1px black;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+.btnNewAlerte:hover {
+    background: darkred;
+    color: white;
+    text-decoration: none;
+}
+
+
+/********************** BTN SUPPRESSION *********************/
 .supp_btn, .contenu {
     display: inline;
 }

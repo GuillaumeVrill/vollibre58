@@ -14,8 +14,6 @@ Fonctions relatives à la base de données qu'il faut créer:
             Fonctions aditionnelles à gérer:
 -----------------------------------------------------------------
 
--> créer des boutons pour l'ajout d'événements ou d'alertes pour éviter les liens dans la barre d'administration
-
 
 
 -----------------------------------------------------------------

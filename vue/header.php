@@ -42,11 +42,7 @@
                 <a href="<?php print URL_PATH; ?>?page=list_article">G&eacute;rer les articles</a>
                 <a href="<?php print URL_PATH; ?>?page=list_album">G&eacute;rer les albums</a>
             <?php endif; ?>
-            <?php if($_SESSION['user_right'] == '1' || $_SESSION['user_right'] == '2'): ?>
-                <a href="<?php print URL_PATH; ?>?page=evenements">G&eacute;rer alertes et &eacute;v&eacute;nements</a>
-            <?php endif; ?>
-            <a href="<?php print URL_PATH; ?>?page=f_add_event">Proposer un &eacute;v&eacute;nement</a>
-            <a href="<?php print URL_PATH; ?>?page=f_add_alerte">Poster une alerte</a>
+            <a href="<?php print URL_PATH; ?>?page=evenements">G&eacute;rer alertes et &eacute;v&eacute;nements</a>
             <?php if($_SESSION['user_right'] == '1' || $_SESSION['user_right'] == '2'): ?>
                 <a href="<?php print URL_PATH; ?>?page=list_user">G&eacute;rer les utilisateurs</a>
                 <a href="<?php print URL_PATH; ?>?page=list_msg_contact">Messages</a>

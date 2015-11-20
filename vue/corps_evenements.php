@@ -59,4 +59,14 @@
             </ul>
         </div>
     </div>
+    <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right'])): ?>
+    <div class="col-xs-12">
+        <div class="col-xs-6" id="firstForm">
+            <a class="btnNew btnNewEvent" href="<?php print URL_PATH; ?>?page=f_add_event">Nouvel &eacute;v&eacute;nement</a>
+        </div>
+        <div class="col-xs-6">
+            <a class="btnNew btnNewAlerte" href="<?php print URL_PATH; ?>?page=f_add_alerte">Nouvelle alerte</a>
+        </div>
+    </div>
+    <?php endif; ?>
 </section>

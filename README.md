@@ -7,13 +7,7 @@ Fonctions relatives à la base de données qu'il faut créer:
 -----------------------------------------------------------------
 
 -> récupérer les données en utf8 et les ressortir en affichage en utf8 (encodage)
-
-
-
------------------------------------------------------------------
-            Fonctions aditionnelles à gérer:
------------------------------------------------------------------
-
+-> voir si c'est possible de supprimer les événements et alertes trop ancien(ne)s automatiquement dans la base, à intervalle régulier
 
 
 -----------------------------------------------------------------

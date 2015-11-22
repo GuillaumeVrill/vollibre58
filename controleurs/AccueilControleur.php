@@ -2,6 +2,7 @@
 //recherche des alertes et des événements:
 $alertes = recupererAlertes();
 $evenements = recupererEvenements();
+$video = recupererVideo();
 $lastNews = recupererNews();
 $lastNewsPictures = array();
 for($i=0; $i<sizeof($lastNews); $i++){

@@ -2,21 +2,19 @@
 class Album {
 	
 	/*
-	 * l'id de la disposition
+	 * l'id de l'album
 	 * */
 	private $id;
 	
 	/*
-	 * le titre de la disposition
+	 * le titre de l'album
 	 * */
 	private $titre;
         
         /*
-	 * l'url de la disposition
+	 * l'url de l'album
 	 * */
 	private $url;
-
-
 	
 
 	public function __construct($id, $titre, $url){
@@ -26,28 +24,28 @@ class Album {
 	}
 
 	/*
-	 * l'id de l'image
+	 * l'id de l'album
 	 * */
 	public function getId(){
 		return $this->id;
 	}
 
 	/*
-	 * le nouvel id de l'image
+	 * le nouvel id de l'album
 	 * */
 	public function setId($id){
 		$this->id = $id;
 	}
 	
 	/*
-	 * l'id de la news associées à l'image
+	 * le titre de l'album
 	 * */
 	public function getTitre(){
 		return $this->titre;
 	}
 	
 	/*
-	 * Le nouvel id de la news associé à l'image
+	 * Le nouveau titre de l'album
 	 * */
 	public function setTitre($titre){
 		$this->titre = $titre;

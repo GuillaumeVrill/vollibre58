@@ -38,7 +38,7 @@
 <div class="row">
     <div id="video" class="col-xs-12 col-sm-8">
         <h3>Pr&eacute;sentation du club:</h3>
-        <iframe src="https://www.youtube.com/embed/JW2ShQsMFEk" frameborder="0" allowfullscreen></iframe>
+        <iframe src="<?php if(isset($video[0]) && !empty($video[0]->getChemin())){ print $video[0]->getChemin(); } ?>" frameborder="0" allowfullscreen></iframe>
     </div>
     <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">

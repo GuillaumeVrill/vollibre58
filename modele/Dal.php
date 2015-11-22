@@ -263,7 +263,7 @@
 	 * Description:récupère les liens albums dans la base de données
 	 * Variables:
 	 * requete: la requete sql
-	 * tabResult: le tableau d'objets Image
+	 * tabResult: le tableau d'objets Albums
 	 * */
         function recupererAlbums(){
             $requete = 'SELECT * FROM `talbums`';
@@ -328,6 +328,19 @@
         function recupererMessages(){
             $requete = 'SELECT * FROM `tmessage` ORDER BY `id` DESC';
             new MessageFactory($requete, $tabResult, null);
+            return $tabResult;
+        }
+        
+        /*
+	 * Nom:recupererVideo
+	 * Description:récupère les liens videos dans la base de données
+	 * Variables:
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets Video
+	 * */
+        function recupererVideo(){
+            $requete = 'SELECT * FROM `tvideo_accueil`';
+            new VideoFactory($requete, $tabResult, null);
             return $tabResult;
         }
         

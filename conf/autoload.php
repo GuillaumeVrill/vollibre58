@@ -17,6 +17,7 @@ require_once($root."modele/Grade.php");
 require_once($root."modele/Message.php");
 require_once($root."modele/Disposition.php");
 require_once($root."modele/Album.php");
+require_once($root."modele/Video.php");
 require_once($root."modele/Dal.php");
 
 //inclus l'ensemble des fabriques des classes métiers ~/modele
@@ -29,6 +30,7 @@ require_once($root."modele/ImageFactory.php");
 require_once($root."modele/MessageFactory.php");
 require_once($root."modele/DispositionFactory.php");
 require_once($root."modele/AlbumFactory.php");
+require_once($root."modele/VideoFactory.php");
 
 //inclus la classe de securité permettant d'utiliser des fonctions contre les injections SQL etc.
 require_once('modele/securite.php');

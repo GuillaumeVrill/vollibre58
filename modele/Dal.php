@@ -696,7 +696,7 @@
 	 * pseudo: le pseudo du membre
 	 * motDePasse: le mot de passe du membre
 	 * requete: la requete sql
-	 * tabResult: le tableau d'objets de type Grade
+	 * tabResult: le tableau d'objets de type Membre
 	 * */
 	function editerMembre($actualUserId ,$membre){
             if(isset($membre) && isset($actualUserId)){
@@ -734,7 +734,7 @@
 	 * $texte et texte2: les textes de la news
 	 * $date: la date de poste de la news
 	 * requete: la requete sql
-	 * tabResult: le tableau d'objets de type Grade
+	 * tabResult: le tableau d'objets de type News
 	 * */
 	function editerNews($actualNewsId, $news){
             if(isset($news) && isset($actualNewsId)){
@@ -754,6 +754,29 @@
                 array_push($argument, $id);
 
                 new NewsFactory($requete, $tabResult, $argument);
+            }
+	}
+        
+        /*
+	 * Nom: editerVideo
+	 * Description : edite le lien de la vidéo d'accueil
+	 * Parametre:
+	 * actVideoId: l'id de la video a modifier
+         * newVideo: la nouvelle video (nouveau chemin)
+	 * Variables:
+	 * requete: la requete sql
+	 * tabResult: le tableau d'objets de type Video
+	 * */
+	function editerVideo($actVideoId ,$newVideo){
+            if(isset($actVideoId) && isset($newVideo)){
+                $chemin = $newVideo->getChemin();
+                
+                $requete = 'UPDATE `tvideo_accueil` SET `chemin`=? WHERE `id`=?';
+                $parametres = array();
+                array_push($parametres, $chemin);
+                array_push($parametres, $actVideoId);
+
+                new VideoFactory($requete, $tabResult, $parametres);
             }
 	}
         

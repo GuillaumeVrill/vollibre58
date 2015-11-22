@@ -44,3 +44,42 @@
     border-radius: 5px;
     margin-bottom: 10px;
 }
+
+/**************** EDITION DE L'URL DE LA VIDEO ******************/
+.editVideo {
+    display: inline-block;
+    width: 100%;
+}
+
+.editVideo label {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#videoURL {
+    display: inline-block;
+    width: 40%;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+#videoSubmit {
+    display: inline-block;
+    margin-left: 10px;
+    margin-right: 10px;
+    background: green;
+    border: solid 1px black;
+    padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+}
+
+#videoSubmit:hover {
+    background: darkgreen;
+    color: white;
+    text-decoration: none;
+}

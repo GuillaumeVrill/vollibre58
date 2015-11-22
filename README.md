@@ -7,7 +7,6 @@ Fonctions relatives à la base de données qu'il faut créer:
 -----------------------------------------------------------------
 
 -> récupérer les données en utf8 et les ressortir en affichage en utf8 (encodage)
--> permettre l'édition du lien de la vidéo d'accueil
 
 
 

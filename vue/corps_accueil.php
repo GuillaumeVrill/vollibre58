@@ -39,6 +39,15 @@
     <div id="video" class="col-xs-12 col-sm-8">
         <h3>Pr&eacute;sentation du club:</h3>
         <iframe src="<?php if(isset($video[0]) && !empty($video[0]->getChemin())){ print $video[0]->getChemin(); } ?>" frameborder="0" allowfullscreen></iframe>
+        <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>
+            <div class="editVideo">
+                <form name="f_edit_video" id="f_edit_video" method="post" action="<?php print URL_PATH; ?>">
+                    <label for="videoURL">URL de la vidéo: </label>
+                    <input type="text" name="videoURL" id="videoURL" value="<?php if(isset($video[0]) && !empty($video[0]->getChemin())){ print $video[0]->getChemin(); } ?>" required />
+                    <input type="submit" name="videoSubmit" id="videoSubmit" value="Mettre à jour" />
+                </form>
+            </div>
+        <?php endif; ?>
     </div>
     <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">

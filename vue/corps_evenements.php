@@ -14,8 +14,7 @@
                                 <strong><?php print utf8_encode($evenements[$i]->getTitre()); ?></strong> - 
                                 <?php print utf8_encode ($evenements[$i]->getDescription()); ?>
                             </div>
-                            <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && 
-                                    ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>
+                            <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>
                                 <div class="supp_btn">
                                     <form class="btn" name="event_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements">
                                         <input name="event<?php print $evenements[$i]->getId(); ?>" id="event<?php print $evenements[$i]->getId(); ?>" type="submit" value=""

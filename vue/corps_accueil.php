@@ -1,8 +1,3 @@
-<?php
-    //recherche des alertes et des événements:
-    $alertes = recupererAlertes();
-    $evenements = recupererEvenements();
-?>
 <section id="alerteEvent" class="row">
     <div class="col-xs-12 col-sm-6">
         <?php
@@ -51,21 +46,17 @@
                     <h3>Derni&egrave;res actualit&eacute;s du club</h3>
             </div>
             <ul class="list-group">
-                <?php
-                    $tab_News = recupererNbDerniereNews(5);
-
-                    if(isset($tab_News)){
-                            echo "ok";
-                    }
-                    else{
-                            echo "pas ok";
-                    }
-                   /* for($i=0; $i<count($tab_News); $i++){
-                            echo utf8_encode($tab_News[$i]->getTitre());
-                    }*/
-                ?>
-                <li class="list-group-item">Prochain <a href="">&eacute;v&eacute;nement</a> pr&eacute;vu</li>
-                <li class="list-group-item">Etc.</li>
+                <?php for($n=0; $n<sizeof($lastNews) && $n<2; $n++): ?>
+                    <?php if(isset($lastNews[$n]) && !empty($lastNews[$n]->getTitre()) && 
+                            isset($lastNewsPictures[$n]) && !empty($lastNewsPictures[$n][0])): ?>
+                    <li class="list-group-item">
+                        <a href="<?php print URL_PATH; ?>?page=blog">
+                            <div class="newsTitle"><?php print $lastNews[$n]->getTitre(); ?></div>
+                            <img class="newsPic" src="<?php print $lastNewsPictures[$n][0]->getChemin(); ?>" />
+                        </a>
+                    </li>
+                    <?php endif; ?>
+                <?php endfor; ?>
             </ul>
         </div>
     </div>

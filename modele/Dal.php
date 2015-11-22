@@ -73,7 +73,7 @@
 	 * tabResult: le tableau d'objets alerte
 	 * */
 	function recupererAlertes(){
-		$requete = 'SELECT * FROM `talert`';	
+		$requete = 'SELECT * FROM `talert` ORDER BY `id` DESC';	
 		new AlertesFactory($requete, $tabResult, null);
 		return $tabResult;
 	}
@@ -86,7 +86,7 @@
 	 * tabResult: le tableau d'objets Evenement
 	 * */
 	function recupererEvenements(){
-		$requete = 'SELECT * FROM `tevenements`';	
+		$requete = 'SELECT * FROM `tevenements` ORDER BY `id` DESC';	
 		new EvenementsFactory($requete, $tabResult, null);
 		return $tabResult;
 	}
@@ -144,15 +144,15 @@
         }
         
         /**
-         * Nom: recupererLastIdArticle
-         * Description: récupère l'id du dernier article enregistré
+         * Nom: recupererLastArticle
+         * Description: récupère le dernier article enregistré
 	 * Paramètre: 
 	 * Variables:
 	 * requete: la requête sql
 	 * argument : les paramètres de la requête
 	 * tabResult: l'entier contenant l'id du dernier article
          * */
-        function recupererLastIdArticle(){
+        function recupererLastArticle(){
             $requete = 'SELECT * FROM `tnews` WHERE `id` = (SELECT MAX(`id`) FROM `tnews`)';
             new NewsFactory($requete, $tabResult, null);
             return $tabResult;

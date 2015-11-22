@@ -21,6 +21,7 @@
 #video iframe {
     width: 90%;
     min-height: 400px;
+    margin-bottom: 25px;
 }
 
 .panel-heading {

@@ -8,7 +8,7 @@
                         <p>
                             <span class="label label-success">Event:</span>
                             <?php print utf8_encode ($evenements[$i]->getDateFin()); ?> - 
-                            <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print utf8_encode($evenements[$i]->getTitre()); ?></a>
+                            <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print $evenements[$i]->getTitre(); ?></a>
                         </p>
                     <?php }
                 }
@@ -25,7 +25,7 @@
                         <p>
                             <span class="label label-danger">Alerte:</span>
                             <?php print utf8_encode ($alertes[$i]->getDateDebut()); ?> - 
-                            <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print utf8_encode($alertes[$i]->getTitre()); ?></a>
+                            <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print $alertes[$i]->getTitre(); ?></a>
                         </p>
                     <?php }
                 }

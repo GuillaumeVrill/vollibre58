@@ -9,10 +9,10 @@
                     for($i=0; $i<count($evenements); $i++){ ?>
                         <li class="list-group-item">
                             <div class="contenu">
-                                <span class="badge">Evenement</span>
+                                <span class="badge">Ev&eacute;nement</span>
                                 <?php print utf8_encode($evenements[$i]->getDateFin()); ?> - 
-                                <strong><?php print utf8_encode($evenements[$i]->getTitre()); ?></strong> - 
-                                <?php print utf8_encode ($evenements[$i]->getDescription()); ?>
+                                <strong><?php print $evenements[$i]->getTitre(); ?></strong> - 
+                                <?php print $evenements[$i]->getDescription(); ?>
                             </div>
                             <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>
                                 <div class="supp_btn">
@@ -40,8 +40,8 @@
                             <div class="contenu">
                                 <span class="badge">Alerte</span>
                                 <?php print utf8_encode($alertes[$i]->getDateDebut()); ?> - 
-                                <strong><?php print utf8_encode($alertes[$i]->getTitre()); ?></strong> - 
-                                <?php print utf8_encode ($alertes[$i]->getDescription()); ?>
+                                <strong><?php print $alertes[$i]->getTitre(); ?></strong> - 
+                                <?php print $alertes[$i]->getDescription(); ?>
                             </div>
                             <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && 
                                     ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>

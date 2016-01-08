@@ -1,5 +1,12 @@
 <?php
 
+//import de PDO pour les serveur ne le supportant pas:
+/*require_once('PDO/PDO.php');
+require_once('PDO/PDOException.php');
+require_once('PDO/PDOStatement.php');
+require_once('PDO/PDOMySQL.php');
+require_once('PDO/PDOStatementMySQL.php');*/
+
 class ConnexionBDD
 {
 	/**
@@ -45,6 +52,7 @@ class ConnexionBDD
 		}
 		catch(PDOException $e){
 			echo "problème de connexion à la base de données\n";
+                        echo $e->getMessage();
 		}
 
 	}

@@ -1,10 +1,18 @@
 <?php 
+        //fonction générique de contrôle du contenu d'une donnée (fonction, variable, case de tableau, etc.)
+        //Utilisé pour les serveurs de version PHP < 5.3
+        function notEmpty($data){
+            $var = $data;
+            if(!empty($var)){ return true; }
+            else { return false; }
+        }
+        
         /**
 	 * Nom: connexionMembre
 	 * Description: récupère une personne de la base de données si les informations 
          * passées en paramètres correspondent à ce qu'il y'a dans la base
 	 * Variables:
-         * $pseudo: le pseudonyme d ela personne
+         * $pseudo: le pseudonyme de la personne
          * $passwd: le mot de passe (crypté) de la personne
 	 * requete: la requête sql
 	 * tabResult: le tableau d'objets du membre

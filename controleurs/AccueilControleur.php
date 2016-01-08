@@ -16,8 +16,11 @@ for($i=0; $i<sizeof($lastNews); $i++){
 
 if(isset($_REQUEST['videoSubmit']) && !empty($_REQUEST['videoSubmit']) && isset($_REQUEST['videoURL']) && !empty($_REQUEST['videoURL'])){
     $v = new Video(0, $_REQUEST['videoURL']);
-    if(isset($video) && !empty($video[0]->getId())){
-        editerVideo($video[0]->getId(), $v);
+    if(isset($video)){
+        $vid = $video[0]->getId();
+        if(notEmpty($video[0]->getId())){
+            editerVideo($video[0]->getId(), $v);
+        }
     }
 }
 

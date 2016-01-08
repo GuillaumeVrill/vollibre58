@@ -6,19 +6,19 @@
     $img = recupererImagesArticle($article);
     $pic = array();
     
-    if(isset($img[0])  && !empty($img[0]->getChemin())){
+    if(isset($img[0])  && notEmpty($img[0]->getChemin())){
         $pic[0] = $img[0]->getChemin();
     }
     else {
         $pic[0] = "";
     }
-    if(isset($img[1])  && !empty($img[1]->getChemin())){
+    if(isset($img[1])  && notEmpty($img[1]->getChemin())){
         $pic[1] = $img[1]->getChemin();
     }
     else {
         $pic[1] = "";
     }
-    if(isset($img[2])  && !empty($img[2]->getChemin())){
+    if(isset($img[2])  && notEmpty($img[2]->getChemin())){
         $pic[2] = $img[2]->getChemin();
     }
     else {

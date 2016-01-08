@@ -1,7 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <?php
     //création ou récupération de la session:
-    //session_start();
+    session_start(); //a desactiver chez free
     
     //appel du controleur correspondant a la page demandée:
     if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){

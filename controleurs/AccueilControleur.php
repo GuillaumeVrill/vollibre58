@@ -6,8 +6,11 @@ $video = recupererVideo();
 $lastNews = recupererNews();
 $lastNewsPictures = array();
 for($i=0; $i<sizeof($lastNews); $i++){
-    if(isset($lastNews) && !empty($lastNews[$i]->getId())){
-        $lastNewsPictures[$i] = recupererImagesArticle($lastNews[$i]);
+    if(isset($lastNews)){
+        $lastN = $lastNews[$i]->getId();
+        if(!empty($lastN)){
+            $lastNewsPictures[$i] = recupererImagesArticle($lastNews[$i]);
+        }
     }
 }
 

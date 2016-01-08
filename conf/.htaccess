@@ -1,0 +1,4 @@
+AuthName "Page de configuration protégée"
+AuthType Basic
+AuthUserFile "/vollibre58/conf/.htpasswd"
+Require valid-user

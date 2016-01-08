@@ -4,7 +4,8 @@
 $root = $_SERVER['DOCUMENT_ROOT']."/";
 
 //PATH:
-define('URL_PATH', 'http://vollibre58/');	// Path de l'application : à modifier
+define('URL_PATH', 'http://vollibre58/');         // Path de l'application (locale)
+//define('URL_PATH', 'http://vollibre58.free.fr/');    // Path de l'application (production)
 define('STATIC_PATH', URL_PATH.'static/');	// Path des médias, feuilles de style, et feuilles de script dynamique (js, ajax, etc.)
 
 //inclus l'ensemble des classes métiers ~/modeles
@@ -33,7 +34,7 @@ require_once($root."modele/AlbumFactory.php");
 require_once($root."modele/VideoFactory.php");
 
 //inclus la classe de securité permettant d'utiliser des fonctions contre les injections SQL etc.
-require_once('modele/securite.php');
+//require_once($root.'modele/securite.php');
 
 ?>
 

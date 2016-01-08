@@ -4,7 +4,7 @@ class PersonneFactory{
 	function __construct($requete, &$tabResult, $parametres){		
 		
 		$dbh = ConnexionBDD::getInstance();
-		
+                
 		$stmt = $dbh->prepareEtExecuteRequete($dbh, $requete, $parametres);
 	
 	

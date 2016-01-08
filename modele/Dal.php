@@ -7,19 +7,26 @@
          * $pseudo: le pseudonyme d ela personne
          * $passwd: le mot de passe (crypté) de la personne
 	 * requete: la requête sql
-	 * tabResult: le tableau d'objets Administrateur
+	 * tabResult: le tableau d'objets du membre
 	 * */
         function connexionMembre($pseudo, $passwd){
-            $p = isset($pseudo) ? mysql_real_escape_string($pseudo) : null;
-            $mdp = isset($passwd) ? mysql_real_escape_string($passwd) : null;
+            $p = isset($pseudo) ? $pseudo : null;
+            $mdp = isset($passwd) ? $passwd : null;
             if(isset($p) && !empty($p) && isset($mdp) && !empty($mdp)){
-                $requete = "SELECT * FROM `tmembre` WHERE `pseudo` = ? AND `motdepasse` = PASSWORD(?)";
+                $requete = "SELECT * FROM `tmembre` WHERE `pseudo` = ?";
                 $args = array();
                 array_push($args, $p);
-                array_push($args, $mdp);
+                //array_push($args, $mdp);
                 new PersonneFactory($requete, $tabResult, $args);
-                if(isset($tabResult) && sizeof($tabResult)==1){
-                    return $tabResult;
+                if(isset($tabResult) && sizeof($tabResult)>=1){
+                    for($i=0; $i<sizeof($tabResult); $i++){
+                        if(password_verify($mdp, $tabResult[$i]->getMotDePasse())){
+                            return $tabResult[$i];
+                        }
+                        else {
+                            return null;
+                        }
+                    }
                 }
                 else{
                     return null;
@@ -406,10 +413,10 @@
                     }
                 }
 
-                $requete = 'INSERT INTO `tmembre`(`pseudo`, `motDePasse`, `email`, `id_grade`) VALUES (?,PASSWORD(?),?,?)';
+                $requete = 'INSERT INTO `tmembre`(`pseudo`, `motDePasse`, `email`, `id_grade`) VALUES (?,?,?,?)';
                 $parametres = array();
                 array_push($parametres, $pseudo);
-                array_push($parametres, $motDePasse);
+                array_push($parametres, password_hash($motDePasse, PASSWORD_DEFAULT));
                 array_push($parametres, $email);
                 array_push($parametres, $id_grade);
 
@@ -711,10 +718,10 @@
                     $id_grade = $id_grade_tmp[0]->getId();
                 }
                 
-                $requete = 'UPDATE `tmembre` SET `pseudo`=?, `motDePasse`=PASSWORD(?), `email`=?, `id_grade`=? WHERE `id`=?';
+                $requete = 'UPDATE `tmembre` SET `pseudo`=?, `motDePasse`=?, `email`=?, `id_grade`=? WHERE `id`=?';
                 $parametres = array();
                 array_push($parametres, $pseudo);
-                array_push($parametres, $motDePasse);
+                array_push($parametres, password_hash($motDePasse, PASSWORD_DEFAULT));
                 array_push($parametres, $email);
                 array_push($parametres, $id_grade);
                 array_push($parametres, $actualUserId);

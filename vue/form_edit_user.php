@@ -5,8 +5,11 @@
     // grade: 3=membre, 2=redacteur, 1=moderateur, 0=administrateur (/!\ =/= getId() /!\)
     $g[0] = $grades[3];
     $g[1] = $grades[2];
-    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && $_SESSION['user_right'] == "1"){
+    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && $_SESSION['user_right'] <= "2"){
         $g[2] = $grades[1];
+    }
+    if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && $_SESSION['user_right'] == "1"){
+        $gadmin = $grades[0];
     }
 ?>
 <section id="editUser" class="row">
@@ -38,10 +41,17 @@
                     <label for="gradeUser">Grade: </label>
                     <select name="gradeUser" id="gradeUser">
                         <?php
-                            //listing des options disponibles dans le tableau de grades:
-                            for($i=0; $i<sizeof($g); $i++){ ?>
-                                <option value="<?php print $g[$i]->getId(); ?>" <?php if($g[$i]->getId() == $user->getIdGrade()): ?>selected<?php endif; ?>>
-                                    <?php print $g[$i]->getLibelle(); ?>
+                            if($user->getId() != 1){
+                                //listing des options disponibles dans le tableau de grades:
+                                for($i=0; $i<sizeof($g); $i++){ ?>
+                                    <option value="<?php print $g[$i]->getId(); ?>" <?php if($g[$i]->getId() == $user->getIdGrade()): ?>selected<?php endif; ?>>
+                                        <?php print $g[$i]->getLibelle(); ?>
+                                    </option>
+                                <?php }
+                            }
+                            else { ?>
+                                <option value="<?php print $gadmin->getId(); ?>" <?php if($gadmin->getId() == $user->getIdGrade()): ?>selected<?php endif; ?>>
+                                    <?php print $gadmin->getLibelle(); ?>
                                 </option>
                             <?php }
                         ?>

@@ -8,7 +8,7 @@
                 </li>
                 <li class="col-lg-4 col-md-4 col-sm-12">
                     <span class="copyright">
-                        Copyright &copy; 2015 by 
+                        Copyright &copy; 2016 by 
                         <a href="<?php print URL_PATH ?>" title="Page d'accueil du site">
                             vol libre 58
                         </a>

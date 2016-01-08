@@ -26,11 +26,6 @@ Fonctions relatives à la base de données qu'il faut créer:
 -----------------------------------------------------------------
                         SECURITE A GERER:
 -----------------------------------------------------------------
-
--> Créer une fonction de hachage et de salage des mots de passe utilisateur lors de la création et de la connexion d'un utilisateur:
-        Dal.php -> connexionMembre() (remplacement de la fonction PASSWORD())
-                -> creerMembre()
-
 -> Securiser les variables des formulaires
 
 -> Supprimer les valeurs des tableaux POST et GET des formulaires pour éviter les ré-exécutions de code lors des actualisations de page

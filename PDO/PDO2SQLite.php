@@ -9,7 +9,7 @@
  * @Site		http://www.devpro.it/
  * @Mail		andrea [ at ] 3site [ dot ] it
  */ 
-class PDOSQLite {
+class PDO2SQLite {
 	
 	/**
 	 *	__connection:Resource		Database connection
@@ -40,7 +40,7 @@ class PDOSQLite {
 			$this->__dbinfo = &$string_dsn;
 	}
 
-	function setContainerPDO(PDO $pdo){
+	function setContainerPDO(PDO2 $pdo){
 		$this->__container_pdo = $pdo;
 	}
 
@@ -110,7 +110,7 @@ class PDOSQLite {
 	 * @Return	PDOStatementSQLite
 	 */
 	function prepare($query, $array = array()) {
-		return new PDOStatementSQLite($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
+		return new PDO2StatementSQLite($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
 	}
 	
 	/**
@@ -120,7 +120,7 @@ class PDOSQLite {
 	 * @Return	PDOStatementSQLite
 	 */
 	function query($query) {
-    	$statement = new PDOStatementSQLite($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
+    	$statement = new PDO2StatementSQLite($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
 		$statement->query();
 		return $statement;
 	}
@@ -147,14 +147,14 @@ class PDOSQLite {
 	function getAttribute($attribute) {
 		$result = null;
 		switch($attribute) {
-			case PDO::ATTR_SERVER_INFO:
+			case PDO2::ATTR_SERVER_INFO:
 				$result = sqlite_libencoding();
 				break;
-			case PDO::ATTR_SERVER_VERSION:
-			case PDO::ATTR_CLIENT_VERSION:
+			case PDO2::ATTR_SERVER_VERSION:
+			case PDO2::ATTR_CLIENT_VERSION:
 				$result = sqlite_libversion();
 				break;
-			case PDO::ATTR_PERSISTENT:
+			case PDO2::ATTR_PERSISTENT:
 				$result = $this->__persistent;
 				break;
 		}
@@ -171,13 +171,13 @@ class PDOSQLite {
 	 */
 	function setAttribute($attribute, $mixed) {
 		$result = false;
-		if($attribute === PDO::ATTR_ERRMODE && $mixed ===PDO::ERRMODE_EXCEPTION){
+		if($attribute === PDO2::ATTR_ERRMODE && $mixed ===PDO2::ERRMODE_EXCEPTION){
 			$this->__throwExceptions = true;
 		}
-		elseif($attribute == PDO::ATTR_STATEMENT_CLASS && @$mixed[0] == 'LoggedPDOStatement'){
+		elseif($attribute == PDO2::ATTR_STATEMENT_CLASS && @$mixed[0] == 'LoggedPDOStatement'){
 			$this->logging = true;
 		}
-		if($attribute === PDO::ATTR_PERSISTENT && $mixed != $this->__persistent) {
+		if($attribute === PDO2::ATTR_PERSISTENT && $mixed != $this->__persistent) {
 			$result = true;
 			$this->__persistent = (boolean) $mixed;
 			sqlite_close($this->__connection);
@@ -210,7 +210,7 @@ class PDOSQLite {
 			$errno = sqlite_last_error($this->__connection);
 			$errst = sqlite_error_string($errno);
 		}
-		throw new PDOException("Database error ($errno): $errst");
+		throw new PDO2Exception("Database error ($errno): $errst");
 		$this->__errorCode = &$er;
 		$this->__errorInfo = array($this->__errorCode, $errno, $errst);
 	}

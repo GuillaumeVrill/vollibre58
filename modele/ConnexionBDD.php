@@ -1,11 +1,11 @@
 <?php
 
 //import de PDO pour les serveur ne le supportant pas:
-/*require_once('PDO/PDO.php');
-require_once('PDO/PDOException.php');
-require_once('PDO/PDOStatement.php');
-require_once('PDO/PDOMySQL.php');
-require_once('PDO/PDOStatementMySQL.php');*/
+require_once('PDO/PDO2.php');
+require_once('PDO/PDO2Exception.php');
+require_once('PDO/PDO2Statement.php');
+require_once('PDO/PDO2MySQL.php');
+require_once('PDO/PDO2StatementMySQL.php');
 
 class ConnexionBDD
 {
@@ -47,10 +47,10 @@ class ConnexionBDD
 		$this->motDePasse = $motDePasse;
 
 		try{
-			$dbh = new PDO($this->dsn, $nomUtilisateur, $motDePasse);
+			$dbh = new PDO2($this->dsn, $nomUtilisateur, $motDePasse);
 			$this->dbh = $dbh;
 		}
-		catch(PDOException $e){
+		catch(PDO2Exception $e){
 			echo "problème de connexion à la base de données\n";
                         echo $e->getMessage();
 		}
@@ -79,7 +79,7 @@ class ConnexionBDD
 		$statement = $this->dbh->prepare($requete);
 
 		for($i=0; $i<$num_args; $i++){
-			$statement->bindParam(($i+1), $parametres[$i], PDO::PARAM_STR);
+			$statement->bindParam(($i+1), $parametres[$i], PDO2::PARAM_STR);
 		}
 		
 		$statement->execute();

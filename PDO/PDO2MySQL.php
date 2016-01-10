@@ -9,7 +9,7 @@
 * @Site        http://www.devpro.it/
 * @Mail        andrea [ at ] 3site [ dot ] it
 */
-class PDOMySQL {
+class PDO2MySQL {
 
     /**
      *    __connection:Resource        Database connection
@@ -46,7 +46,7 @@ class PDOMySQL {
         }
     }
 
-	function setContainerPDO(PDO $pdo){
+	function setContainerPDO(PDO2 $pdo){
 		$this->__container_pdo = $pdo;
 	}
 
@@ -116,7 +116,7 @@ class PDOMySQL {
 	 * @Return    PDOStatementMySQL
 	 */
     function prepare($query, $array = array()) {
-        return new PDOStatementMySQL($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
+        return new PDO2StatementMySQL($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
     }
 
 	/**
@@ -126,7 +126,7 @@ class PDOMySQL {
 	 * @Return    PDOStatementMySQL
 	 */
     function query($query) {
-    	$statement = new PDOStatementMySQL($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
+    	$statement = new PDO2StatementMySQL($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
 		$statement->query();
 		return $statement;
     }
@@ -153,16 +153,16 @@ class PDOMySQL {
     function getAttribute($attribute) {
         $result = false;
         switch($attribute) {
-            case PDO::ATTR_SERVER_INFO:
+            case PDO2::ATTR_SERVER_INFO:
                 $result = mysql_get_host_info($this->__connection);
                 break;
-            case PDO::ATTR_SERVER_VERSION:
+            case PDO2::ATTR_SERVER_VERSION:
                 $result = mysql_get_server_info($this->__connection);
                 break;
-            case PDO::ATTR_CLIENT_VERSION:
+            case PDO2::ATTR_CLIENT_VERSION:
                 $result = mysql_get_client_info();
                 break;
-            case PDO::ATTR_PERSISTENT:
+            case PDO2::ATTR_PERSISTENT:
                 $result = $this->__persistent;
                 break;
         }
@@ -179,13 +179,13 @@ class PDOMySQL {
 	 */
     function setAttribute($attribute, $mixed) {
         $result = false;
-		if($attribute == PDO::ATTR_ERRMODE && $mixed ==PDO::ERRMODE_EXCEPTION){
+		if($attribute == PDO2::ATTR_ERRMODE && $mixed ==PDO2::ERRMODE_EXCEPTION){
 			$this->__throwExceptions = true;
 		}
-		elseif($attribute == PDO::ATTR_STATEMENT_CLASS && @$mixed[0] == 'LoggedPDOStatement'){
+		elseif($attribute == PDO2::ATTR_STATEMENT_CLASS && @$mixed[0] == 'LoggedPDOStatement'){
 			$this->logging = true;
 		}
-        elseif($attribute === PDO::ATTR_PERSISTENT && $mixed != $this->__persistent) {
+        elseif($attribute === PDO2::ATTR_PERSISTENT && $mixed != $this->__persistent) {
             $result = true;
             $this->__persistent = (boolean) $mixed;
             mysql_close($this->__connection);
@@ -219,7 +219,7 @@ class PDOMySQL {
             $errno = mysql_errno($this->__connection);
             $errst = mysql_error($this->__connection);
         }
-		throw new PDOException("Database error ($errno): $errst");
+		throw new PDO2Exception("Database error ($errno): $errst");
         $this->__errorCode = &$er;
         $this->__errorInfo = array($this->__errorCode, $errno, $errst);
     }

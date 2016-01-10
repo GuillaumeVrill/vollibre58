@@ -46,7 +46,7 @@ if(class_exists('PDO'))
  * @Site		http://www.devpro.it/
  * @Mail		andrea [ at ] 3site [ dot ] it
  */
-class PDO {
+class PDO2 {
 	
 	const FETCH_ASSOC = 2;
 	const FETCH_NUM = 3;
@@ -83,12 +83,12 @@ class PDO {
 	 *	http://us2.php.net/manual/en/function.pdo-construct.php
 	 */
 	function __construct($string_dsn, $string_username = '', $string_password = '', $array_driver_options = null) {
-		$con = &$this->__getDSN($string_dsn);
+		$con = $this->__getDSN($string_dsn);
 		switch($con['dbtype']){
 			case 'mysql':
 				if(isset($con['port']))
 					$con['host'] .= ':'.$con['port'];
-				$this->__driver = new PDOMySQL(
+				$this->__driver = new PDO2MySQL(
 					$con['host'],
 					$con['dbname'],
 					$string_username,
@@ -97,13 +97,13 @@ class PDO {
 				break;
 			case 'sqlite2':
 			case 'sqlite':
-				$this->__driver = new PDOSQLite($con['dbname']);
+				$this->__driver = new PDO2SQLite($con['dbname']);
 				break;
 			case 'pgsql':
 				$string_dsn = "host={$con['host']} dbname={$con['dbname']} user={$string_username} password={$string_password}";
 				if(isset($con['port']))
 					$string_dsn .= " port={$con['port']}";
-				$this->__driver = new PDOPostgres($string_dsn);
+				$this->__driver = new PDO2Postgres($string_dsn);
 				break;
 		}
 		$this->__driver->setContainerPDO($this);

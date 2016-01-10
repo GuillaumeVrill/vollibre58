@@ -10,7 +10,7 @@
  * @Mail		andrea [ at ] 3site [ dot ] it
  */
 
-class PDOStatementMySQL extends PDOStatement{
+class PDO2StatementMySQL extends PDO2Statement{
 
 	/**
 	 * Connection mode, is true on persistent, false on normal (deafult) connection
@@ -28,25 +28,25 @@ class PDOStatementMySQL extends PDOStatement{
 	 * @Param	Integer		this variable is not used but respects PDO original accepted parameters
 	 * @Return	Mixed		Next row of executed query or false if there is nomore.
 	 */
-	function fetch($mode = PDO::FETCH_BOTH, $cursor = null, $offset = null) {
+	function fetch($mode = PDO2::FETCH_BOTH, $cursor = null, $offset = null) {
 		if(func_num_args() == 0)
 			$mode = &$this->__fetchmode;
 		$result = false;
 		if(!is_null($this->__result)) {
 			switch($mode) {
-				case PDO::FETCH_NUM:
+				case PDO2::FETCH_NUM:
 					$result = mysql_fetch_row($this->__result);
 					break;
-				case PDO::FETCH_ASSOC:
+				case PDO2::FETCH_ASSOC:
 					$result = mysql_fetch_assoc($this->__result);
 					break;
-				case PDO::FETCH_OBJ:
+				case PDO2::FETCH_OBJ:
 					$result = mysql_fetch_object($this->__result);
 					break;
-				case PDO::FETCH_CLASS:
+				case PDO2::FETCH_CLASS:
 					$result = mysql_fetch_object($this->__result, $this->__fetchClass);
 					break;
-				case PDO::FETCH_BOTH:
+				case PDO2::FETCH_BOTH:
 				default:
 					$result = mysql_fetch_array($this->__result);
 					break;
@@ -66,31 +66,31 @@ class PDOStatementMySQL extends PDOStatement{
 	 *                                    if this param is omitted
 	 * @Return	array		An array with all fetched rows
 	 */
-	function fetchAll($mode = PDO::FETCH_BOTH, $column_index = 0) {
+	function fetchAll($mode = PDO2::FETCH_BOTH, $column_index = 0) {
 		$result = array();
 		if(!is_null($this->__result)) {
 			switch($mode) {
-				case PDO::FETCH_NUM:
+				case PDO2::FETCH_NUM:
 					while($r = mysql_fetch_row($this->__result))
 						array_push($result, $r);
 					break;
-				case PDO::FETCH_ASSOC:
+				case PDO2::FETCH_ASSOC:
 					while($r = mysql_fetch_assoc($this->__result))
 						array_push($result, $r);
 					break;
-				case PDO::FETCH_COLUMN:
+				case PDO2::FETCH_COLUMN:
 					for($x = 0; $x < mysql_num_rows($this->__result); $x++)
 						array_push($result, mysql_result($this->__result, $x, $column_index));
 					break;
-				case PDO::FETCH_OBJ:
+				case PDO2::FETCH_OBJ:
 					while($r = mysql_fetch_object($this->__result))
 						array_push($result, $r);
 					break;
-				case PDO::FETCH_CLASS:
+				case PDO2::FETCH_CLASS:
 					while($r = mysql_fetch_object($this->__result, $this->__fetchClass))
 						array_push($result, $r);
 					break;
-				case PDO::FETCH_BOTH:
+				case PDO2::FETCH_BOTH:
 				default:
 					while($r = mysql_fetch_array($this->__result))
 						array_push($result, $r);
@@ -152,7 +152,7 @@ class PDOStatementMySQL extends PDOStatement{
 			$errno = mysql_errno($this->__connection);
 			$errst = mysql_error($this->__connection);
 		}
-		throw new PDOException("Database error ($errno): $errst");
+		throw new PDO2Exception("Database error ($errno): $errst");
 		$this->__errorCode = &$er;
 		$this->__errorInfo = array($this->__errorCode, $errno, $errst);
 		$this->__result = null;

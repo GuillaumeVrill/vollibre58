@@ -1,6 +1,6 @@
 <?php
 
-abstract class PDOStatement implements Iterator {
+abstract class PDO2Statement implements Iterator {
 
 	protected $__connection;
 	protected $__dbinfo;
@@ -10,7 +10,7 @@ abstract class PDOStatement implements Iterator {
 	protected $__boundParams = array();
 	protected $__errorCode = '';
 	protected $__errorInfo = array('');
-	protected $__fetchmode = PDO::FETCH_BOTH;
+	protected $__fetchmode = PDO2::FETCH_BOTH;
 	protected $__fetchClass;
 
 	/**
@@ -59,7 +59,7 @@ abstract class PDOStatement implements Iterator {
 		++$this->__position;
 	}
 
-	function current($mode = PDO::FETCH_BOTH) {
+	function current($mode = PDO2::FETCH_BOTH) {
 		return $this->fetch();
 	}
 
@@ -69,7 +69,7 @@ abstract class PDOStatement implements Iterator {
 
 	function valid() {
 		if($this->__num_rows===null)
-			throw new PDOException("Row count not specified");
+			throw new PDO2Exception("Row count not specified");
 		return ($this->__position < $this->__num_rows);
 	}
 
@@ -160,7 +160,7 @@ abstract class PDOStatement implements Iterator {
 			$start = microtime(true);
 		}
 
-		$this->__result = &$this->__uquery($__query);
+		$this->__result = $this->__uquery($__query);
 
 		if($log){
 			$time = microtime(true) - $start;
@@ -206,12 +206,12 @@ abstract class PDOStatement implements Iterator {
 	function setFetchMode($mode, $class=null) {
 		$result = false;
 		switch($mode) {
-			case PDO::FETCH_CLASS:
+			case PDO2::FETCH_CLASS:
 				$this->__fetchClass = $class;
-			case PDO::FETCH_NUM:
-			case PDO::FETCH_ASSOC:
-			case PDO::FETCH_OBJ:
-			case PDO::FETCH_BOTH:
+			case PDO2::FETCH_NUM:
+			case PDO2::FETCH_ASSOC:
+			case PDO2::FETCH_OBJ:
+			case PDO2::FETCH_BOTH:
 				$result = true;
 				$this->__fetchmode = &$mode;
 				break;

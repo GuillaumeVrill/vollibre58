@@ -9,7 +9,7 @@
  * @Site		http://www.devpro.it/
  * @Mail		andrea [ at ] 3site [ dot ] it
  */ 
-class PDOPostgres {
+class PDO2Postgres {
 	
 	/**
 	*	__connection:Resource		Database connection
@@ -41,7 +41,7 @@ class PDOPostgres {
 			$this->__dbinfo = &$string_dsn;
 	}
 
-	function setContainerPDO(PDO $pdo){
+	function setContainerPDO(PDO2 $pdo){
 		$this->__container_pdo = $pdo;
 	}
 	
@@ -115,7 +115,7 @@ class PDOPostgres {
 	 * @Return	PDOStatementPostgres
 	 */
 	function prepare($query, $array = array()) {
-		return new PDOStatementPostgres($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
+		return new PDO2StatementPostgres($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
 	}
 	
 	/**
@@ -125,7 +125,7 @@ class PDOPostgres {
 	 * @Return	PDOStatementPostgres
 	 */
 	function query($query) {
-    	$statement = new PDOStatementPostgres($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
+    	$statement = new PDO2StatementPostgres($query, $this->__connection, $this->__dbinfo, $this->__container_pdo);
 		$statement->query();
 		return $statement;
 	}
@@ -152,17 +152,17 @@ class PDOPostgres {
 	function getAttribute($attribute) {
 		$result = false;
 		switch($attribute) {
-			case PDO::ATTR_SERVER_INFO:
+			case PDO2::ATTR_SERVER_INFO:
 				$result = pg_parameter_status($this->__connection, 'server_encoding');
 				break;
-			case PDO::ATTR_SERVER_VERSION:
+			case PDO2::ATTR_SERVER_VERSION:
 				$result = pg_parameter_status($this->__connection, 'server_version');
 				break;
-			case PDO::ATTR_CLIENT_VERSION:
+			case PDO2::ATTR_CLIENT_VERSION:
 				$result = pg_parameter_status($this->__connection, 'server_version');
 				$result .= ' '.pg_parameter_status($this->__connection, 'client_encoding');
 				break;
-			case PDO::ATTR_PERSISTENT:
+			case PDO2::ATTR_PERSISTENT:
 				$result = $this->__persistent;
 				break;
 		}
@@ -179,13 +179,13 @@ class PDOPostgres {
 	 */
 	function setAttribute($attribute, $mixed) {
 		$result = false;
-		if($attribute === PDO::ATTR_ERRMODE && $mixed ===PDO::ERRMODE_EXCEPTION){
+		if($attribute === PDO2::ATTR_ERRMODE && $mixed ===PDO2::ERRMODE_EXCEPTION){
 			$this->__throwExceptions = true;
 		}
-		elseif($attribute == PDO::ATTR_STATEMENT_CLASS && @$mixed[0] == 'LoggedPDOStatement'){
+		elseif($attribute == PDO2::ATTR_STATEMENT_CLASS && @$mixed[0] == 'LoggedPDOStatement'){
 			$this->logging = true;
 		}
-		if($attribute === PDO::ATTR_PERSISTENT && $mixed != $this->__persistent) {
+		if($attribute === PDO2::ATTR_PERSISTENT && $mixed != $this->__persistent) {
 			$result = true;
 			$this->__persistent = (boolean) $mixed;
 			pg_close($this->__connection);
@@ -220,7 +220,7 @@ class PDOPostgres {
 			$errno = 1;
 			$errst = pg_last_error($this->__connection);
 		}
-		throw new PDOException("Database error ($errno): $errst");
+		throw new PDO2Exception("Database error ($errno): $errst");
 		$this->__errorCode = &$er;
 		$this->__errorInfo = array($this->__errorCode, $errno, $errst);
 	}

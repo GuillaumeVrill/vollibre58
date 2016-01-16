@@ -72,6 +72,5 @@
 		<script src="static/bootstrap/js/carousel.js" type="text/javascript"></script>
                 <script src="static/jquery/carousel-perso.js" type="text/javascript"></script>
 		<script src="static/jquery/background.js" type="text/javascript"></script>
-                <script src="static/jquery/background.js" type="text/javascript"></script>
 	</body>
 </html>

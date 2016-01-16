@@ -14,7 +14,7 @@
                 <li><a href="<?php print URL_PATH ?>" title="Page d'accueil du site">Accueil</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=clubetsites" title="Sites de vol, activit&eacute;s du club, ...">Club et sites</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=blog" title="Historique de nos plus beaux vols!">Le blog</a></li>
-                <li><a href="<?php print URL_PATH ?>?page=evenements" title="Travaux, Projets, Sorties club, ...">Evenements</a></li>
+                <li><a href="<?php print URL_PATH ?>?page=evenements" title="Travaux, Projets, Sorties club, ...">Infos et alertes</a></li>
                 <li><a href="<?php print URL_PATH ?>?page=contact" title="Besoin d'infos? Qui contacter?">Contact</a></li>
             </ul>
             <p class="navbar-text navbar-right">
@@ -98,7 +98,7 @@
                 <a href="<?php print URL_PATH ?>?page=evenements" title="Travaux, Projets, Sorties club, ...">
                     <img class="img_thumbnail" src="static/images/carousel/evenement01.png" alt="Evenements" />
                     <div class="carousel-caption">
-                        <h2>Evenements</h2>
+                        <h2>Infos et alertes</h2>
                         <p>Une sortie de prévues? Un objet laiss&eacute; au d&eacute;co? C'est par ici!</p>
                     </div>
                 </a>

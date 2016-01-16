@@ -2,14 +2,14 @@
     <div class="col-xs-12 col-sm-6" id="event">
         <div class="panel panel-success">
             <div class="panel-heading">
-                <h1 class="panel-title">Ev&eacute;nements</h1>
+                <h1 class="panel-title">Informations</h1>
             </div>
             <ul class="list-group">
                 <?php if(isset($evenements)){
                     for($i=0; $i<count($evenements); $i++){ ?>
                         <li class="list-group-item">
                             <div class="contenu">
-                                <span class="badge">Ev&eacute;nement</span>
+                                <span class="badge">Informations</span>
                                 <?php print utf8_encode($evenements[$i]->getDateFin()); ?> - 
                                 <strong><?php print $evenements[$i]->getTitre(); ?></strong> - 
                                 <?php print $evenements[$i]->getDescription(); ?>
@@ -18,7 +18,7 @@
                                 <div class="supp_btn">
                                     <form class="btn" name="event_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements">
                                         <input name="event<?php print $evenements[$i]->getId(); ?>" id="event<?php print $evenements[$i]->getId(); ?>" type="submit" value=""
-                                            onClick="confirm('Supprimer l\'événement?')" />
+                                            onClick="confirm('Supprimer l\'information?')" />
                                     </form>
                                 </div>
                             <?php endif; ?>
@@ -61,7 +61,7 @@
     <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right'])): ?>
     <div class="col-xs-12">
         <div class="col-xs-6" id="firstForm">
-            <a class="btnNew btnNewEvent" href="<?php print URL_PATH; ?>?page=f_add_event">Nouvel &eacute;v&eacute;nement</a>
+            <a class="btnNew btnNewEvent" href="<?php print URL_PATH; ?>?page=f_add_event">Nouvelle Information</a>
         </div>
         <div class="col-xs-6">
             <a class="btnNew btnNewAlerte" href="<?php print URL_PATH; ?>?page=f_add_alerte">Nouvelle alerte</a>

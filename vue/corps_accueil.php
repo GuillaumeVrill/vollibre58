@@ -6,7 +6,7 @@
                 for($i=0; $i<3; $i++){
                     if(count($evenements)>$i){ ?>
                         <p>
-                            <span class="label label-success">Event:</span>
+                            <span class="label label-success">Infos:</span>
                             <?php print utf8_encode ($evenements[$i]->getDateFin()); ?> - 
                             <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print $evenements[$i]->getTitre(); ?></a>
                         </p>

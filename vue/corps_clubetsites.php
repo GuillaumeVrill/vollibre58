@@ -16,11 +16,11 @@
         <div class="row pastille-space">
             <div class="col-xs-6 pastille-container">
                 <h3>Grenois</h3><br />
-                <img class="pastille" src="static/images/incontournables/pastilleGrenois.jpg" />
+                <a href="static/images/incontournables/pastilleGrenois.jpg" target="_blank"><img class="pastille" src="static/images/incontournables/pastilleGrenois.jpg" /></a>
             </div>
             <div class="col-xs-6 pastille-container">
                 <h3>Asnan</h3><br />
-                <img class="pastille" src="static/images/incontournables/pastilleAsnan.jpg" />
+                <a href="static/images/incontournables/pastilleAsnan.jpg" target="_blank"><img class="pastille" src="static/images/incontournables/pastilleAsnan.jpg" /></a>
             </div>
         </div>
         <br /><br />
@@ -36,7 +36,7 @@
                 Vivamus sit amet ligula ullamcorper, placerat felis in, luctus quam.
             </p>
         </div>
-        <div class="historyPic"><img src="static/images/incontournables/img213.jpg" /></div>
+        <div class="historyPic"><a href="static/images/incontournables/img213.jpg" target="_blank"><img src="static/images/incontournables/img213.jpg" /></a></div>
         <div class="historySection">
             <p>
                 Duis ut diam id lacus accumsan imperdiet. Cras luctus purus a consequat ultricies. 
@@ -56,7 +56,7 @@
                 </tr>
                 <tr class="picture">
                     <td>
-                        <img src="static/images/incontournables/img212.jpg" />
+                        <a href="static/images/incontournables/img212.jpg" target="_blank"><img src="static/images/incontournables/img212.jpg" /></a>
                     </td>
                 </tr>
             </table>
@@ -71,7 +71,7 @@
                 Phasellus ornare neque enim, nec imperdiet diam hendrerit vel.
             </p>
             <br /><br />
-            <div class="historyPic"><img src="static/images/incontournables/100_9707.jpg" /></div>
+            <div class="historyPic"><a href="static/images/incontournables/100_9707.jpg" target="_blank"><img src="static/images/incontournables/100_9707.jpg" /></a></div>
             <br /><br />
             <p>
                 Duis gravida dolor vitae porta luctus. Sed sed gravida sapien, non ultrices nibh. 

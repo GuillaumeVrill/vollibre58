@@ -13,7 +13,7 @@
                     <?php }
                 }
             }
-            else { echo 'Aucun évènement prévu.'; }
+            else { echo 'Aucune information enregistr&eacute;e.'; }
         ?>
         <br />
     </div>

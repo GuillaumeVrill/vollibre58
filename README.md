@@ -26,7 +26,5 @@ Fonctions relatives à la base de données qu'il faut créer:
 -----------------------------------------------------------------
                         SECURITE A GERER:
 -----------------------------------------------------------------
--> Securiser les variables des formulaires
-
 -> Supprimer les valeurs des tableaux POST et GET des formulaires pour éviter les ré-exécutions de code lors des actualisations de page
     -> ou forcer l'actualisation de la page en JS pour contourner le problème

@@ -1,8 +1,4 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
-<?php
-    //création ou récupération de la session:
-    session_start(); //a desactiver chez free
-    
+<?php    
     //appel du controleur correspondant a la page demandée:
     if(isset($_REQUEST['page']) && !empty($_REQUEST['page'])){
         switch($_REQUEST['page']){
@@ -28,7 +24,7 @@
     }
     else{ require_once('controleurs/AccueilControleur.php'); }
 ?>
-
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <html lang="fr">
 	<head>
 		<title>Vol Libre 58</title>

@@ -9,13 +9,15 @@
             //Controle de l'utilisateur:
             $personne = connexionMembre($pseudo, $mdp);
             if($personne != null){
-                $_SESSION['user_id'] = $personne->getId();
+                $_SESSION["user_id"] = $personne->getId();
                 $_SESSION['user_name'] = $personne->getPseudo();
                 $_SESSION['user_right'] = $personne->getIdGrade();
-                header("Location: ".URL_PATH);
+                //header("Location : ".URL_PATH);
+                //echo $_SESSION['user_id'].", ".$_SESSION['user_id'].", ".$_SESSION['user_id']; exit(); // debug free
             }
             else{
-                header("Location: ".URL_PATH."?page=connexion");
+                //header("Location: ".URL_PATH."?page=connexion");
+                //echo "mot de passe incorrect"; exit();
             }
         }
     }

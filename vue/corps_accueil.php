@@ -48,6 +48,14 @@
                 </form>
             </div>
         <?php endif; ?>
+        <div class="regles">
+            <h4>Les r&egrave;gles pour voler avec nous:</h4>
+            <ul>
+                <li>Roulez à 30km/h dans le village</li>
+                <li>En arrivant, saluez les locaux (et m&ecirc;me les autres!)</li>
+                <li>En vol, respectez les priorités</li>
+                <li>Posez-vous dans l'attrerrissage, dans les chemins, mais pas dans les champs en culture</li>
+        </div>
     </div>
     <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">

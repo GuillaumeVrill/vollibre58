@@ -20,6 +20,7 @@
         function connexionMembre($pseudo, $passwd){
             $p = isset($pseudo) ? $pseudo : null;
             $mdp = isset($passwd) ? $passwd : null;
+            $hash = md5($mdp);
             if(isset($p) && !empty($p) && isset($mdp) && !empty($mdp)){
                 $requete = "SELECT * FROM `tmembre` WHERE `pseudo` = ?";
                 $args = array();
@@ -28,7 +29,8 @@
                 new PersonneFactory($requete, $tabResult, $args);
                 if(isset($tabResult) && sizeof($tabResult)>=1){
                     for($i=0; $i<sizeof($tabResult); $i++){
-                        if(password_verify($mdp, $tabResult[$i]->getMotDePasse())){
+                        //if(password_verify($mdp, $tabResult[$i]->getMotDePasse())){   //activer la seconde condition pour le serveur free
+                        if($hash == $tabResult[$i]->getMotDePasse()){   // activer cette ligne chez free
                             return $tabResult[$i];
                         }
                         else {
@@ -424,7 +426,8 @@
                 $requete = 'INSERT INTO `tmembre`(`pseudo`, `motDePasse`, `email`, `id_grade`) VALUES (?,?,?,?)';
                 $parametres = array();
                 array_push($parametres, $pseudo);
-                array_push($parametres, password_hash($motDePasse, PASSWORD_DEFAULT));
+                //array_push($parametres, password_hash($motDePasse, PASSWORD_DEFAULT));
+                array_push($parametres, md5($motDePasse)); // CHEZ FREE
                 array_push($parametres, $email);
                 array_push($parametres, $id_grade);
 
@@ -729,7 +732,8 @@
                 $requete = 'UPDATE `tmembre` SET `pseudo`=?, `motDePasse`=?, `email`=?, `id_grade`=? WHERE `id`=?';
                 $parametres = array();
                 array_push($parametres, $pseudo);
-                array_push($parametres, password_hash($motDePasse, PASSWORD_DEFAULT));
+                //array_push($parametres, password_hash($motDePasse, PASSWORD_DEFAULT));
+                array_push($parametres, md5($motDePasse)); //CHEZ FREE
                 array_push($parametres, $email);
                 array_push($parametres, $id_grade);
                 array_push($parametres, $actualUserId);

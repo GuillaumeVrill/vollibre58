@@ -18,21 +18,21 @@ class NewsFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$titre = $row['titre'];
+				$titre = stripslashes($row['titre']);
 			}
 			catch(Exception $e)
 			{
 				echo $e->getMessage();
 			}
 			try{
-				$texte1 = $row['texte'];
+				$texte1 = stripslashes($row['texte']);
 			}
 			catch(Exception $e)
 			{
 				echo $e->getMessage();
 			}
                         try{
-				$texte2 = $row['texte2'];
+				$texte2 = stripslashes($row['texte2']);
 			}
 			catch(Exception $e)
 			{

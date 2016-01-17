@@ -16,7 +16,7 @@ class AlbumFactory {
 				echo $e->getMessage();
 			}
 			try{
-				$titre = $row['titre'];		
+				$titre = stripslashes($row['titre']);
 			}
 			catch(Exception $e){
 				echo $e->getMessage();

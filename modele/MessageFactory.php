@@ -27,14 +27,14 @@ class MessageFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$objet=$row['objet'];
+				$objet = stripslashes($row['objet']);
 			}
 			catch(Exception $e)
 			{
 				echo $e->getMessage();
 			}
 			try{
-				$message = $row['message'];
+				$message = stripslashes($row['message']);
 			}
 			catch(Exception $e){
 				echo $e->getMessage();

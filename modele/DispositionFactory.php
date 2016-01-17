@@ -16,19 +16,19 @@ class DispositionFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$libelle=$row['libelle'];		
+				$libelle = stripslashes($row['libelle']);		
 			}
 			catch(Exception $e){
 				echo $e->getMessage();
 			}
 			try{
-				$description = $row['description'];
+				$description = stripslashes($row['description']);
 			}
 			catch(Exception $e){
 				echo $e->getMessage();
 			}
                         try{
-				$nom = $row['nom'];
+				$nom = stripslashes($row['nom']);
 			}
 			catch(Exception $e){
 				echo $e->getMessage();

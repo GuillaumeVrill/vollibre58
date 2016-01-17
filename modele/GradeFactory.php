@@ -16,7 +16,7 @@ class GradeFactory{
 				echo $e->getMessage();
 			}
 			try{
-				$libelle=$row['libelle'];		
+				$libelle = stripslashes($row['libelle']);		
 			}
 			catch(Exception $e){
 				echo $e->getMessage();

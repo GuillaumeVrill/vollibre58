@@ -107,9 +107,10 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
                     }
                     break;
             }
-            
             //Ajout du nouvel article:
             editerNews($article->getId(), $article);
+            //Suppression des images dont l'idArticle est celui de l'article en cours:
+            supprimerImageParIdArticle($article->getId());
             //Récupération dernier article ajouté et mise en place du bon id dans les images créés:
             $res = recupererNewsParId($article->getId());
             for($i=0; $i<sizeof($image); $i++){

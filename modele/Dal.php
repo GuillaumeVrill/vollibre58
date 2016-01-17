@@ -704,6 +704,24 @@
             }
         }
         
+        /**
+	 * Nom: supprimerImageParId
+	 * Description:  supprime une image dans la base de données en fonction de son id
+	 * Paramètre:
+	 * $id: l'id de l'image
+	 * Variables:
+	 * requete: la requete sql
+	 * parametres: les parametres de la requete sql
+	 * */
+	function supprimerImageParIdArticle($id_article){
+            if(isset($id_article)){
+                $requete = 'DELETE FROM `timages` WHERE `id_news`=?';
+                $parametres = array();
+                array_push($parametres, $id_article);
+                new ImageFactory($requete, $tabResult, $parametres);
+            }
+	}
+        
         /*
 	 * Nom: editerMembre
 	 * Description : edite un membre dans la base de données

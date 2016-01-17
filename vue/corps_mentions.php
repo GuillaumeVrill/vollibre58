@@ -14,7 +14,7 @@
                                 <div class="ville">Grenois</div>
                             </div>
                             <div class="telephone">0670928898</div>
-                            <div class="mail">vollibre58@free.fr (/!\ pas encore fonctionnel /!\)</div>
+                            <div class="mail">vollibre58@free.fr</div>
                         </div>
                         <div class="infos">
                             <div class="fonction">Directeur de la publication : </div>

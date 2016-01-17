@@ -1,4 +1,13 @@
 <?php
+function addPicture($img){
+    //Récupération dernier article ajouté et mise en place du bon id dans les images créés:
+    $res = recupererLastArticle();
+    for($i=0; $i<sizeof($img); $i++){
+        $img[$i]->setIdNews($res[0]->getId());
+        creerImage($img[$i]);
+    }
+}
+
 $rights = array();
 $rights[0] = "1";   //administrateur
 $rights[1] = "2";   //moderateur
@@ -33,7 +42,7 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
         if(isset($_REQUEST['image_3picinv_petite1']) && !empty($_REQUEST['image_3picinv_petite1'])){ $i3invp1 = $_REQUEST['image_3picinv_petite1']; }
         if(isset($_REQUEST['image_3picinv_petite2']) && !empty($_REQUEST['image_3picinv_petite2'])){ $i3invp2 = $_REQUEST['image_3picinv_petite2']; }
         
-        if(isset($_REQUEST['disposition']) && !empty($_REQUEST['disposition'] && isset($_REQUEST['titreArticle']) && !empty($_REQUEST['titreArticle']))){
+        if(isset($_REQUEST['disposition']) && !empty($_REQUEST['disposition']) && isset($_REQUEST['titreArticle']) && !empty($_REQUEST['titreArticle'])){
             $id_dispo = $_REQUEST['disposition'];
             $titre = $_REQUEST['titreArticle'];
             $article = null;
@@ -42,7 +51,6 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
             switch($id_dispo){
                 case 1: 
                     if($txtH && $txtB && $istd){
-                        //REMPLACER L'ID DE L'ARTICLE PAR UNE FONCTION DE RECUPERATION DU DERNIER ID SAISI.
                         $article = new News(0, $titre, $txtH, $txtB, $today, $id_user, $id_dispo);
                         array_push($image, new Image(0, $istd, 0));
                     }
@@ -115,12 +123,7 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
             
             //Ajout du nouvel article:
             creerNews($article);
-            //Récupération dernier article ajouté et mise en place du bon id dans les images créés:
-            $res = recupererLastIdArticle();
-            for($i=0; $i<sizeof($image); $i++){
-                $image[$i]->setIdNews($res[0]->getId());
-                creerImage($image[$i]);
-            }
+            addPicture($image);
             
         }
     }

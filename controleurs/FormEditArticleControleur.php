@@ -52,7 +52,7 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
             $id_article = 0;
         }
         
-        if(isset($_REQUEST['disposition']) && !empty($_REQUEST['disposition'] && isset($_REQUEST['titreArticle']) && !empty($_REQUEST['titreArticle']))){
+        if(isset($_REQUEST['disposition']) && !empty($_REQUEST['disposition']) && isset($_REQUEST['titreArticle']) && !empty($_REQUEST['titreArticle'])){
             $id_dispo = $_REQUEST['disposition'];
             $titre = $_REQUEST['titreArticle'];
             $article = null;

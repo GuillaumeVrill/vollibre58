@@ -60,7 +60,7 @@
     <div class="col-xs-12 col-sm-4">
         <div class="panel panel-default">
             <div class="panel-heading">
-                    <h3>Derni&egrave;res actualit&eacute;s du club</h3>
+                <h3>Derni&egrave;res actualit&eacute;s du club</h3>
             </div>
             <ul class="list-group">
                 <?php for($n=0; $n<sizeof($lastNews) && $n<2; $n++): ?>
@@ -76,5 +76,33 @@
                 <?php endfor; ?>
             </ul>
         </div>
+    </div>
+</div>
+<div id="carte" class="row">
+    <div class="col-xs-12">
+        <div class="infos">
+            <h2>Grenois</h2>
+            <div class="infos2">
+                <h3>La montagne</h3>
+                <div>
+                    Pratique: Delta, Parapente<br />
+                    Orientation: S<br />
+                    Coordonn&eacute;es GPS:47°19'27"N - 03°32'15"E<br />
+                    Altitude: 369m<br />
+                    Attention, d&eacute;s que le vent pr&eacute;sente une tendanceEst ou Ouest, vous &ecirc;tes sous le vent des arbres 
+                    qui encadrent le d&eacute;collage.<br />
+                    Carte IGN: 2623 EST<br />
+                </div>
+            </div>
+            <div class="infos2">
+                <h3>Atterrissage</h3>
+                <div>
+                    Coordonn&eacute;es GPS: 47°19'17"N - 03°32'12"E<br />
+                    Altitude: 270m<br />
+                    Carte IGN: 2623 EST<br />
+                </div>
+            </div>
+        </div>
+        <img src="/static/images/fonds/carte01.PNG" alt="carte chemins decollage et atterrissage" title="carte chemins decollage et atterrissage" />
     </div>
 </div>

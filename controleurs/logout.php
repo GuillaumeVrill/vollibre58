@@ -3,4 +3,4 @@
 $_SESSION = array();
 session_destroy();
 unset($_SESSION);
-header('Location: '.URL_PATH);
+header('Location: '.URL_PATH.'?page=connexion');

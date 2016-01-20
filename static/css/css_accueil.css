@@ -30,6 +30,41 @@
     text-align: left;
 }
 
+#carte {
+    background-color: #eee;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+#carte .infos {
+    width: 80%;
+    margin-left: 10%;
+    text-align: left;
+    padding-bottom: 20px;
+}
+
+#carte .infos .infos2 {
+    display: inline-block;
+    vertical-align: top;
+    width: 48%;
+    margin-left: 1%;
+    text-align: left;
+}
+
+@media only screen and (max-width:1000px) {
+    #carte .infos .infos2 {
+        width: 100%;
+    }
+}
+
+#carte img {
+    border-radius: 10px;
+    width: 80%
+}
+
 .panel-heading {
     text-align: center;
 }

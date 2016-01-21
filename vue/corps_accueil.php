@@ -103,6 +103,6 @@
                 </div>
             </div>
         </div>
-        <img src="/static/images/fonds/carte01.PNG" alt="carte chemins decollage et atterrissage" title="carte chemins decollage et atterrissage" />
+        <img src="/static/images/fonds/carte01.jpg" alt="carte chemins decollage et atterrissage" title="carte chemins decollage et atterrissage" />
     </div>
 </div>

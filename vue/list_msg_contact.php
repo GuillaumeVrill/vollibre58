@@ -14,9 +14,9 @@
             </div>
             <div class="msg_action">
                 <div class="supp_btn">
-                    <form class="btn" name="message_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=list_msg_contact">
-                        <input name="message<?php print $msgs[$i]->getId(); ?>" id="message<?php print $msgs[$i]->getId(); ?>" type="submit" value=""
-                            onClick="confirm('Supprimer le message?')" />
+                    <form class="btn" name="message_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=list_msg_contact" 
+                          onsubmit="return confirm('Supprimer le message?')">
+                        <input name="message<?php print $msgs[$i]->getId(); ?>" id="message<?php print $msgs[$i]->getId(); ?>" type="submit" value="" />
                     </form>
                 </div>
             </div>

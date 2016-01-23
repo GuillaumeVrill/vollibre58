@@ -16,9 +16,9 @@
                             </div>
                             <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>
                                 <div class="supp_btn">
-                                    <form class="btn" name="event_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements">
-                                        <input name="event<?php print $evenements[$i]->getId(); ?>" id="event<?php print $evenements[$i]->getId(); ?>" type="submit" value=""
-                                            onClick="confirm('Supprimer l\'information?')" />
+                                    <form class="btn" name="event_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements" 
+                                          onsubmit="return confirm('Supprimer l\'information?')">
+                                        <input name="event<?php print $evenements[$i]->getId(); ?>" id="event<?php print $evenements[$i]->getId(); ?>" type="submit" value="" />
                                     </form>
                                 </div>
                             <?php endif; ?>
@@ -46,9 +46,9 @@
                             <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && 
                                     ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>
                                 <div class="supp_btn">
-                                    <form class="btn" name="alert_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements">
-                                        <input name="alerte<?php print $alertes[$i]->getId(); ?>" id="alerte<?php print $alertes[$i]->getId(); ?>" type="submit" value="" 
-                                            onClick="confirm('Supprimer l\'alerte?')"/>
+                                    <form class="btn" name="alert_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=evenements" 
+                                          onsubmit="return confirm('Supprimer l\'alerte?')">
+                                        <input name="alerte<?php print $alertes[$i]->getId(); ?>" id="alerte<?php print $alertes[$i]->getId(); ?>" type="submit" value="" />
                                     </form>
                                 </div>
                             <?php endif; ?>

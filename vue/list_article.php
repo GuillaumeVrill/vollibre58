@@ -18,15 +18,15 @@
         <div class="article_disposition"><?php print $articles[$i]->getIdDisposition(); ?></div>
         <div class="article_action">
             <div class="supp_btn">
-                <form class="btn" name="news_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=list_article">
-                    <input name="article<?php print $articles[$i]->getId(); ?>" id="article<?php print $articles[$i]->getId(); ?>" type="submit" value=""
-                        onClick="confirm('Supprimer l\'article?')" />
+                <form class="btn" name="news_supp_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=list_article" 
+                      onsubmit="return confirm('Supprimer l\'article?')">
+                    <input name="article<?php print $articles[$i]->getId(); ?>" id="article<?php print $articles[$i]->getId(); ?>" type="submit" value="" />
                 </form>
             </div>
             <div class="edit_btn">
-                <form class="btn2" name="news_edit_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=f_edit_article">
+                <form class="btn2" name="news_edit_form<?php print $i; ?>" method="post" action="<?php print URL_PATH; ?>?page=f_edit_article" 
+                      onsubmit="return confirm('Editer l\'article?')">
                     <input name="article<?php print $articles[$i]->getId(); ?>" id="article<?php print $articles[$i]->getId(); ?>" type="submit" value=""
-                        onClick="confirm('Editer l\'article?')" 
                         alt="editer l'article" 
                         title="editer l'article" />
                     <input type="hidden" name="actualNews" id="actualNews" value="<?php print $articles[$i]->getId(); ?>" />

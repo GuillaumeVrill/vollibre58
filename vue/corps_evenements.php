@@ -39,7 +39,7 @@
                         <li class="list-group-item">
                             <div class="contenu">
                                 <span class="badge">Alerte</span>
-                                <?php print utf8_encode($alertes[$i]->getDateDebut()); ?> - 
+                                <?php print utf8_encode($alertes[$i]->getDateFin()); ?> - 
                                 <strong><?php print $alertes[$i]->getTitre(); ?></strong> - 
                                 <?php print $alertes[$i]->getDescription(); ?>
                             </div>

@@ -24,7 +24,7 @@
                     if(count($alertes)>$i){ ?>
                         <p>
                             <span class="label label-danger">Alerte:</span>
-                            <?php print utf8_encode ($alertes[$i]->getDateDebut()); ?> - 
+                            <?php print utf8_encode ($alertes[$i]->getDateFin()); ?> - 
                             <a class="description" href="<?php print URL_PATH; ?>?page=evenements"><?php print $alertes[$i]->getTitre(); ?></a>
                         </p>
                     <?php }

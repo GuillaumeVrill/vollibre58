@@ -6,7 +6,7 @@
         </div>
         <form method="post" action="?page=f_add_alerte">
             <div class="alerte_line">
-                <label for="dateExp">Date d'expiration: </label>
+                <label for="dateExp">Date: </label>
                 <input type="date" name="dateExp" id="dateExp" required />
             </div>
             <div class="alerte_line">

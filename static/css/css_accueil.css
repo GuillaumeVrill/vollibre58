@@ -124,3 +124,9 @@
     color: white;
     text-decoration: none;
 }
+
+/************************** DIVERS ************************/
+.limit30 {
+    font-weight: bold;
+    color: red;
+}

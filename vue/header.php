@@ -99,7 +99,7 @@
                     <img class="img_thumbnail" src="static/images/carousel/evenement01.png" alt="Evenements" />
                     <div class="carousel-caption">
                         <h2>Infos et alertes</h2>
-                        <p>Une sortie de prévues? Un objet laiss&eacute; au d&eacute;co? C'est par ici!</p>
+                        <p>Une sortie de prévue? Un objet laiss&eacute; au d&eacute;co? C'est par ici!</p>
                     </div>
                 </a>
             </div>

@@ -2,15 +2,52 @@
     <div class="col-xs-12">
         <h1> Voler a Grenois </h1>
         <br />
+        
+        <h3>Historique</h3>
+        <div class="historySection">
+            <p>
+                Le club Vol libre 58 a &eacute;t&eacute; cr&eacute;&eacute; le 6 septembre 2008. Il est adh&eacute;rent de la FFVL et fait parti de la ligue Bourgogne 
+                Franche Comt&eacute; de vol libre. A l’origine domicili&eacute; à Saint L&eacute;ger des Vignes, il sera transf&eacute;r&eacute; &agrave; Grenois en 2013. <br />
+                En 2009 le club Fil D’air nous transfert la gestion du site de Grenois et la m&ecirc;me ann&eacute;e nous louons un terrain pour &ecirc;tre sur d’avoir un atterrissage. 
+                Nous signons un bail de 10 ans pour une location de 50 euros par ans. Le terrain sera d&eacute;broussaill&eacute; par M. Cointe, maire de Grenois.<br />
+            </p>
+        </div>
+        <div class="historyPic"><a href="static/images/incontournables/img213.jpg" target="_blank"><img src="static/images/incontournables/img213.jpg" /></a></div>
+        <div class="historySection">
+            <p>
+                En 2011 le site de Grenois (la Chapelle) est inscrit &agrave; la PDESI (Plan D&eacute;partementale des Espaces, Sites et Itin&eacute;raires de Pleine Nature).
+                En 2013 une convention est sign&eacute;e avec la mairie d’Asnan pour l’utilisation et l’entretien du d&eacute;collage de la vierge.<br />
+            </p>
+        </div>
+        <div class="historySection separated">
+            <table>
+                <tr class="texte">
+                    <td>
+                        Ces premiers clich&eacute;s datent des d&eacute;buts du vol libre &agrave; Grenois. L'histoire de notre site!
+                    </td>
+                </tr>
+                <tr class="picture">
+                    <td>
+                        <a href="static/images/incontournables/img212.jpg" target="_blank"><img src="static/images/incontournables/img212.jpg" /></a>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br /><br />
+        
         <h3>Les Sites de vol</h3>
         <div class="historySection">
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum rutrum metus quis libero porttitor mollis. 
-                Praesent felis risus, condimentum at dapibus porta, volutpat vitae mi. Nulla eu tristique nisl, eget sodales orci. 
-                Vivamus quis tempus velit, at molestie mauris. Mauris non massa placerat, ullamcorper velit non, accumsan sapien. 
-                Mauris accumsan tristique tellus, sit amet fermentum diam. Donec accumsan scelerisque sagittis. 
-                Vestibulum consequat pharetra enim. Mauris in libero suscipit, facilisis mauris vel, sagittis ipsum. 
-                Fusce tellus libero, cursus bibendum eros pellentesque, posuere porta velit. Sed pellentesque gravida enim ut bibendum.
+                Nous disposons donc de deux sites de vol: Grenois (La Chapelle), et Asnan (La Vierge). <br />
+                Le site de Grenois est notre site principal, orienté <strong>Sud-Est, Sud, Sud-Ouest</strong>. Il offre souvent de magnifiques vols d'automne.<br />
+                L'atterrissage se situe juste au dessous (une carte en pr&eacute;sente l'emplacement sur la page d'accueil). Nous vous prions de <strong>ne pas rouler sur 
+                l'atterrissage</strong>, afin d'&eacute;viter les d&eacute;p&ocirc;ts d'huile ou d'essence, qui sont un calvaire pour nos ailes. Des chemins sont &agrave; disposition, 
+                utilisez-les.
+                <br /><br />
+                Le site de La Vierge, &agrave; Asnan, est orient&eacute; <strong>Ouest</strong>, et est assez &eacute;troit. Il est plus technique car le relief est tr&egrave;s 
+                prononc&eacute;, ce qui en fait un site vent&eacute; par nature.<br />
+                En revanche, il propose un excellent rendement thermique. Il n'y a cependant pas d'atterrissage, aussi <strong>il est imp&eacute;ratif de se 
+                poser dans les chemins!</strong>
             </p>
         </div>
         <div class="row pastille-space">
@@ -24,58 +61,29 @@
             </div>
         </div>
         <br /><br />
-        <h3>Historique</h3>
         <div class="historySection">
             <p>
-                Sed odio ipsum, lobortis id lobortis dignissim, tempus at risus. Mauris sem leo, aliquet vel congue a, fermentum vel diam. 
-                Vivamus at mattis turpis. Nulla tortor arcu, iaculis vel facilisis id, blandit ac metus. 
-                Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Aliquam gravida ipsum ut nibh hendrerit eleifend. 
-                Phasellus cursus eget turpis a imperdiet. Vestibulum a enim sapien. Maecenas est augue, suscipit et erat nec, aliquet accumsan libero. 
-                Vestibulum lacinia sit amet nibh eu placerat. Vestibulum et diam mollis, sodales felis eu, lobortis lorem. 
-                Nullam magna enim, posuere non bibendum quis, iaculis id nunc. Quisque pellentesque semper viverra. 
-                Vivamus sit amet ligula ullamcorper, placerat felis in, luctus quam.
+                Quoiqu'il en soit, ne posez pas dans les champs en culture, que ce soit sur l'un ou l'autre de nos sites. Il y a des chemins et un atterrissage officiel 
+                &agrave; Grenois, utilisez-les. <br /><br />
             </p>
         </div>
-        <div class="historyPic"><a href="static/images/incontournables/img213.jpg" target="_blank"><img src="static/images/incontournables/img213.jpg" /></a></div>
-        <div class="historySection">
-            <p>
-                Duis ut diam id lacus accumsan imperdiet. Cras luctus purus a consequat ultricies. 
-                Suspendisse vestibulum, magna quis pretium molestie, justo ante ullamcorper erat, eget rutrum diam diam vel dolor. 
-                Ut maximus ornare orci, a iaculis metus varius in. Proin quis volutpat massa. Etiam at mollis magna. Donec vel nibh id mauris efficitur imperdiet.
-            </p>
-        </div>
-        <div class="historySection separated">
-            <table>
-                <tr class="texte">
-                    <td>
-                        Phasellus a elit ultrices, suscipit tortor quis, consectetur ipsum. Integer sed est libero. Nunc sollicitudin molestie rutrum. 
-                        Vestibulum non diam odio. <br />
-                        Donec eu eros a eros accumsan posuere. Donec convallis sem ultrices, vestibulum magna ut, volutpat nibh. 
-                        Aenean iaculis facilisis ante non mollis. Suspendisse potenti.
-                    </td>
-                </tr>
-                <tr class="picture">
-                    <td>
-                        <a href="static/images/incontournables/img212.jpg" target="_blank"><img src="static/images/incontournables/img212.jpg" /></a>
-                    </td>
-                </tr>
-            </table>
-        </div>
-        <br /><br />
+
         <h3>Le club et ses membres</h3>
         <div class="historySection">
             <p>
-                Phasellus luctus bibendum lectus in scelerisque. Mauris sagittis arcu sed mi scelerisque lobortis. Donec quis aliquet elit. Curabitur at iaculis neque. 
-                Mauris vitae lorem eu felis sagittis ultrices non eu ex. Donec a dignissim ligula. Etiam sem felis, bibendum quis velit eget, mattis rutrum lectus. 
-                Nam arcu purus, consectetur vitae mi nec, sollicitudin finibus tortor. Donec elit nisi, sollicitudin id efficitur nec, congue ac tortor. 
-                Phasellus ornare neque enim, nec imperdiet diam hendrerit vel.
+                Nous sommes une vingtaine de pilotes en moyenne. Si l'on ajoute nos fid&egrave;les acolytes de Fil D'air, nous sommes une trentaine voir plus au total. <br />
+                Bien que nous ne soyons presque jamais tous pr&eacute;sents sur le d&eacute;collage en m&ecirc;me temps, vous remarquerez vite que chacun d'entre nous 
+                &agrave; sa personnalit&eacute; bien &agrave; elle, et que quelque soit les caract&egrave;res, nous nous respectons tous et toutes. <br />
             </p>
             <br /><br />
             <div class="historyPic"><a href="static/images/incontournables/100_9707.jpg" target="_blank"><img src="static/images/incontournables/100_9707.jpg" /></a></div>
             <br /><br />
             <p>
-                Duis gravida dolor vitae porta luctus. Sed sed gravida sapien, non ultrices nibh. 
-                Pellentesque sed maximus tellus. Phasellus sapien enim, consequat vitae mauris sed, eleifend dapibus nisl.
+                Aussi, soyez courtois, et n'h&eacute;sitez pas &agrave; venir &eacute;changer quelques mots avant de d&eacute;coller avec les locaux pr&eacute;sents, 
+                mais aussi avec les autres! Combien de pilotes passent sans m&ecirc;me un "bonjour", alors qu'il n'y a pourtant que deux syllabes!<br />
+                Il est toujours agr&eacute;able d'&eacute;changer quelques mots, au moins pour savoir avec qui l'on vol !
+                <br /><br />
+                Bon vol &agrave; tous et &agrave; toutes!<br /><br />
             </p>
         </div>
     </div>

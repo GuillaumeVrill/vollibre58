@@ -42,15 +42,15 @@
             $ch = curl_init();
             curl_setopt($ch, CURLOPT_URL, "http://api.pioupiou.fr/v1/live/110");
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $json_a = curl_exec($ch);
+            $json_data = curl_exec($ch);
             curl_close($ch);
             $json = new Services_JSON();
-            $datas = $json->decode($json_a);
+            $datas = $json->decode($json_data);
         ?>
         <div class="pioupiou-datas">
             <div class="pioupiou-left">
                 <h4>Informations g&eacute;n&eacute;rales:</h4>
-                <strong>Balise: </strong><?php print($datas->data->meta->data); ?><br />
+                <strong>Balise: </strong><?php print($datas->data->meta->name); ?><br />
                 <strong>Lattitude: </strong><?php print($datas->data->location->latitude); ?><br />
                 <strong>Longitude: </strong><?php print($datas->data->location->longitude); ?><br />
                 <strong>Date: </strong><?php print($datas->data->location->date); ?><br />

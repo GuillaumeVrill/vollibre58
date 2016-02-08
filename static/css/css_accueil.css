@@ -10,6 +10,33 @@
     color: #337DB8;
 }
 
+#pioupiou {
+    background-color: #eee;
+    border-radius: 5px;
+    text-align: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+}
+
+#pioupiou .pioupiou-datas {
+    width: 80%;
+    margin-left: 10%;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+#pioupiou .pioupiou-left,
+#pioupiou .pioupiou-right {
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+    width: 40%;
+}
+
+#pioupiou .infos-legales {
+    margin-top: 25px;
+}
+
 #video {
     background-color: #eee;
     border-radius: 5px;

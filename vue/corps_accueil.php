@@ -44,23 +44,24 @@
             curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
             $json_a = curl_exec($ch);
             curl_close($ch);
-            $datas = json_decode($json_a, true);
+            $json = new Services_JSON();
+            $datas = $json->decode($json_a);
         ?>
         <div class="pioupiou-datas">
             <div class="pioupiou-left">
                 <h4>Informations g&eacute;n&eacute;rales:</h4>
-                <strong>Balise: </strong><?php print($datas['data']['meta']['name']); ?><br />
-                <strong>Lattitude: </strong><?php print($datas['data']['location']['latitude']); ?><br />
-                <strong>Longitude: </strong><?php print($datas['data']['location']['longitude']); ?><br />
-                <strong>Date: </strong><?php print($datas['data']['location']['date']); ?><br />
+                <strong>Balise: </strong><?php print($datas->data->meta->data); ?><br />
+                <strong>Lattitude: </strong><?php print($datas->data->location->latitude); ?><br />
+                <strong>Longitude: </strong><?php print($datas->data->location->longitude); ?><br />
+                <strong>Date: </strong><?php print($datas->data->location->date); ?><br />
             </div>
             <div class="pioupiou-right">
                 <h4>Mesures:</h4>
-                <strong>Date: </strong><?php print($datas['data']['measurements']['date']); ?><br />
-                <strong>Pression: </strong><?php print($datas['data']['measurements']['pressure']); ?><br />
-                <strong>Vitesse Vent Moyenne: </strong><?php print($datas['data']['measurements']['wind_speed_avg']); ?><br />
-                <strong>Vitesse vent Max: </strong><?php print($datas['data']['measurements']['wind_speed_max']); ?><br />
-                <strong>Vitesse Vent Min: </strong><?php print($datas['data']['measurements']['wind_speed_min']); ?><br />
+                <strong>Date: </strong><?php print($datas->data->measurements->date); ?><br />
+                <strong>Pression: </strong><?php print($datas->data->measurements->pressure); ?><br />
+                <strong>Vitesse Vent Moyenne: </strong><?php print($datas->data->measurements->wind_speed_avg); ?><br />
+                <strong>Vitesse vent Max: </strong><?php print($datas->data->measurements->wind_speed_max); ?><br />
+                <strong>Vitesse Vent Min: </strong><?php print($datas->data->measurements->wind_speed_min); ?><br />
             </div>
             <div class="infos-legales">
                 Pour plus d'informations sur l'acquisition des donn&eacute;es des balises Pioupiou, se reporter &agrave; l'article correspondant dans les 

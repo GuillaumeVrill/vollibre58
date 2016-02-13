@@ -54,7 +54,9 @@
                     Tout comme nous nous engageons &agrave; ne publier que du contenu libre de droits ou dont nous disposons d'une autorisation, si vous souhaitez 
                     utiliser le contenu de ce site &agrave; des fins autres que personnelles, veuillez nous en demander l'autorisation, par respect envers nos auteurs.<br />
                     Certaines oeuvres graphiques et notament les personnages des <strong>"Dodo"</strong> ont &eacute;t&eacute; r&eacute;alis&eacute;es par 
-                    <strong>Jean-Jacques Garnier</strong>, ces oeuvres sont soumises au droit d'auteur selon la loi en vigueur.
+                    <strong>Jean-Jacques Garnier</strong>, ces oeuvres sont soumises au droit d'auteur selon la loi en vigueur.<br />
+                    De m&ecirc;me, nous nous r&eacute;servons le droit de retirer &agrave; n'importe quel moment dans le cas o&ugrave; un de nos membres ne souhaite pas 
+                    autoriser d'images le concernant sur le site. <br />
                 </div>
             </div>
             <div class="infos">

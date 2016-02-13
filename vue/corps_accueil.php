@@ -1,3 +1,27 @@
+<?php
+    //function to get the remote data
+    function url_get_contents ($url) {
+        if (function_exists('curl_exec')){ 
+            $conn = curl_init($url);
+            curl_setopt($conn, CURLOPT_SSL_VERIFYPEER, true);
+            curl_setopt($conn, CURLOPT_FRESH_CONNECT,  true);
+            curl_setopt($conn, CURLOPT_RETURNTRANSFER, 1);
+            $url_get_contents_data = (curl_exec($conn));
+            curl_close($conn);
+        }elseif(function_exists('file_get_contents')){
+            $url_get_contents_data = file_get_contents($url);
+        }elseif(function_exists('fopen') && function_exists('stream_get_contents')){
+            $handle = fopen ($url, "r");
+            $url_get_contents_data = stream_get_contents($handle);
+        }else{
+            $url_get_contents_data = false;
+        }
+    return $url_get_contents_data;
+    }
+    
+    include("http://api.pioupiou.fr/v1/live/110?callback=myCallBackFunction");
+?>
+
 <section id="alerteEvent" class="row">
     <div class="col-xs-12 col-sm-6">
         <?php
@@ -35,42 +59,9 @@
         <br />
     </div>
 </section>
-<div class="row">
-    <div id="pioupiou" class="col-xs-12">
-        <h3>Donn&eacute;es m&eacute;t&eacute;os:</h3>
-        <?php
-            $ch = curl_init();
-            curl_setopt($ch, CURLOPT_URL, "http://api.pioupiou.fr/v1/live/110");
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-            $json_data = curl_exec($ch);
-            curl_close($ch);
-            $json = new Services_JSON();
-            $datas = $json->decode($json_data);
-        ?>
-        <div class="pioupiou-datas">
-            <div class="pioupiou-left">
-                <h4>Informations g&eacute;n&eacute;rales:</h4>
-                <strong>Balise: </strong><?php print($datas->data->meta->name); ?><br />
-                <strong>Lattitude: </strong><?php print($datas->data->location->latitude); ?><br />
-                <strong>Longitude: </strong><?php print($datas->data->location->longitude); ?><br />
-                <strong>Date: </strong><?php print($datas->data->location->date); ?><br />
-            </div>
-            <div class="pioupiou-right">
-                <h4>Mesures:</h4>
-                <strong>Date: </strong><?php print($datas->data->measurements->date); ?><br />
-                <strong>Pression: </strong><?php print($datas->data->measurements->pressure); ?><br />
-                <strong>Vitesse Vent Moyenne: </strong><?php print($datas->data->measurements->wind_speed_avg); ?><br />
-                <strong>Vitesse vent Max: </strong><?php print($datas->data->measurements->wind_speed_max); ?><br />
-                <strong>Vitesse Vent Min: </strong><?php print($datas->data->measurements->wind_speed_min); ?><br />
-            </div>
-            <div class="infos-legales">
-                Pour plus d'informations sur l'acquisition des donn&eacute;es des balises Pioupiou, se reporter &agrave; l'article correspondant dans les 
-                <a href="<?php print URL_PATH ?>?page=mentions" title="Mentions legales" target="_blank">Mentions l&eacute;gales</a>. <br />
-                Lien direct vers les donn&eacute;es brutes de la balise: <a href="http://api.pioupiou.fr/v1/live/110" target="_blank">ici</a>
-            </div>
-        </div>
-    </div>
-</div>
+<?php 
+    //require_once("vue/pioupiou.php"); 
+?>
 <div class="row">
     <div id="video" class="col-xs-12 col-sm-8">
         <h3>Pr&eacute;sentation du club:</h3>

@@ -65,7 +65,7 @@
                     Les donn&eacute;es li&eacute;es au vent et aux relev&eacute;s m&eacute;t&eacute;o sont la propri&eacute;t&eacute; de Pioupiou, nous 
                     ne faisons qu'utiliser ces donn&eacute;es (<i>open data</i>). <br />
                     => <strong><i>Wind data (c) contributors of the Pioupiou wind network < <a href="http://pioupiou.fr">http://pioupiou.fr/</a> ></i></strong><br />
-                    Vous &ecirc;tes libre d'utiliser les donn&eacute;es de la m&ecirc;me mani&egrave;re que sur le site. Pour obtenir es donn&eacute;es, reportez-vous 
+                    Vous &ecirc;tes libre d'utiliser les donn&eacute;es de la m&ecirc;me mani&egrave;re que sur le site. Pour obtenir les donn&eacute;es, reportez-vous 
                     &agrave; la documentation disponible sur le site officiel. 
                 </div>
             </div>

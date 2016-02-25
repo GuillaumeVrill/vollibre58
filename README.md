@@ -3,7 +3,7 @@ Dépôt du site vollibre58, club de parapente de Bourgogne
 
 Le site web a été réalisé à la main (et non les pieds) par Guillaume Vrilliaux et Sebastien Lenhartova.
 Il reste certainement des améliorations à faire, et "oui" nous aurions pu utiliser un CMS, mais l'idée était également 
-de mettre en pratique nos compétence en développement web. 
+de mettre en pratique nos compétence en développement web afin de s'améliorer.
 D'où le choix de développer le site complètement. 
 
 Le site internet présente notre club aux externes, et permet de nous contacter. Il dispose d'une interface d'administration pour permttre aux personnes identifiées 
@@ -12,19 +12,27 @@ d'interagir avec le site pour publier des articles, gérer les utilisateurs, ou 
 Pour fonctionner, il faut la base de données qui va bien (dont je suis le propriétaire, sinon c'est trop facile :p ).
 
 
--------------------------------------- ESPACE DEVELOPPEUR ------------------------------------------
+HEBERGEMENT:
+
+Le site est hebergé chez free, ce qui a nécessité un certain "bricolage", dont les points suivants:
+- sécurité des mots de passe (nous voulions utiliser des méthodes modernes de haschage et de salage, mais elles ne sont pas supportés,
+et aux vuex de la fréquentation du site (faible), nous avons choisi de rester sur du md5).
+- PDO: il existe dans la version de PHP, mais n'est pas supporté avec l'utilisation de MySQL. Pour contourner ce problème, nous 
+avons utilisé une libraire "PDO" renommée "PDO2" dans le projet, qui permet d'utiliser cette technologie dans des versions plus 
+anciennes de PHP, comme c'est le cas pour l'hébergement chez free. 
+- Certaines fonctions PHP ne sont pas supportées ou ne fonctionnent pas de la même façon que dans les versions récentes de PHP, il est 
+donc normal de trouver certains points de développement assez étrange. 
+- La page "Pioupiou.php" permet de récupérer des informations depuis une balise météo, en utilisant "curl" pour récupérer ces données à distance 
+sur les serveurs de Pioupiou. Cependant, curl à été bloqué par free pour des raisons de surfréquentations, et les autres fonctions permettant 
+la récupération de données distantes ont également été bloquées. Cela fonctionne donc en local, mais cela a été masqué sur le serveur. 
+La page est donc inactive, il faut décommenter son "require_once()" dans le fichier "corps_accueil.php". 
 
 
------------------------------------------------------------------
-Fonctions relatives à la base de données qu'il faut créer:
------------------------------------------------------------------
+Ce que nous pourrions améliorer:
 
--> surveiller les encodages (utf8) chez l'hébergeur (actuellement free)
--> voir si c'est possible de supprimer les événements et alertes trop ancien(ne)s automatiquement dans la base, à intervalle régulier
-
-
------------------------------------------------------------------
-                        SECURITE A GERER:
------------------------------------------------------------------
--> Supprimer les valeurs des tableaux POST et GET des formulaires pour éviter les ré-exécutions de code lors des actualisations de page
-    -> ou forcer l'actualisation de la page en JS pour contourner le problème
+- Le fichier "Dal.php" contient toutes les fonctions relatives à la manipulation de la BDD.
+Il aurait pu être intéressant de créer des managers indépendant pour chaques objet.
+- Les vues contiennetn parfois trop de php. Il serait interessant de les optimiser en isolant le php et en le plaçant dans le controleur 
+correspondant, afin de ne garder dans les vues que du HTML et ainsi avoir un template à part entière. 
+- Le controleur principal appelle le controleur correspondant lors de changement d'URL, et les controleurs secondaires récupèrent les informations 
+et appellent la vue et sa mise en page. Le processus peut certainement être optimisé d'une autre façon. 

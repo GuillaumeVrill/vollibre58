@@ -120,6 +120,8 @@ CREATE TABLE IF NOT EXISTS `tmembre` (
   UNIQUE KEY `pseudo` (`pseudo`)
 ) DEFAULT CHARSET=utf8;
 
+INSERT INTO `tmembre` VALUES (1, 'admin', '21232f297a57a5a743894a0e4a801fc3', 'admin@example.com', 1);
+
 -- --------------------------------------------------------
 
 --

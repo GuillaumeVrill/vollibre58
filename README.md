@@ -9,7 +9,8 @@ D'où le choix de développer le site complètement.
 Le site internet présente notre club aux externes, et permet de nous contacter. Il dispose d'une interface d'administration pour permttre aux personnes identifiées 
 d'interagir avec le site pour publier des articles, gérer les utilisateurs, ou encore proposer des événements ou des alertes. 
 
-Pour fonctionner, il faut la base de données qui va bien (dont je suis le propriétaire, sinon c'est trop facile :p ).
+Pour fonctionner, il faut la base de données qui va bien, dont la structure est disponible dans le dossier BDD. Un compte admin est créé de base avec comme pseudos:
+"admin" et mot de passe "admin". Cela vous permettra ensuite de l'éditer et de créer de nouveaux utilisateur.
 
 
 HEBERGEMENT:

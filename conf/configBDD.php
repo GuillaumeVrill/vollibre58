@@ -1,7 +1,7 @@
 <?php
-		$nomUtilisateur = "root";
-		$motDePasse = "ninja";
- 		$baseDeDonnées="vollibre58";
-		$adresse = "";
-		$dsn = "mysql:dbname=".$baseDeDonnées.";host=".$adresse;
+    $nomUtilisateur = "root";
+    $motDePasse = "";
+    $baseDeDonnées="vollibre58";
+    $adresse = "localhost";
+    $dsn = "mysql:dbname=".$baseDeDonnées.";host=".$adresse; // local
 ?>

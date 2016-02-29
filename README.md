@@ -37,3 +37,19 @@ Il aurait pu être intéressant de créer des managers indépendant pour chaques
 correspondant, afin de ne garder dans les vues que du HTML et ainsi avoir un template à part entière. 
 - Le controleur principal appelle le controleur correspondant lors de changement d'URL, et les controleurs secondaires récupèrent les informations 
 et appellent la vue et sa mise en page. Le processus peut certainement être optimisé d'une autre façon. 
+- Le comportement sous mobile est perturbé par le diaporama, et recharge la page de façon récurente. Il faudrait améliorer ce comportement en priorité. 
+
+
+INSTALLATION:
+
+- Mettre en place un virtual Host pour le site
+- Créer la base de données "vollibre58"
+- Créer les tables et le contenu de base nécessaire au fonctionnement, grâce au fichier "BDD/vollibre58.sql"
+- En cas de changement du nom, modifier le fichier de configuration "conf/configBDD" (également vrai dans le cas d'une installation sur serveurs réelles, les adresses doivent être adaptés)
+- Ensuite, il reste à accéder au site via un navigateur. 
+
+- Les identifiants par défauts sont:
+login: admin
+passwd: admin
+
+- Lors de la connexion, il faut commencer par changer le mot de passe administrateur.

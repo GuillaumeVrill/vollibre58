@@ -113,6 +113,7 @@ if(isset($_SESSION['user_id']) && !empty($_SESSION['user_id']) && in_array($_SES
             supprimerImageParIdArticle($article->getId());
             //Récupération dernier article ajouté et mise en place du bon id dans les images créés:
             $res = recupererNewsParId($article->getId());
+            //Sauvegarde des images en base:
             for($i=0; $i<sizeof($image); $i++){
                 $image[$i]->setIdNews($res[0]->getId());
                 creerImage($image[$i]);

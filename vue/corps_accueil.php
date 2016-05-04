@@ -133,3 +133,17 @@
         <img src="/static/images/fonds/carte01.jpg" alt="carte chemins decollage et atterrissage" title="carte chemins decollage et atterrissage" />
     </div>
 </div>
+<div id="bilanPDF" class="row">
+    <div class="col-xs-12">
+        <h4>Les bilans de l'ann&eacute;e en cours:</h4>
+        <a href="<?php print STATIC_PATH; ?>/PDF/BilanAG2015.pdf">
+            <img class="pdf-logo" src="<?php print STATIC_PATH; ?>/images/icones/logoPDF.png" /> Bilan de l'AG
+        </a>
+        <a href="<?php print STATIC_PATH; ?>/PDF/BilanActiviteAG2015.pdf">
+            <img class="pdf-logo" src="<?php print STATIC_PATH; ?>/images/icones/logoPDF.png" /> Bilan Activit&eacute;
+        </a>
+        <a href="<?php print STATIC_PATH; ?>/PDF/BilanFinancierAG2015.pdf">
+            <img class="pdf-logo" src="<?php print STATIC_PATH; ?>/images/icones/logoPDF.png" /> Bilan Financier
+        </a>
+    </div>
+</div>

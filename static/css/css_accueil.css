@@ -152,6 +152,22 @@
     text-decoration: none;
 }
 
+/*********************** Bilans et PDF ********************/
+#bilanPDF {
+    display: inline-block;
+    background-color: #eee;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px;
+    margin: 0;
+    margin-bottom: 5px;
+}
+
+#bilanPDF img.pdf-logo{
+    width: 20px;
+    height: 20px;
+}
+
 /************************** DIVERS ************************/
 .limit30 {
     font-weight: bold;

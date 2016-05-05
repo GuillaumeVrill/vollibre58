@@ -2,7 +2,7 @@
 function createAlbumLinks(){
     $albums = recupererAlbums();
     for($i=0; $i<sizeof($albums); $i++){
-        echo '<a href="'.$albums[$i]->getUrl().'">'.$albums[$i]->getTitre().'</a>';
+        echo '<a href="'.$albums[$i]->getUrl().'" target="_blank">'.$albums[$i]->getTitre().'</a>';
     }
 }
 

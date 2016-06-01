@@ -64,7 +64,7 @@
 ?>
 <div class="row">
     <div id="video" class="col-xs-12 col-sm-8">
-        <h3>Pr&eacute;sentation du club:</h3>
+        <h3>Une vid&eacute;o du club:</h3>
         <iframe src="<?php if(isset($video[0]) && notEmpty($video[0]->getChemin())){ print $video[0]->getChemin(); } ?>" frameborder="0" allowfullscreen></iframe>
         <?php if(isset($_SESSION['user_right']) && !empty($_SESSION['user_right']) && ($_SESSION['user_right']=='2' || $_SESSION['user_right']=='1')) : ?>
             <div class="editVideo">
